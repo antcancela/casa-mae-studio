@@ -156,6 +156,11 @@ export const translations = {
     contact: {
       title: "Let's talk about your home.",
       lead: "Book a 30-minute conversation with no compromise—let's get to know each other, understand your project, and see how Atelier Casa Mãe can help.",
+      instagram: {
+        title: 'Still on the fence?',
+        description: 'Follow me on Instagram and see if you like what I share. Get a glimpse of my work, process, and design philosophy.',
+        cta: 'Follow on Instagram',
+      },
       info: {
         location: 'Location',
         email: 'Email',
@@ -327,6 +332,11 @@ export const translations = {
     contact: {
       title: 'Trocamos umas ideias?',
       lead: 'Marque uma conversa de 30 minutos sem compromisso—vamos conhecer-nos, perceber o seu projeto e ver como o Atelier Casa Mãe pode ajudar.',
+      instagram: {
+        title: 'Ainda indecisa/o?',
+        description: 'Siga-me no Instagram e veja se gosta do que partilho. Conheça melhor o meu trabalho, processo e filosofia de design.',
+        cta: 'Seguir no Instagram',
+      },
       info: {
         location: 'Localização',
         email: 'Email',

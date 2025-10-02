@@ -1,6 +1,6 @@
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { MapPin, Mail, Phone } from 'lucide-react';
+import { MapPin, Mail, Phone, Instagram } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
 interface ContactProps {
@@ -27,6 +27,33 @@ export const Contact = ({ onBookCallClick }: ContactProps) => {
             <Button onClick={onBookCallClick} size="lg" className="text-lg px-8 py-6">
               {t.contact.cta}
             </Button>
+          </div>
+
+          {/* Instagram Section */}
+          <div className="pt-12 max-w-2xl mx-auto">
+            <div className="bg-muted/30 rounded-lg p-8 space-y-4">
+              <h2 className="text-display text-2xl font-semibold">
+                {t.contact.instagram.title}
+              </h2>
+              <p className="text-muted-foreground">
+                {t.contact.instagram.description}
+              </p>
+              <Button
+                variant="outline"
+                size="lg"
+                asChild
+                className="gap-2"
+              >
+                <a 
+                  href="https://www.instagram.com/atelier_casamae/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="h-5 w-5" />
+                  {t.contact.instagram.cta}
+                </a>
+              </Button>
+            </div>
           </div>
 
           <div className="pt-12 border-t border-border max-w-xl mx-auto">
