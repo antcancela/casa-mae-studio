@@ -11,7 +11,7 @@ export const siteConfig = {
   },
   
   // Calendly Integration
-  calendlyUrl: 'https://calendly.com/ateliercasamae/intro',
+  calendlyUrl: 'https://calendly.com/ateliercasamae/30min',
   
   // Default Locale
   defaultLocale: 'pt',
