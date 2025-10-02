@@ -6,6 +6,12 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 // Import gallery images
 import kidsRoom1 from '@/assets/gallery/kids-room-1.jpg';
 import kidsRoom2 from '@/assets/gallery/kids-room-2.jpg';
+import kidsRoom3 from '@/assets/gallery/kids-room-3.jpg';
+import kidsRoom4 from '@/assets/gallery/kids-room-4.jpg';
+import kidsRoom5 from '@/assets/gallery/kids-room-5.jpg';
+import kidsRoom6 from '@/assets/gallery/kids-room-6.jpg';
+import kidsRoom7 from '@/assets/gallery/kids-room-7.jpg';
+import kidsRoom8 from '@/assets/gallery/kids-room-8.jpg';
 import familyHome1 from '@/assets/gallery/family-home-1.jpeg';
 import familyHome2 from '@/assets/gallery/family-home-2.jpeg';
 import lisbonApt1 from '@/assets/gallery/lisbon-apt-1.jpg';
@@ -17,6 +23,12 @@ const galleries = {
   kidsRooms: [
     { src: kidsRoom1, caption: "Kids' Room Design 1" },
     { src: kidsRoom2, caption: "Kids' Room Design 2" },
+    { src: kidsRoom3, caption: "Kids' Room Design 3" },
+    { src: kidsRoom4, caption: "Kids' Room Design 4" },
+    { src: kidsRoom5, caption: "Kids' Room Design 5" },
+    { src: kidsRoom6, caption: "Kids' Room Design 6" },
+    { src: kidsRoom7, caption: "Kids' Room Design 7" },
+    { src: kidsRoom8, caption: "Kids' Room Design 8" },
   ],
   familyHome: [
     { src: familyHome1, caption: 'Family Home Interior 1' },
