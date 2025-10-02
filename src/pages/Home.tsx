@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { ArrowRight, Home as HomeIcon, Briefcase, Users, Sparkles, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -182,6 +183,11 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
           </div>
         </div>
       </section>
+
+      {/* Separator */}
+      <div className="container mx-auto px-4 py-8">
+        <Separator className="max-w-5xl mx-auto" />
+      </div>
 
       {/* Process Section */}
       <section className="py-16 bg-background">

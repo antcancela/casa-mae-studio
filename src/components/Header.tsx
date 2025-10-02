@@ -32,9 +32,9 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-            <img src={logo} alt="Atelier Casa Mãe" className="h-12 w-12 rounded-full object-cover" />
-            <span className="text-display text-lg font-semibold text-foreground hidden sm:inline-block">
+          <Link to="/" className="flex items-center space-x-3 group">
+            <img src={logo} alt="Atelier Casa Mãe" className="h-12 w-12 rounded-full object-cover transition-transform group-hover:scale-105" />
+            <span className="text-display text-lg font-bold text-foreground group-hover:text-primary transition-colors">
               Atelier Casa Mãe
             </span>
           </Link>
