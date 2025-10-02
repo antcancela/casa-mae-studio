@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { ArrowRight, Users, CheckCircle2, Wrench, Lightbulb, ArrowDown } from 'lucide-react';
+import { ArrowRight, Users, CheckCircle2, Wrench, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { getOrganizationSchema, getServiceSchema } from '@/lib/structuredData';
@@ -238,9 +238,6 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
                         <h5 className="font-semibold mb-1">{step.title}</h5>
                         <p className="text-sm text-muted-foreground">{step.description}</p>
                       </div>
-                      {idx < t.home.process.paths.turnkey.steps.length - 1 && (
-                        <ArrowDown className="absolute left-2.5 top-10 h-4 w-4 text-primary/40" />
-                      )}
                     </div>
                   ))}
                 </div>
@@ -279,9 +276,6 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
                         <h5 className="font-semibold mb-1">{step.title}</h5>
                         <p className="text-sm text-muted-foreground">{step.description}</p>
                       </div>
-                      {idx < t.home.process.paths.consultancy.steps.length - 1 && (
-                        <ArrowDown className="absolute left-2.5 top-10 h-4 w-4 text-primary/40" />
-                      )}
                     </div>
                   ))}
                 </div>
