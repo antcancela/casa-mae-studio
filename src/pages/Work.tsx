@@ -18,6 +18,9 @@ import lisbonApt1 from '@/assets/gallery/lisbon-apt-1.jpg';
 import lisbonApt2 from '@/assets/gallery/lisbon-apt-2.jpg';
 import riverApt1 from '@/assets/gallery/river-apt-1.jpg';
 import riverApt2 from '@/assets/gallery/river-apt-2.jpg';
+import riverApt3 from '@/assets/gallery/river-apt-3.jpg';
+import riverApt4 from '@/assets/gallery/river-apt-4.jpg';
+import riverApt5 from '@/assets/gallery/river-apt-5.jpg';
 
 const galleries = {
   kidsRooms: [
@@ -41,6 +44,9 @@ const galleries = {
   river: [
     { src: riverApt1, caption: 'River Apartment 1' },
     { src: riverApt2, caption: 'River Apartment 2' },
+    { src: riverApt3, caption: 'River Apartment 3' },
+    { src: riverApt4, caption: 'River Apartment 4' },
+    { src: riverApt5, caption: 'River Apartment 5' },
   ],
 };
 
