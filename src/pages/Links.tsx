@@ -3,7 +3,7 @@ import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CalendlyModal } from '@/components/CalendlyModal';
 import { siteConfig } from '@/config/site';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo-links.png';
 
 export const Links = () => {
   const [calendlyOpen, setCalendlyOpen] = useState(false);
@@ -65,7 +65,7 @@ export const Links = () => {
             <img 
               src={logo} 
               alt="Atelier Casa Mãe" 
-              className="h-24 w-24 rounded-full object-cover border-2 border-primary/20"
+              className="h-32 w-auto"
             />
           </div>
           <div>
