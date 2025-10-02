@@ -48,23 +48,41 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
 
       {/* Intro Section */}
       <section className="py-16 bg-secondary/20">
-        <div className="container mx-auto max-w-4xl px-4">
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-foreground/90 mb-6">{t.home.intro.p1}</p>
-            
-            <p className="text-lg text-foreground/90 mb-4">{t.home.intro.p2}</p>
-            <ul className="space-y-2 mb-6">
-              {t.home.intro.list1.map((item, idx) => (
-                <li key={idx} className="text-foreground/80">{item}</li>
-              ))}
-            </ul>
-            
-            <p className="text-lg text-foreground/90 mb-4">{t.home.intro.p3}</p>
-            <ul className="space-y-2">
-              {t.home.intro.list2.map((item, idx) => (
-                <li key={idx} className="text-foreground/80">{item}</li>
-              ))}
-            </ul>
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Card 1: Nova Fase */}
+            <Card className="border-none shadow-elegant bg-card hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-8">
+                <h3 className="text-display text-2xl md:text-3xl font-semibold mb-6 text-primary">
+                  Para quem vai entrar numa nova fase:
+                </h3>
+                <ul className="space-y-4">
+                  {t.home.intro.list1.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-foreground/80">
+                      <span className="text-primary mt-1">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Card 2: Casa Adaptada */}
+            <Card className="border-none shadow-elegant bg-card hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-8">
+                <h3 className="text-display text-2xl md:text-3xl font-semibold mb-6 text-primary">
+                  Para quem quer uma casa mais adaptada à família:
+                </h3>
+                <ul className="space-y-4">
+                  {t.home.intro.list2.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-foreground/80">
+                      <span className="text-primary mt-1">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
