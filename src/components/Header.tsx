@@ -57,7 +57,7 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
               variant="ghost"
               size="icon"
               onClick={toggleLanguage}
-              className="hidden sm:flex"
+              className="hidden sm:flex hover:bg-primary/20 hover:scale-105 transition-all px-4"
               aria-label="Toggle language"
             >
               <Globe className="h-5 w-5" />
