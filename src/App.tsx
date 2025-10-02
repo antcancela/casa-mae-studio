@@ -1,27 +1,51 @@
+import { useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { CalendlyModal } from "@/components/CalendlyModal";
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+import { Work } from "./pages/Work";
+import { Contact } from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  const [calendlyOpen, setCalendlyOpen] = useState(false);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <LanguageProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <div className="flex flex-col min-h-screen">
+              <Header onBookCallClick={() => setCalendlyOpen(true)} />
+              <main className="flex-1">
+                <Routes>
+                  <Route path="/" element={<Home onBookCallClick={() => setCalendlyOpen(true)} />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/work" element={<Work />} />
+                  <Route path="/contact" element={<Contact onBookCallClick={() => setCalendlyOpen(true)} />} />
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </main>
+              <Footer onBookCallClick={() => setCalendlyOpen(true)} />
+              <CalendlyModal open={calendlyOpen} onOpenChange={setCalendlyOpen} />
+            </div>
+          </BrowserRouter>
+        </TooltipProvider>
+      </LanguageProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
