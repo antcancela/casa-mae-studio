@@ -33,7 +33,7 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <img src={logo} alt="Atelier Casa Mãe" className="h-10 w-auto transition-transform group-hover:scale-105" />
+            <img src={logo} alt="Atelier Casa Mãe" className="h-20 w-auto transition-transform group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation */}
