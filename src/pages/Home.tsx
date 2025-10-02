@@ -4,6 +4,10 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import joanaHero from '@/assets/joana-hero.jpg';
+import familyHome11 from '@/assets/gallery/family-home-11.jpg';
+import lisbonApt3 from '@/assets/gallery/lisbon-apt-3.jpg';
+import riverApt3 from '@/assets/gallery/river-apt-3.jpg';
+import kidsRoom3 from '@/assets/gallery/kids-room-3.jpg';
 
 interface HomeProps {
   onBookCallClick: () => void;
@@ -98,6 +102,43 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
               {t.home.portfolio.description}
             </p>
           </div>
+          
+          {/* Project thumbnails grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-5xl mx-auto">
+            <Link to="/work" className="group relative overflow-hidden rounded-lg aspect-square shadow-lg hover:shadow-xl transition-all">
+              <img 
+                src={familyHome11} 
+                alt="Family Home" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </Link>
+            <Link to="/work" className="group relative overflow-hidden rounded-lg aspect-square shadow-lg hover:shadow-xl transition-all">
+              <img 
+                src={lisbonApt3} 
+                alt="Apartment in Lisbon" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </Link>
+            <Link to="/work" className="group relative overflow-hidden rounded-lg aspect-square shadow-lg hover:shadow-xl transition-all">
+              <img 
+                src={riverApt3} 
+                alt="River Apartment" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </Link>
+            <Link to="/work" className="group relative overflow-hidden rounded-lg aspect-square shadow-lg hover:shadow-xl transition-all">
+              <img 
+                src={kidsRoom3} 
+                alt="Kids Room" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </Link>
+          </div>
+
           <div className="text-center">
             <Button size="lg" variant="outline" asChild>
               <Link to="/work">
