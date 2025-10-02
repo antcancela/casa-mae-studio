@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 // Import gallery images
 import kidsRoom1 from '@/assets/gallery/kids-room-1.jpg';
@@ -77,6 +79,52 @@ const galleries = {
 export const Work = () => {
   const { t } = useLanguage();
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const [currentGallery, setCurrentGallery] = useState<typeof galleries.kidsRooms>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const openLightbox = (images: typeof galleries.kidsRooms, index: number) => {
+    setCurrentGallery(images);
+    setCurrentIndex(index);
+    setLightboxImage(images[index].src);
+  };
+
+  const closeLightbox = () => {
+    setLightboxImage(null);
+    setCurrentGallery([]);
+  };
+
+  const goToNext = () => {
+    if (currentGallery.length > 0) {
+      const nextIndex = (currentIndex + 1) % currentGallery.length;
+      setCurrentIndex(nextIndex);
+      setLightboxImage(currentGallery[nextIndex].src);
+    }
+  };
+
+  const goToPrevious = () => {
+    if (currentGallery.length > 0) {
+      const prevIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+      setCurrentIndex(prevIndex);
+      setLightboxImage(currentGallery[prevIndex].src);
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightboxImage) return;
+      
+      if (e.key === 'ArrowRight') {
+        goToNext();
+      } else if (e.key === 'ArrowLeft') {
+        goToPrevious();
+      } else if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxImage, currentIndex, currentGallery]);
 
   const Gallery = ({ images }: { images: typeof galleries.kidsRooms }) => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -84,7 +132,7 @@ export const Work = () => {
         <div
           key={idx}
           className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
-          onClick={() => setLightboxImage(image.src)}
+          onClick={() => openLightbox(images, idx)}
         >
           <img
             src={image.src}
@@ -136,14 +184,53 @@ export const Work = () => {
       </div>
 
       {/* Lightbox */}
-      <Dialog open={!!lightboxImage} onOpenChange={() => setLightboxImage(null)}>
-        <DialogContent className="max-w-5xl p-0 bg-transparent border-none">
+      <Dialog open={!!lightboxImage} onOpenChange={closeLightbox}>
+        <DialogContent className="max-w-7xl p-0 bg-black/95 border-none">
           {lightboxImage && (
-            <img
-              src={lightboxImage}
-              alt="Full size"
-              className="w-full h-auto rounded-lg"
-            />
+            <div className="relative">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute top-4 right-4 z-50 text-white hover:bg-white/20"
+                onClick={closeLightbox}
+              >
+                <X className="h-6 w-6" />
+              </Button>
+              
+              {currentGallery.length > 1 && (
+                <>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 z-50 text-white hover:bg-white/20"
+                    onClick={goToPrevious}
+                  >
+                    <ChevronLeft className="h-8 w-8" />
+                  </Button>
+                  
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 z-50 text-white hover:bg-white/20"
+                    onClick={goToNext}
+                  >
+                    <ChevronRight className="h-8 w-8" />
+                  </Button>
+                </>
+              )}
+
+              <img
+                src={lightboxImage}
+                alt={currentGallery[currentIndex]?.caption || "Full size"}
+                className="w-full h-auto max-h-[90vh] object-contain"
+              />
+              
+              {currentGallery.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm bg-black/50 px-4 py-2 rounded-full">
+                  {currentIndex + 1} / {currentGallery.length}
+                </div>
+              )}
+            </div>
           )}
         </DialogContent>
       </Dialog>
