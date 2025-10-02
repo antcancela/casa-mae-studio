@@ -24,6 +24,10 @@ import familyHome10 from '@/assets/gallery/family-home-10.jpg';
 import familyHome11 from '@/assets/gallery/family-home-11.jpg';
 import lisbonApt1 from '@/assets/gallery/lisbon-apt-1.jpg';
 import lisbonApt2 from '@/assets/gallery/lisbon-apt-2.jpg';
+import lisbonApt3 from '@/assets/gallery/lisbon-apt-3.jpg';
+import lisbonApt4 from '@/assets/gallery/lisbon-apt-4.jpg';
+import lisbonApt5 from '@/assets/gallery/lisbon-apt-5.jpg';
+import lisbonApt6 from '@/assets/gallery/lisbon-apt-6.jpg';
 import riverApt1 from '@/assets/gallery/river-apt-1.jpg';
 import riverApt2 from '@/assets/gallery/river-apt-2.jpg';
 import riverApt3 from '@/assets/gallery/river-apt-3.jpg';
@@ -56,6 +60,10 @@ const galleries = {
   lisbon: [
     { src: lisbonApt1, caption: 'Lisbon Apartment 1' },
     { src: lisbonApt2, caption: 'Lisbon Apartment 2' },
+    { src: lisbonApt3, caption: 'Lisbon Apartment 3' },
+    { src: lisbonApt4, caption: 'Lisbon Apartment 4' },
+    { src: lisbonApt5, caption: 'Lisbon Apartment 5' },
+    { src: lisbonApt6, caption: 'Lisbon Apartment 6' },
   ],
   river: [
     { src: riverApt1, caption: 'River Apartment 1' },
