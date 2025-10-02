@@ -30,10 +30,10 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-28 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <img src={logo} alt="Atelier Casa Mãe" className="h-20 w-auto transition-transform group-hover:scale-105" />
+            <img src={logo} alt="Atelier Casa Mãe" className="h-24 w-auto transition-transform group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation */}
