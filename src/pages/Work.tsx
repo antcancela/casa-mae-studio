@@ -155,17 +155,14 @@ export const Work = () => {
           {t.work.intro}
         </p>
 
-        <Tabs defaultValue="kidsRooms" className="w-full">
+        <Tabs defaultValue="familyHome" className="w-full">
           <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-8">
-            <TabsTrigger value="kidsRooms">{t.work.categories.kidsRooms}</TabsTrigger>
             <TabsTrigger value="familyHome">{t.work.categories.familyHome}</TabsTrigger>
             <TabsTrigger value="lisbon">{t.work.categories.lisbon}</TabsTrigger>
             <TabsTrigger value="river">{t.work.categories.river}</TabsTrigger>
+            <TabsTrigger value="kidsRooms">{t.work.categories.kidsRooms}</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="kidsRooms">
-            <Gallery images={galleries.kidsRooms} />
-          </TabsContent>
           <TabsContent value="familyHome">
             <Gallery images={galleries.familyHome} />
           </TabsContent>
@@ -174,6 +171,9 @@ export const Work = () => {
           </TabsContent>
           <TabsContent value="river">
             <Gallery images={galleries.river} />
+          </TabsContent>
+          <TabsContent value="kidsRooms">
+            <Gallery images={galleries.kidsRooms} />
           </TabsContent>
         </Tabs>
       </div>
