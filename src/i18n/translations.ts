@@ -160,7 +160,7 @@ export const translations = {
         title: 'O que dizem os clientes',
         items: [
           {
-            text: 'I cannot speak highly enough of Joana… She is creative, organized, resourceful and just a joy to work with. We adore the beautiful oasis she created for us.',
+            text: "Só posso dizer bem da Joana e da experiência maravilhosa que foi trabalhar com ela. Começámos do zero e trabalhámos todos os aspectos do design de interiores, incluindo móveis, têxteis e obras de arte. Ela é criativa, organizada, engenhosa e simplesmente uma alegria trabalhar com ela.",
             author: "Sheila O'Leary",
             lang: 'en',
           },
