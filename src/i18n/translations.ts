@@ -52,14 +52,21 @@ export const translations = {
             description: 'We discuss your needs, lifestyle, and vision for your space.',
           },
           {
-            title: 'Design Proposal',
-            description: 'I create a tailored design plan with mood boards and layouts.',
-          },
-          {
-            title: 'Implementation',
-            description: 'Choose between full turnkey service or consultancy support.',
+            title: 'Quote & Project Plan',
+            description: 'You receive a detailed quote and project plan tailored to your needs.',
           },
         ],
+        paths: {
+          title: 'Choose Your Service',
+          turnkey: {
+            title: 'Turnkey',
+            description: 'Complete design and implementation service. I handle everything from concept to execution, coordinating with suppliers and contractors.',
+          },
+          consultancy: {
+            title: 'Consultancy',
+            description: 'Design and guidance only. You receive the complete design plan and support, while you manage the implementation yourself.',
+          },
+        },
       },
       stats: {
         projects: 'Projects Completed',
@@ -200,14 +207,21 @@ export const translations = {
             description: 'Discutimos as suas necessidades, estilo de vida e visão para o espaço.',
           },
           {
-            title: 'Proposta de Design',
-            description: 'Crio um plano personalizado com mood boards e layouts.',
-          },
-          {
-            title: 'Implementação',
-            description: 'Escolha entre serviço chave-na-mão ou consultoria.',
+            title: 'Orçamento & Plano de Projeto',
+            description: 'Recebe um orçamento detalhado e plano de projeto adaptado às suas necessidades.',
           },
         ],
+        paths: {
+          title: 'Escolha o Seu Serviço',
+          turnkey: {
+            title: 'Chave na Mão',
+            description: 'Serviço completo de design e implementação. Trato de tudo desde o conceito até à execução, coordenando fornecedores e empreiteiros.',
+          },
+          consultancy: {
+            title: 'Consultoria',
+            description: 'Apenas design e orientação. Recebe o plano de design completo e apoio, enquanto gere a implementação por si.',
+          },
+        },
       },
       stats: {
         projects: 'Projetos Realizados',

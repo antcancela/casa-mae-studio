@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { ArrowRight, Home as HomeIcon, Briefcase, Users, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Home as HomeIcon, Briefcase, Users, Sparkles, CheckCircle2, FileText, Wrench, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import joanaHero from '@/assets/joana-hero.jpg';
 import familyHome11 from '@/assets/gallery/family-home-11.jpg';
@@ -200,9 +200,11 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
               {t.home.process.description}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          
+          {/* Initial Steps */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
             {t.home.process.steps.map((step, idx) => {
-              const icons = [Briefcase, Sparkles, HomeIcon];
+              const icons = [Briefcase, FileText];
               const Icon = icons[idx];
               return (
                 <Card 
@@ -220,6 +222,36 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
                 </Card>
               );
             })}
+          </div>
+
+          {/* Service Paths */}
+          <div className="max-w-5xl mx-auto">
+            <h3 className="text-display text-2xl md:text-3xl font-semibold text-center mb-8">
+              {t.home.process.paths.title}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Turnkey */}
+              <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-all animate-fade-in">
+                <CardContent className="p-8">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                    <Wrench className="h-8 w-8 text-primary" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-3 text-primary">{t.home.process.paths.turnkey.title}</h4>
+                  <p className="text-muted-foreground">{t.home.process.paths.turnkey.description}</p>
+                </CardContent>
+              </Card>
+
+              {/* Consultancy */}
+              <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-all animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                <CardContent className="p-8">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                    <Lightbulb className="h-8 w-8 text-primary" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-3 text-primary">{t.home.process.paths.consultancy.title}</h4>
+                  <p className="text-muted-foreground">{t.home.process.paths.consultancy.description}</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
