@@ -1,17 +1,33 @@
-import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { MapPin, Mail, Phone, Instagram } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageContext';
 import { siteConfig } from '@/config/site';
+import { SEO } from '@/components/SEO';
+import { getBreadcrumbSchema } from '@/lib/structuredData';
 
 interface ContactProps {
   onBookCallClick: () => void;
 }
 
 export const Contact = ({ onBookCallClick }: ContactProps) => {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+
+  const metaDescription = locale === 'pt'
+    ? 'Entre em contacto com o Atelier Casa Mãe. Marque uma conversa de 30 minutos para discutir o seu projeto de design de interiores.'
+    : 'Get in touch with Atelier Casa Mãe. Book a 30-minute conversation to discuss your interior design project.';
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: typeof window !== 'undefined' ? `${window.location.origin}/` : '' },
+    { name: locale === 'pt' ? 'Contacto' : 'Contact', url: typeof window !== 'undefined' ? window.location.href : '' }
+  ]);
 
   return (
     <div className="min-h-screen py-16">
+      <SEO 
+        title={locale === 'pt' ? 'Contacto' : 'Contact'}
+        description={metaDescription}
+        jsonLd={breadcrumbSchema}
+      />
       <div className="container mx-auto max-w-4xl px-4">
         <div className="text-center space-y-12">
           <div>

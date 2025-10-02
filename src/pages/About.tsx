@@ -1,12 +1,28 @@
-import { useLanguage } from '@/i18n/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
+import { useLanguage } from '@/i18n/LanguageContext';
 import joanaPortrait from '@/assets/joana-portrait.jpg';
+import { SEO } from '@/components/SEO';
+import { getPersonSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 
 export const About = () => {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+
+  const metaDescription = locale === 'pt'
+    ? 'Conheça Joana Leitão, designer de interiores especializada em espaços familiares. Mais de 10 anos de experiência criando lares funcionais e bonitos.'
+    : 'Meet Joana Leitão, interior designer specialized in family spaces. Over 10 years of experience creating functional and beautiful homes.';
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: typeof window !== 'undefined' ? `${window.location.origin}/` : '' },
+    { name: locale === 'pt' ? 'Sobre' : 'About', url: typeof window !== 'undefined' ? window.location.href : '' }
+  ]);
 
   return (
     <div className="min-h-screen py-16">
+      <SEO 
+        title={locale === 'pt' ? 'Sobre' : 'About'}
+        description={metaDescription}
+        jsonLd={[getPersonSchema(), breadcrumbSchema]}
+      />
       <div className="container mx-auto max-w-6xl px-4">
         <h1 className="text-display text-4xl md:text-5xl font-semibold mb-16 text-center">
           {t.about.title}

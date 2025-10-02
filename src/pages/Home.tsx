@@ -2,8 +2,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { ArrowRight, Home as HomeIcon, Briefcase, Users, Sparkles, CheckCircle2, FileText, Wrench, Lightbulb } from 'lucide-react';
+import { ArrowRight, Users, CheckCircle2, Wrench, Lightbulb, ArrowDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '@/components/SEO';
+import { getOrganizationSchema, getServiceSchema } from '@/lib/structuredData';
 import joanaHero from '@/assets/joana-hero.jpg';
 import familyHome11 from '@/assets/gallery/family-home-11.jpg';
 import lisbonApt3 from '@/assets/gallery/lisbon-apt-3.jpg';
@@ -15,10 +17,19 @@ interface HomeProps {
 }
 
 export const Home = ({ onBookCallClick }: HomeProps) => {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+
+  const metaDescription = locale === 'pt' 
+    ? 'Design de interiores especializado em famílias e quartos de crianças. Atelier Casa Mãe cria espaços bonitos e funcionais para toda a família.'
+    : 'Interior design specialized in families and children\'s rooms. Atelier Casa Mãe creates beautiful and functional spaces for the whole family.';
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title={locale === 'pt' ? 'Início' : 'Home'}
+        description={metaDescription}
+        jsonLd={[getOrganizationSchema(), getServiceSchema()]}
+      />
       {/* Hero Section with Image */}
       <section className="relative min-h-[75vh] flex items-center">
         <div className="container mx-auto px-4">
@@ -214,16 +225,22 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
                   <p className="text-sm text-muted-foreground">{t.home.process.paths.turnkey.subtitle}</p>
                 </div>
                 <Separator className="mb-6" />
-                <div className="space-y-6 mb-8">
+                <div className="space-y-6 mb-8 relative">
+                  {/* Timeline line */}
+                  <div className="absolute left-4 top-4 bottom-4 w-0.5 bg-primary/20" />
+                  
                   {t.home.process.paths.turnkey.steps.map((step, idx) => (
-                    <div key={idx} className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-sm">
-                        {idx}
+                    <div key={idx} className="flex gap-4 relative">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-sm z-10 shadow-md">
+                        {idx + 1}
                       </div>
-                      <div>
+                      <div className="flex-1 pt-0.5">
                         <h5 className="font-semibold mb-1">{step.title}</h5>
                         <p className="text-sm text-muted-foreground">{step.description}</p>
                       </div>
+                      {idx < t.home.process.paths.turnkey.steps.length - 1 && (
+                        <ArrowDown className="absolute left-2.5 top-10 h-4 w-4 text-primary/40" />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -249,16 +266,22 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
                   <p className="text-sm text-muted-foreground">{t.home.process.paths.consultancy.subtitle}</p>
                 </div>
                 <Separator className="mb-6" />
-                <div className="space-y-6 mb-8">
+                <div className="space-y-6 mb-8 relative">
+                  {/* Timeline line */}
+                  <div className="absolute left-4 top-4 bottom-4 w-0.5 bg-primary/20" />
+                  
                   {t.home.process.paths.consultancy.steps.map((step, idx) => (
-                    <div key={idx} className="flex gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-sm">
-                        {idx}
+                    <div key={idx} className="flex gap-4 relative">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-sm z-10 shadow-md">
+                        {idx + 1}
                       </div>
-                      <div>
+                      <div className="flex-1 pt-0.5">
                         <h5 className="font-semibold mb-1">{step.title}</h5>
                         <p className="text-sm text-muted-foreground">{step.description}</p>
                       </div>
+                      {idx < t.home.process.paths.consultancy.steps.length - 1 && (
+                        <ArrowDown className="absolute left-2.5 top-10 h-4 w-4 text-primary/40" />
+                      )}
                     </div>
                   ))}
                 </div>

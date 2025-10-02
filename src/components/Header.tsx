@@ -57,8 +57,8 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
               variant="ghost"
               size="icon"
               onClick={toggleLanguage}
-              className="hidden sm:flex hover:bg-primary/20 hover:scale-105 transition-all px-4"
-              aria-label="Toggle language"
+              className="flex hover:bg-primary/20 hover:scale-105 transition-all px-4"
+              aria-label={`Switch to ${locale === 'en' ? 'Portuguese' : 'English'}`}
             >
               <Globe className="h-5 w-5" />
               <span className="ml-2 text-sm font-medium">{locale.toUpperCase()}</span>
@@ -102,15 +102,6 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
                 {item.label}
               </Link>
             ))}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleLanguage}
-              className="justify-start"
-            >
-              <Globe className="h-5 w-5 mr-2" />
-              {locale === 'en' ? 'Português' : 'English'}
-            </Button>
             <Button onClick={() => { onBookCallClick(); setMobileMenuOpen(false); }} className="w-full">
               {t.nav.bookCall}
             </Button>
