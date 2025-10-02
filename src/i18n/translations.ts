@@ -44,7 +44,7 @@ export const translations = {
         },
       },
       process: {
-        title: 'Choose Your Service Path',
+        title: 'Choose Your Service Type',
         description: 'Two approaches to transform your home',
         paths: {
           turnkey: {
@@ -226,7 +226,7 @@ export const translations = {
         },
       },
       process: {
-        title: 'Escolha o Seu Caminho de Serviço',
+        title: 'Escolha o Tipo de Serviço',
         description: 'Duas abordagens para transformar a sua casa',
         paths: {
           turnkey: {
