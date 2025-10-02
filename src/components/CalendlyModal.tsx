@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
+import { Dialog, DialogContent } from './ui/dialog';
 import { siteConfig } from '@/config/site';
 
 interface CalendlyModalProps {
@@ -10,10 +10,7 @@ export const CalendlyModal = ({ open, onOpenChange }: CalendlyModalProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-3xl h-[80vh] p-0">
-        <DialogHeader className="px-6 pt-6">
-          <DialogTitle className="text-display">Book a Conversation</DialogTitle>
-        </DialogHeader>
-        <div className="flex-1 overflow-hidden px-6 pb-6">
+        <div className="h-full overflow-hidden p-6">
           <iframe
             src={siteConfig.calendlyUrl}
             width="100%"
