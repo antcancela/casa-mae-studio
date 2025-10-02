@@ -44,24 +44,18 @@ export const translations = {
         },
       },
       process: {
-        title: 'How I Work',
-        description: 'A structured and collaborative approach to bring your vision to life',
-        commonSteps: [
-          {
-            title: 'Initial Conversation',
-            description: 'We discuss your needs, family dynamics, and project goals'
-          },
-          {
-            title: 'Quote & Project Plan',
-            description: 'Detailed proposal with timeline, scope, and investment'
-          }
-        ],
+        title: 'Choose Your Service Path',
+        description: 'Two approaches to transform your home',
         paths: {
-          title: 'Choose Your Service Path',
           turnkey: {
             title: 'Turnkey Service',
             subtitle: 'Complete end-to-end solution',
+            cta: 'Book a Conversation',
             steps: [
+              {
+                title: 'Conversation & Quote',
+                description: 'We discuss your needs and I present a detailed proposal with timeline and investment'
+              },
               {
                 title: 'Design Development',
                 description: 'Complete interior design with detailed plans and specifications'
@@ -79,7 +73,12 @@ export const translations = {
           consultancy: {
             title: 'Consultancy Service',
             subtitle: 'Expert guidance for your team',
+            cta: 'Book a Conversation',
             steps: [
+              {
+                title: 'Conversation & Quote',
+                description: 'We discuss your needs and I present a detailed proposal with timeline and investment'
+              },
               {
                 title: 'Design Development',
                 description: 'Complete interior design with detailed plans and specifications'
@@ -227,24 +226,18 @@ export const translations = {
         },
       },
       process: {
-        title: 'Como Trabalho',
-        description: 'Uma abordagem estruturada e colaborativa para dar vida à sua visão',
-        commonSteps: [
-          {
-            title: 'Conversa Inicial',
-            description: 'Discutimos as suas necessidades, dinâmica familiar e objetivos do projeto'
-          },
-          {
-            title: 'Orçamento e Plano de Projeto',
-            description: 'Proposta detalhada com cronograma, âmbito e investimento'
-          }
-        ],
+        title: 'Escolha o Seu Caminho de Serviço',
+        description: 'Duas abordagens para transformar a sua casa',
         paths: {
-          title: 'Escolha o Seu Caminho de Serviço',
           turnkey: {
             title: 'Serviço Chave na Mão',
             subtitle: 'Solução completa do início ao fim',
+            cta: 'Marcar Conversa',
             steps: [
+              {
+                title: 'Conversa e Orçamento',
+                description: 'Discutimos as suas necessidades e apresento uma proposta detalhada com cronograma e investimento'
+              },
               {
                 title: 'Desenvolvimento do Design',
                 description: 'Design de interiores completo com plantas detalhadas e especificações'
@@ -262,7 +255,12 @@ export const translations = {
           consultancy: {
             title: 'Serviço de Consultoria',
             subtitle: 'Orientação especializada para a sua equipa',
+            cta: 'Marcar Conversa',
             steps: [
+              {
+                title: 'Conversa e Orçamento',
+                description: 'Discutimos as suas necessidades e apresento uma proposta detalhada com cronograma e investimento'
+              },
               {
                 title: 'Desenvolvimento do Design',
                 description: 'Design de interiores completo com plantas detalhadas e especificações'
