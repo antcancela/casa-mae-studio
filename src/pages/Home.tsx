@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import joanaHero from '@/assets/joana-hero.jpg';
 
 interface HomeProps {
   onBookCallClick: () => void;
@@ -13,23 +14,34 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-16 md:py-24 lg:py-32 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-display text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 animate-fade-in">
-            {t.home.hero.headline}
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            {t.home.hero.subheadline}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" onClick={onBookCallClick}>
-              {t.home.hero.primaryCta}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link to="/work">{t.home.hero.secondaryCta}</Link>
-            </Button>
+      {/* Hero Section with Image */}
+      <section className="relative min-h-[90vh] flex items-center">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="order-2 lg:order-1 space-y-6">
+              <h1 className="text-display text-4xl md:text-5xl lg:text-6xl font-semibold animate-fade-in">
+                Sou a Joana Leitão, designer de interiores.
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground">
+                {t.home.hero.subheadline}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" onClick={onBookCallClick}>
+                  {t.home.hero.primaryCta}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/work">{t.home.hero.secondaryCta}</Link>
+                </Button>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <img
+                src={joanaHero}
+                alt="Joana Leitão, designer de interiores"
+                className="w-full h-auto rounded-lg shadow-elegant animate-fade-in"
+              />
+            </div>
           </div>
         </div>
       </section>
