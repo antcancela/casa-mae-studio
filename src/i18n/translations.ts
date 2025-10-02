@@ -189,7 +189,7 @@ export const translations = {
     home: {
       hero: {
         headline: 'Design de Interiores para Famílias',
-        subheadline: 'Sou a Joana Leitão, e no Atelier Casa Mãe especializo-me em criar casas bonitas e funcionais onde cada membro da família prospera—com especial cuidado para os mais novos.',
+        subheadline: 'Sou a Joana Leitão, e no Atelier Casa Mãe especializo-me em criar casas bonitas e funcionais para a família—com especial cuidado com os mais novos.',
         primaryCta: 'Marcar Conversa',
         secondaryCta: 'Ver Trabalhos',
       },
