@@ -20,7 +20,7 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Image */}
-      <section className="relative min-h-[90vh] flex items-center">
+      <section className="relative min-h-[75vh] flex items-center">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="order-2 lg:order-1 space-y-6">
