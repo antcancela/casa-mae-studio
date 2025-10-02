@@ -12,6 +12,7 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Work } from "./pages/Work";
 import { Contact } from "./pages/Contact";
+import { Links } from "./pages/Links";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,21 +27,29 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
-            <div className="flex flex-col min-h-screen">
-              <Header onBookCallClick={() => setCalendlyOpen(true)} />
-              <main className="flex-1">
-                <Routes>
-                  <Route path="/" element={<Home onBookCallClick={() => setCalendlyOpen(true)} />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/work" element={<Work />} />
-                  <Route path="/contact" element={<Contact onBookCallClick={() => setCalendlyOpen(true)} />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </main>
-              <Footer onBookCallClick={() => setCalendlyOpen(true)} />
-              <CalendlyModal open={calendlyOpen} onOpenChange={setCalendlyOpen} />
-            </div>
+            <Routes>
+              {/* Links page without Header/Footer */}
+              <Route path="/links" element={<Links />} />
+              
+              {/* Main layout with Header/Footer */}
+              <Route path="*" element={
+                <div className="flex flex-col min-h-screen">
+                  <Header onBookCallClick={() => setCalendlyOpen(true)} />
+                  <main className="flex-1">
+                    <Routes>
+                      <Route path="/" element={<Home onBookCallClick={() => setCalendlyOpen(true)} />} />
+                      <Route path="/about" element={<About />} />
+                      <Route path="/work" element={<Work />} />
+                      <Route path="/contact" element={<Contact onBookCallClick={() => setCalendlyOpen(true)} />} />
+                      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </main>
+                  <Footer onBookCallClick={() => setCalendlyOpen(true)} />
+                  <CalendlyModal open={calendlyOpen} onOpenChange={setCalendlyOpen} />
+                </div>
+              } />
+            </Routes>
           </BrowserRouter>
         </TooltipProvider>
       </LanguageProvider>
