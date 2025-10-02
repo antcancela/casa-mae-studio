@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { useSwipeable } from 'react-swipeable';
 import { SEO } from '@/components/SEO';
 import { getBreadcrumbSchema } from '@/lib/structuredData';
 
@@ -84,6 +83,8 @@ export const Work = () => {
   const [currentGallery, setCurrentGallery] = useState<{ src: string; caption: string }[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageLoading, setImageLoading] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   const openLightbox = (images: { src: string; caption: string }[], index: number) => {
     setCurrentGallery(images);
@@ -93,32 +94,52 @@ export const Work = () => {
     setImageLoading(true);
   };
 
-  const closeLightbox = () => {
+  const closeLightbox = useCallback(() => {
     setLightboxOpen(false);
     setCurrentImage(null);
     setCurrentGallery([]);
+  }, []);
+
+  const goToNext = useCallback(() => {
+    setCurrentIndex(prev => {
+      const nextIndex = (prev + 1) % currentGallery.length;
+      setCurrentImage(currentGallery[nextIndex]);
+      setImageLoading(true);
+      return nextIndex;
+    });
+  }, [currentGallery]);
+
+  const goToPrevious = useCallback(() => {
+    setCurrentIndex(prev => {
+      const prevIndex = (prev - 1 + currentGallery.length) % currentGallery.length;
+      setCurrentImage(currentGallery[prevIndex]);
+      setImageLoading(true);
+      return prevIndex;
+    });
+  }, [currentGallery]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
   };
 
-  const goToNext = () => {
-    const nextIndex = (currentIndex + 1) % currentGallery.length;
-    setCurrentIndex(nextIndex);
-    setCurrentImage(currentGallery[nextIndex]);
-    setImageLoading(true);
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
   };
 
-  const goToPrevious = () => {
-    const prevIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-    setCurrentIndex(prevIndex);
-    setCurrentImage(currentGallery[prevIndex]);
-    setImageLoading(true);
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+    
+    if (isLeftSwipe) {
+      goToNext();
+    } else if (isRightSwipe) {
+      goToPrevious();
+    }
+    setTouchStart(0);
+    setTouchEnd(0);
   };
-
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => goToNext(),
-    onSwipedRight: () => goToPrevious(),
-    trackMouse: true,
-    preventScrollOnSwipe: true,
-  });
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -208,7 +229,12 @@ export const Work = () => {
       {/* Lightbox Dialog */}
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
         <DialogContent className="max-w-7xl w-full h-[90vh] p-0 overflow-hidden bg-black/95">
-          <div {...swipeHandlers} className="relative w-full h-full flex items-center justify-center">
+          <div 
+            className="relative w-full h-full flex items-center justify-center"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {/* Close button */}
             <Button
               variant="ghost"
