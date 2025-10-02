@@ -45,28 +45,56 @@ export const translations = {
       },
       process: {
         title: 'How I Work',
-        description: 'A simple process to transform your home',
-        steps: [
+        description: 'A structured and collaborative approach to bring your vision to life',
+        commonSteps: [
           {
             title: 'Initial Conversation',
-            description: 'We discuss your needs, lifestyle, and vision for your space.',
+            description: 'We discuss your needs, family dynamics, and project goals'
           },
           {
             title: 'Quote & Project Plan',
-            description: 'You receive a detailed quote and project plan tailored to your needs.',
-          },
+            description: 'Detailed proposal with timeline, scope, and investment'
+          }
         ],
         paths: {
-          title: 'Choose Your Service',
+          title: 'Choose Your Service Path',
           turnkey: {
-            title: 'Turnkey',
-            description: 'Complete design and implementation service. I handle everything from concept to execution, coordinating with suppliers and contractors.',
+            title: 'Turnkey Service',
+            subtitle: 'Complete end-to-end solution',
+            steps: [
+              {
+                title: 'Design Development',
+                description: 'Complete interior design with detailed plans and specifications'
+              },
+              {
+                title: 'Project Management',
+                description: 'Coordination with contractors, suppliers, and all implementation'
+              },
+              {
+                title: 'Final Delivery',
+                description: 'Your space is ready to enjoy, fully implemented and styled'
+              }
+            ]
           },
           consultancy: {
-            title: 'Consultancy',
-            description: 'Design and guidance only. You receive the complete design plan and support, while you manage the implementation yourself.',
-          },
-        },
+            title: 'Consultancy Service',
+            subtitle: 'Expert guidance for your team',
+            steps: [
+              {
+                title: 'Design Development',
+                description: 'Complete interior design with detailed plans and specifications'
+              },
+              {
+                title: 'Implementation Guide',
+                description: 'Comprehensive documentation and recommendations for your team'
+              },
+              {
+                title: 'Support & Guidance',
+                description: 'Ongoing consultation as you manage the implementation'
+              }
+            ]
+          }
+        }
       },
       stats: {
         projects: 'Projects Completed',
@@ -200,28 +228,56 @@ export const translations = {
       },
       process: {
         title: 'Como Trabalho',
-        description: 'Um processo simples para transformar a sua casa',
-        steps: [
+        description: 'Uma abordagem estruturada e colaborativa para dar vida à sua visão',
+        commonSteps: [
           {
             title: 'Conversa Inicial',
-            description: 'Discutimos as suas necessidades, estilo de vida e visão para o espaço.',
+            description: 'Discutimos as suas necessidades, dinâmica familiar e objetivos do projeto'
           },
           {
-            title: 'Orçamento & Plano de Projeto',
-            description: 'Recebe um orçamento detalhado e plano de projeto adaptado às suas necessidades.',
-          },
+            title: 'Orçamento e Plano de Projeto',
+            description: 'Proposta detalhada com cronograma, âmbito e investimento'
+          }
         ],
         paths: {
-          title: 'Escolha o Seu Serviço',
+          title: 'Escolha o Seu Caminho de Serviço',
           turnkey: {
-            title: 'Chave na Mão',
-            description: 'Serviço completo de design e implementação. Trato de tudo desde o conceito até à execução, coordenando fornecedores e empreiteiros.',
+            title: 'Serviço Chave na Mão',
+            subtitle: 'Solução completa do início ao fim',
+            steps: [
+              {
+                title: 'Desenvolvimento do Design',
+                description: 'Design de interiores completo com plantas detalhadas e especificações'
+              },
+              {
+                title: 'Gestão de Projeto',
+                description: 'Coordenação com empreiteiros, fornecedores e toda a implementação'
+              },
+              {
+                title: 'Entrega Final',
+                description: 'O seu espaço pronto a desfrutar, totalmente implementado e decorado'
+              }
+            ]
           },
           consultancy: {
-            title: 'Consultoria',
-            description: 'Apenas design e orientação. Recebe o plano de design completo e apoio, enquanto gere a implementação por si.',
-          },
-        },
+            title: 'Serviço de Consultoria',
+            subtitle: 'Orientação especializada para a sua equipa',
+            steps: [
+              {
+                title: 'Desenvolvimento do Design',
+                description: 'Design de interiores completo com plantas detalhadas e especificações'
+              },
+              {
+                title: 'Guia de Implementação',
+                description: 'Documentação abrangente e recomendações para a sua equipa'
+              },
+              {
+                title: 'Apoio e Orientação',
+                description: 'Consultoria contínua enquanto gere a implementação'
+              }
+            ]
+          }
+        }
       },
       stats: {
         projects: 'Projetos Realizados',

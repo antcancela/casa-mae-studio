@@ -201,9 +201,9 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
             </p>
           </div>
           
-          {/* Initial Steps */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-            {t.home.process.steps.map((step, idx) => {
+          {/* Common Initial Steps */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+            {t.home.process.commonSteps.map((step, idx) => {
               const icons = [Briefcase, FileText];
               const Icon = icons[idx];
               return (
@@ -224,34 +224,68 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
             })}
           </div>
 
-          {/* Service Paths */}
-          <div className="max-w-5xl mx-auto">
-            <h3 className="text-display text-2xl md:text-3xl font-semibold text-center mb-8">
+          {/* Service Paths Title */}
+          <div className="text-center mb-12">
+            <h3 className="text-display text-2xl md:text-3xl font-semibold mb-2">
               {t.home.process.paths.title}
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Turnkey */}
-              <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-all animate-fade-in">
-                <CardContent className="p-8">
+          </div>
+
+          {/* Two Service Paths Side by Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Turnkey Path */}
+            <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-all animate-fade-in">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                     <Wrench className="h-8 w-8 text-primary" />
                   </div>
-                  <h4 className="text-xl font-bold mb-3 text-primary">{t.home.process.paths.turnkey.title}</h4>
-                  <p className="text-muted-foreground">{t.home.process.paths.turnkey.description}</p>
-                </CardContent>
-              </Card>
+                  <h4 className="text-2xl font-bold mb-2 text-primary">{t.home.process.paths.turnkey.title}</h4>
+                  <p className="text-sm text-muted-foreground">{t.home.process.paths.turnkey.subtitle}</p>
+                </div>
+                <Separator className="mb-6" />
+                <div className="space-y-6">
+                  {t.home.process.paths.turnkey.steps.map((step, idx) => (
+                    <div key={idx} className="flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-sm">
+                        {idx + 1}
+                      </div>
+                      <div>
+                        <h5 className="font-semibold mb-1">{step.title}</h5>
+                        <p className="text-sm text-muted-foreground">{step.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Consultancy */}
-              <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-all animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                <CardContent className="p-8">
+            {/* Consultancy Path */}
+            <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-all animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                     <Lightbulb className="h-8 w-8 text-primary" />
                   </div>
-                  <h4 className="text-xl font-bold mb-3 text-primary">{t.home.process.paths.consultancy.title}</h4>
-                  <p className="text-muted-foreground">{t.home.process.paths.consultancy.description}</p>
-                </CardContent>
-              </Card>
-            </div>
+                  <h4 className="text-2xl font-bold mb-2 text-primary">{t.home.process.paths.consultancy.title}</h4>
+                  <p className="text-sm text-muted-foreground">{t.home.process.paths.consultancy.subtitle}</p>
+                </div>
+                <Separator className="mb-6" />
+                <div className="space-y-6">
+                  {t.home.process.paths.consultancy.steps.map((step, idx) => (
+                    <div key={idx} className="flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-sm">
+                        {idx + 1}
+                      </div>
+                      <div>
+                        <h5 className="font-semibold mb-1">{step.title}</h5>
+                        <p className="text-sm text-muted-foreground">{step.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
