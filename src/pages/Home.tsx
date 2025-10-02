@@ -41,7 +41,7 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
               <p className="text-lg md:text-xl text-muted-foreground">
                 {t.home.hero.subheadline}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8 sm:mb-0">
                 <Button size="lg" onClick={onBookCallClick}>
                   {t.home.hero.primaryCta}
                   <ArrowRight className="ml-2 h-5 w-5" />
