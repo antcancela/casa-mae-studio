@@ -3,6 +3,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import heroBackground from '@/assets/hero-background.jpg';
 
 interface HomeProps {
   onBookCallClick: () => void;
@@ -10,12 +12,41 @@ interface HomeProps {
 
 export const Home = ({ onBookCallClick }: HomeProps) => {
   const { t } = useLanguage();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 lg:py-32 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
+      <section className="relative py-16 md:py-24 lg:py-32 px-4 overflow-hidden">
+        {/* Parallax Background */}
+        <div 
+          className="absolute inset-0 -z-10"
+          style={{
+            transform: `translateY(${scrollY * 0.5}px)`,
+            transition: 'transform 0.1s ease-out',
+          }}
+        >
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${heroBackground})`,
+              height: '120%',
+              top: '-10%',
+            }}
+          />
+          <div className="absolute inset-0 bg-background/70 backdrop-blur-sm" />
+        </div>
+        
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
           <h1 className="text-display text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 animate-fade-in">
             {t.home.hero.headline}
           </h1>
