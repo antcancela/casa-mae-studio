@@ -14,6 +14,14 @@ import kidsRoom7 from '@/assets/gallery/kids-room-7.jpg';
 import kidsRoom8 from '@/assets/gallery/kids-room-8.jpg';
 import familyHome1 from '@/assets/gallery/family-home-1.jpeg';
 import familyHome2 from '@/assets/gallery/family-home-2.jpeg';
+import familyHome3 from '@/assets/gallery/family-home-3.jpg';
+import familyHome4 from '@/assets/gallery/family-home-4.jpeg';
+import familyHome5 from '@/assets/gallery/family-home-5.jpg';
+import familyHome7 from '@/assets/gallery/family-home-7.jpg';
+import familyHome8 from '@/assets/gallery/family-home-8.jpg';
+import familyHome9 from '@/assets/gallery/family-home-9.jpg';
+import familyHome10 from '@/assets/gallery/family-home-10.jpg';
+import familyHome11 from '@/assets/gallery/family-home-11.jpg';
 import lisbonApt1 from '@/assets/gallery/lisbon-apt-1.jpg';
 import lisbonApt2 from '@/assets/gallery/lisbon-apt-2.jpg';
 import riverApt1 from '@/assets/gallery/river-apt-1.jpg';
@@ -36,6 +44,14 @@ const galleries = {
   familyHome: [
     { src: familyHome1, caption: 'Family Home Interior 1' },
     { src: familyHome2, caption: 'Family Home Interior 2' },
+    { src: familyHome3, caption: 'Family Home Interior 3' },
+    { src: familyHome4, caption: 'Family Home Interior 4' },
+    { src: familyHome5, caption: 'Family Home Interior 5' },
+    { src: familyHome7, caption: 'Family Home Interior 7' },
+    { src: familyHome8, caption: 'Family Home Interior 8' },
+    { src: familyHome9, caption: 'Family Home Interior 9' },
+    { src: familyHome10, caption: 'Family Home Interior 10' },
+    { src: familyHome11, caption: 'Family Home Interior 11' },
   ],
   lisbon: [
     { src: lisbonApt1, caption: 'Lisbon Apartment 1' },
