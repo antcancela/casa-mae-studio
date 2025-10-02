@@ -12,8 +12,8 @@ export const translations = {
     // Home Page
     home: {
       hero: {
-        headline: "I'm Joana Leitão, interior designer.",
-        subheadline: 'Welcome to my interior design studio. At Atelier Casa Mãe I create beautiful, functional homes for families, with special care for the youngest.',
+        headline: "Interior Design for Families",
+        subheadline: "I'm Joana Leitão, and at Atelier Casa Mãe I specialize in creating beautiful, functional homes where every family member thrives—with special care for the youngest.",
         primaryCta: 'Book a Conversation',
         secondaryCta: 'View Work',
       },
@@ -188,8 +188,8 @@ export const translations = {
     // Home Page
     home: {
       hero: {
-        headline: 'Sou a Joana Leitão, designer de interiores.',
-        subheadline: 'Bem-vindo ao meu atelier. No Atelier Casa Mãe crio casas bonitas e funcionais para famílias, com especial cuidado para os mais novos.',
+        headline: 'Design de Interiores para Famílias',
+        subheadline: 'Sou a Joana Leitão, e no Atelier Casa Mãe especializo-me em criar casas bonitas e funcionais onde cada membro da família prospera—com especial cuidado para os mais novos.',
         primaryCta: 'Marcar Conversa',
         secondaryCta: 'Ver Trabalhos',
       },
