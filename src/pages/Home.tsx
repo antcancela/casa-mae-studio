@@ -287,12 +287,9 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)]" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <Users className="h-16 w-16 mx-auto mb-6 opacity-80" />
-          <h2 className="text-display text-3xl md:text-5xl font-bold mb-4 animate-fade-in">
+          <h2 className="text-display text-3xl md:text-5xl font-bold mb-8 animate-fade-in">
             {t.home.ctaBand.title}
           </h2>
-          <p className="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            {t.home.hero.subheadline}
-          </p>
           <Button
             size="lg"
             variant="secondary"
