@@ -96,22 +96,6 @@ export const Links = () => {
           ))}
         </div>
 
-        {/* Social Links */}
-        <div className="flex justify-center gap-4 pt-4">
-          {socialLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              <link.icon className="h-5 w-5" />
-              <span>{link.label}</span>
-            </a>
-          ))}
-        </div>
-
         {/* Contact Info */}
         <div className="space-y-2 pt-4 border-t border-border">
           {contactInfo.map((info) => (
