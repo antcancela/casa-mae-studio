@@ -155,24 +155,13 @@ export const translations = {
     // Contact Page
     contact: {
       title: "Let's talk about your home.",
-      lead: "Tell me a bit about your space and what you'd like to improve.",
-      form: {
-        name: 'Name',
-        email: 'Email',
-        phone: 'Phone (optional)',
-        message: 'Message',
-        submit: 'Send Message',
-        sending: 'Sending...',
-      },
+      lead: "Book a 30-minute conversation with no compromise—let's get to know each other, understand your project, and see how Atelier Casa Mãe can help.",
       info: {
         location: 'Location',
         email: 'Email',
         phone: 'Phone',
       },
       cta: 'Book a Conversation',
-      emailCta: 'Email me',
-      success: 'Thank you! Your message has been sent successfully.',
-      error: 'Sorry, there was an error sending your message. Please try again.',
     },
     
     // Footer
@@ -337,24 +326,13 @@ export const translations = {
     // Contact Page
     contact: {
       title: 'Trocamos umas ideias?',
-      lead: 'Conte-me um pouco sobre o seu espaço e o que gostaria de melhorar.',
-      form: {
-        name: 'Nome',
-        email: 'Email',
-        phone: 'Telemóvel (opcional)',
-        message: 'Mensagem',
-        submit: 'Enviar Mensagem',
-        sending: 'A enviar...',
-      },
+      lead: 'Marque uma conversa de 30 minutos sem compromisso—vamos conhecer-nos, perceber o seu projeto e ver como o Atelier Casa Mãe pode ajudar.',
       info: {
         location: 'Localização',
         email: 'Email',
         phone: 'Telemóvel',
       },
       cta: 'Marcar Conversa',
-      emailCta: 'Enviar email',
-      success: 'Obrigada! A sua mensagem foi enviada com sucesso.',
-      error: 'Desculpe, houve um erro ao enviar a sua mensagem. Por favor, tente novamente.',
     },
     
     // Footer
