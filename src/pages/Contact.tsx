@@ -57,8 +57,8 @@ export const Contact = ({ onBookCallClick }: ContactProps) => {
           </div>
 
           <div className="pt-12 border-t border-border max-w-xl mx-auto">
-            <h2 className="text-display text-2xl font-semibold mb-4">
-              {t.contact.info.location}
+            <h2 className="text-display text-2xl font-semibold mb-2">
+              Location
             </h2>
             <p className="text-muted-foreground mb-8">
               Feel free to send me an e-mail with your questions
