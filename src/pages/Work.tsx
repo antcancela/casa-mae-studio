@@ -47,6 +47,7 @@ const galleries = {
     { src: kidsRoom8, caption: "Kids' Room Design 8" },
   ],
   familyHome: [
+    { src: familyHome11, caption: 'Family Home Interior 11' },
     { src: familyHome1, caption: 'Family Home Interior 1' },
     { src: familyHome3, caption: 'Family Home Interior 3' },
     { src: familyHome4, caption: 'Family Home Interior 4' },
@@ -55,7 +56,6 @@ const galleries = {
     { src: familyHome8, caption: 'Family Home Interior 8' },
     { src: familyHome9, caption: 'Family Home Interior 9' },
     { src: familyHome10, caption: 'Family Home Interior 10' },
-    { src: familyHome11, caption: 'Family Home Interior 11' },
   ],
   lisbon: [
     { src: lisbonApt1, caption: 'Lisbon Apartment 1' },
