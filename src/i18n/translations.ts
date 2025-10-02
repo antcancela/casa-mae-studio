@@ -123,7 +123,7 @@ export const translations = {
     nav: {
       home: 'Início',
       about: 'Sobre',
-      work: 'Trabalhos',
+      work: 'Portfólio',
       contact: 'Contacto',
       bookCall: 'Marcar Conversa',
     },
@@ -198,7 +198,7 @@ export const translations = {
     
     // Work Page
     work: {
-      title: 'Os Meus Trabalhos',
+      title: 'Portfólio',
       intro: 'Faço projetos Chave-na-Mão e de Consultoria (execução pelo cliente). Aqui ficam alguns dos meus projetos recentes.',
       categories: {
         kidsRooms: 'Quartos de Crianças',
