@@ -36,6 +36,35 @@ export const translations = {
         title: 'Recent Projects',
         description: 'Explore a selection of my latest work.',
         cta: 'See Portfolio',
+        projects: {
+          familyHome: 'Family Home',
+          lisbonApt: 'Apartment in Lisbon',
+          riverApt: 'River Apartment',
+          kidsRoom: "Kids' Room",
+        },
+      },
+      process: {
+        title: 'How I Work',
+        description: 'A simple process to transform your home',
+        steps: [
+          {
+            title: 'Initial Conversation',
+            description: 'We discuss your needs, lifestyle, and vision for your space.',
+          },
+          {
+            title: 'Design Proposal',
+            description: 'I create a tailored design plan with mood boards and layouts.',
+          },
+          {
+            title: 'Implementation',
+            description: 'Choose between full turnkey service or consultancy support.',
+          },
+        ],
+      },
+      stats: {
+        projects: 'Projects Completed',
+        years: 'Years of Experience',
+        families: 'Happy Families',
       },
       testimonials: {
         title: 'What Clients Say',
@@ -155,6 +184,35 @@ export const translations = {
         title: 'Projetos Recentes',
         description: 'Explore uma seleção dos meus trabalhos.',
         cta: 'Ver Portfólio',
+        projects: {
+          familyHome: 'Casa de Família',
+          lisbonApt: 'Apartamento em Lisboa',
+          riverApt: 'Apartamento Frente Rio',
+          kidsRoom: 'Quarto de Criança',
+        },
+      },
+      process: {
+        title: 'Como Trabalho',
+        description: 'Um processo simples para transformar a sua casa',
+        steps: [
+          {
+            title: 'Conversa Inicial',
+            description: 'Discutimos as suas necessidades, estilo de vida e visão para o espaço.',
+          },
+          {
+            title: 'Proposta de Design',
+            description: 'Crio um plano personalizado com mood boards e layouts.',
+          },
+          {
+            title: 'Implementação',
+            description: 'Escolha entre serviço chave-na-mão ou consultoria.',
+          },
+        ],
+      },
+      stats: {
+        projects: 'Projetos Realizados',
+        years: 'Anos de Experiência',
+        families: 'Famílias Felizes',
       },
       testimonials: {
         title: 'O que dizem os clientes',
