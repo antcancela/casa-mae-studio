@@ -258,7 +258,7 @@ export const Work = () => {
 
             {/* Image */}
             {currentImage && (
-              <div className="relative w-full h-full flex items-center justify-center px-4 py-20 md:px-20 md:py-24">
+              <div className="relative w-full h-full flex items-center justify-center p-0 md:px-8 md:py-6">
                 {imageLoading && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
