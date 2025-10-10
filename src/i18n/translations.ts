@@ -318,7 +318,7 @@ export const translations = {
         "Durante a quarentena, vi-me com as minhas duas filhas e o meu marido em teletrabalho num apartamento que não foi desenhado para nós. Foi então que comecei a combinar design de interiores com a praticidade do dia-a-dia—equilibrando conforto e estética com funcionalidade, organização e usabilidade.",
         'Abracei também um projeto pessoal: comprei uma casa antiga e renovei-a, planeando cada divisão em função das necessidades da minha família. Estar "fechada em casa" ajudou-me a perceber atritos e como minimizá-los para estimular a independência das crianças.',
         "O projeto Casa Mãe nasceu daqui: um atelier que adapta casas às dinâmicas de cada família, incluindo os mais novos—considerando idades e necessidades. Quero melhorar a vida da sua família a partir de casa, alinhando o espaço com as vossas rotinas para uma dinâmica mais calma e funcional.",
-        "As crianças adoram sentir-se parte da casa—poder ajudar e fazer coisas sozinhas. Para isso, o ambiente tem de estar preparado: um espaço que promove independência, responsabilidade, cuidado com os pertences, diversão e amor pela harmonia.",
+        "As crianças adoram sentir-se parte da casa— serem autônomas e conseguirem ajudar os pais nas tarefas diárias. Para isso, o ambiente tem de estar preparado: um espaço organizado que promova independência, responsabilidade e cuidado com os pertences.",
       ],
     },
 
