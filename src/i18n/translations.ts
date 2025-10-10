@@ -86,7 +86,7 @@ export const translations = {
               },
               {
                 title: "Implementation Guide",
-                description: "Comprehensive documentation and recommendations for your team",
+                description: "Comprehensive documentation and recommendations for project development",
               },
               {
                 title: "Support & Guidance",
