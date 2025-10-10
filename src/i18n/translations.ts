@@ -202,9 +202,10 @@ export const translations = {
         p2: "Para quem vai entrar numa nova fase:",
         list1: [
           "Está à espera de bebé",
-          "Vai passar a trabalhar a partir de casa",
-          "O seu filho vai precisar de uma zona de estudo",
-          "Vai mudar de casa",
+          "Mudou-se para Portugal"
+          "Está a mudar de casa",
+          "Procura ter de uma zona de trabalho",
+          "O seu filho precisa de uma zona de estudo/brincar",
         ],
         p3: "Para quem quer uma casa mais adaptada à família:",
         list2: [
