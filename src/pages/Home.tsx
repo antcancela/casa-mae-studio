@@ -84,15 +84,26 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
       </section>
 
       {/* Intro Section */}
-      <section className="py-16 bg-secondary/20">
+      <section className="py-20 bg-secondary/20">
         <div className="container mx-auto max-w-6xl px-4">
+          {/* Lead-in heading */}
+          <h2 className="text-center text-display text-3xl md:text-4xl font-semibold mb-12 animate-fade-in">
+            {t.home.intro.leadIn}
+          </h2>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Card 1: Nova Fase */}
-            <Card className="border-none shadow-elegant bg-card hover:shadow-xl transition-shadow duration-300">
+            <Card className="relative border-2 border-primary/20 shadow-elegant bg-card hover:shadow-xl hover:border-primary/40 transition-all duration-300 animate-fade-in">
               <CardContent className="p-8">
-                <h3 className="text-display text-2xl md:text-3xl font-semibold mb-6 text-primary">
-                  Para quem vai entrar numa nova fase:
+                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl shadow-lg">
+                  01
+                </div>
+                <h3 className="text-display text-2xl md:text-3xl font-semibold mb-3 text-primary">
+                  {t.home.intro.audience1.title}
                 </h3>
+                <p className="text-muted-foreground mb-6 text-sm">
+                  {t.home.intro.audience1.subtitle}
+                </p>
                 <ul className="space-y-4">
                   {t.home.intro.list1.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-foreground/80">
@@ -105,11 +116,17 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
             </Card>
 
             {/* Card 2: Casa Adaptada */}
-            <Card className="border-none shadow-elegant bg-card hover:shadow-xl transition-shadow duration-300">
+            <Card className="relative border-2 border-primary/20 shadow-elegant bg-card hover:shadow-xl hover:border-primary/40 transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.1s' }}>
               <CardContent className="p-8">
-                <h3 className="text-display text-2xl md:text-3xl font-semibold mb-6 text-primary">
-                  Para quem quer uma casa mais adaptada à família:
+                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl shadow-lg">
+                  02
+                </div>
+                <h3 className="text-display text-2xl md:text-3xl font-semibold mb-3 text-primary">
+                  {t.home.intro.audience2.title}
                 </h3>
+                <p className="text-muted-foreground mb-6 text-sm">
+                  {t.home.intro.audience2.subtitle}
+                </p>
                 <ul className="space-y-4">
                   {t.home.intro.list2.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-foreground/80">

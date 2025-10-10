@@ -19,8 +19,11 @@ export const translations = {
         secondaryCta: "View Work",
       },
       intro: {
-        p1: "At Atelier Casa Mãe I design your new home—or transform your current one—into a space for the whole family, focusing on comfort, functionality, and encouraging everyone to participate in new family dynamics.",
-        p2: "For anybody who is entering a new phase in life:",
+        leadIn: "We usually work with...",
+        audience1: {
+          title: "Those Entering a New Phase",
+          subtitle: "Life transitions that call for a fresh space",
+        },
         list1: [
           "Is expecting a baby",
           "Moved to Portugal",
@@ -28,11 +31,14 @@ export const translations = {
           "Wants to create a workspace",
           "Their child needs a study or play area",
         ],
-        p3: "For families who want a home that adapts better to daily life:",
+        audience2: {
+          title: "Families Seeking Better Adaptation",
+          subtitle: "When your home needs to work harder for your family",
+        },
         list2: [
           "Spends the whole day tidying up, yet the house still feels cluttered",
-          "Doesn’t want to move just yet but needs to rethink the space",
-          "The family routine isn’t flowing well within the space",
+          "Doesn't want to move just yet but needs to rethink the space",
+          "The family routine isn't flowing well within the space",
         ],
       },
       portfolio: {
@@ -200,8 +206,11 @@ export const translations = {
         secondaryCta: "Ver Trabalhos",
       },
       intro: {
-        p1: "No Atelier Casa Mãe, desenho a sua nova casa — ou transformo a atual — num espaço para toda a família, privilegiando o conforto, a funcionalidade e estimulando a participação de todos nas dinâmicas familiares.",
-        p2: "Para quem vai entrar numa nova fase:",
+        leadIn: "Costumamos trabalhar com quem...",
+        audience1: {
+          title: "Vai Entrar Numa Nova Fase",
+          subtitle: "Transições de vida que pedem um espaço renovado",
+        },
         list1: [
           "Está à espera de bebé",
           "Mudou-se para Portugal",
@@ -209,7 +218,10 @@ export const translations = {
           "Procura ter de uma zona de trabalho",
           "O seu filho precisa de uma zona de estudo/brincar",
         ],
-        p3: "Para quem quer uma casa mais adaptada à família:",
+        audience2: {
+          title: "Quer Uma Casa Mais Adaptada à Família",
+          subtitle: "Quando a sua casa precisa de funcionar melhor para a família",
+        },
         list2: [
           "Passa o dia a arrumar a casa e mesmo assim continua confusa",
           "Não quer mudar já de casa mas precisa de repensar o espaço",
