@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from './ui/button';
 import { useLanguage } from '@/i18n/LanguageContext';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo-new.png';
 
 interface HeaderProps {
   onBookCallClick: () => void;
