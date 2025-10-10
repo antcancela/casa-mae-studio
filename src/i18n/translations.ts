@@ -238,7 +238,7 @@ export const translations = {
                   "Discutimos as suas necessidades e apresento uma proposta detalhada com cronograma e investimento",
               },
               {
-                title: "Desenvolvimento do Design",
+                title: "Realização de Projeto de Design de Interiores",
                 description: "Design de interiores completo com plantas detalhadas e especificações",
               },
               {
@@ -262,7 +262,7 @@ export const translations = {
                   "Discutimos as suas necessidades e apresento uma proposta detalhada com cronograma e investimento",
               },
               {
-                title: "Desenvolvimento do Design",
+                title: "Realização de Projeto de Design de Interiores",
                 description: "Design de interiores completo com plantas detalhadas e especificações",
               },
               {
