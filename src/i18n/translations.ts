@@ -137,7 +137,7 @@ export const translations = {
         "During quarantine, I found myself with my two daughters and my husband telecommuting in an apartment not designed for us. That's when I began combining interior design with everyday practicality—balancing comfort and aesthetics with functionality, organization, and usability.",
         "I also embraced a personal project: I bought an old house and renovated it, planning every room around my family's needs. Being 'locked in' helped me notice frictions and how to minimize them to encourage children's independence.",
         "The Casa Mãe project was born from this: a studio that adapts homes to each family's dynamics, including the youngest—considering ages and needs. I want to improve your family's life starting at home, aligning the space with your routines for a calmer, more functional dynamic.",
-        "Children love to feel part of the home—able to help and do things on their own. For that, the environment must be prepared: a space that fosters independence, responsibility, care for belongings, fun, and a love for harmony.",
+        "Children love feeling like part of the home—being independent and able to help their parents with daily tasks. For that, the environment must be prepared: an organized space that fosters independence, responsibility, and care for their belongings.",
       ],
     },
 
