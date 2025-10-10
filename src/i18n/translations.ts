@@ -267,7 +267,7 @@ export const translations = {
               },
               {
                 title: "Guia de Implementação",
-                description: "Documentação abrangente e recomendações para a sua equipa",
+                description: "Documentação abrangente e recomendações para a elaboração do projeto",
               },
               {
                 title: "Apoio e Orientação",
