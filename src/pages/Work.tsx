@@ -258,7 +258,7 @@ export const Work = () => {
 
             {/* Image */}
             {currentImage && (
-              <div className="relative w-full h-full flex items-center justify-center p-16">
+              <div className="relative w-full h-full flex items-center justify-center px-20 py-8">
                 {imageLoading && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
@@ -267,7 +267,7 @@ export const Work = () => {
                 <img
                   src={currentImage.src}
                   alt={currentImage.caption}
-                  className="max-w-full max-h-full object-contain transition-opacity duration-300"
+                  className="w-full h-full object-contain transition-opacity duration-300"
                   style={{ opacity: imageLoading ? 0 : 1 }}
                   onLoad={() => setImageLoading(false)}
                   loading="lazy"
