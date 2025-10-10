@@ -63,7 +63,7 @@ export const translations = {
               },
               {
                 title: "Project Management",
-                description: "Coordination with contractors, suppliers, and all implementation",
+                description: "Coordination of orders from various suppliers and full implementation of the pieces",
               },
               {
                 title: "Final Delivery",
@@ -243,7 +243,7 @@ export const translations = {
               },
               {
                 title: "Gestão de Projeto",
-                description: "Coordenação com empreiteiros, fornecedores e toda a implementação",
+                description: "Coordenação de encomendas dos vários fornecedores e toda a implementação das peças",
               },
               {
                 title: "Entrega Final",
