@@ -13,7 +13,7 @@ export const translations = {
     home: {
       hero: {
         headline: "Interior Design for Families",
-        subheadline: "I'm Joana Leitão, and at Atelier Casa Mãe I specialize in creating beautiful, functional homes where every family member thrives—with special care for the youngest.",
+        subheadline: "We design beautiful and functional homes for families, with special attention to the little ones. We create or transform spaces that prioritize comfort, functionality, and family connection.",
         primaryCta: 'Book a Conversation',
         secondaryCta: 'View Work',
       },
