@@ -22,10 +22,11 @@ export const translations = {
         p1: "At Atelier Casa Mãe I design your new home—or transform your current one—into a space for the whole family, focusing on comfort, functionality, and encouraging everyone to participate in new family dynamics.",
         p2: "For anybody who is entering a new phase in life:",
         list1: [
-          "Expecting a baby",
-          "Starting to work from home",
-          "Your child is starting to move around or needs a study area",
-          "Moving house",
+          "Is expecting a baby",
+          "Moved to Portugal",
+          "Is moving to a new home",
+          "Wants to create a workspace",
+          "Their child needs a study or play area",
         ],
         p3: "For families who want a home that adapts better to daily life:",
         list2: [
