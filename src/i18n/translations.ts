@@ -131,7 +131,7 @@ export const translations = {
       title: 'About Me',
       paragraphs: [
         "Hi! I'm Joana, and I created Atelier Casa Mãe to help families adapt their homes to everyone's needs and routines—creating spaces that reflect who you are and support a better family life.",
-        "My story… I graduated in Environment Design from IADE and worked for 10+ years in renowned ateliers in Portugal (SA&V, Rita Glória, Oficina166) and abroad (Ireland, Angola) before starting my own studio.",
+        "I graduated in Environment Design from IADE and worked for 10+ years in renowned ateliers in Portugal (SA&V, Rita Glória, Oficina166) and abroad (Ireland, Angola) before starting my own studio.",
         "In my life I've moved more than 10 times and became a believer in 'less is more'. With motherhood, I realized that method and organization are fundamental for a balanced family life.",
         "During quarantine, I found myself with my two daughters and my husband telecommuting in an apartment not designed for us. That's when I began combining interior design with everyday practicality—balancing comfort and aesthetics with functionality, organization, and usability.",
         "I also embraced a personal project: I bought an old house and renovated it, planning every room around my family's needs. Being 'locked in' helped me notice frictions and how to minimize them to encourage children's independence.",
@@ -307,7 +307,7 @@ export const translations = {
       title: 'Sobre Mim',
       paragraphs: [
         'Olá! Sou a Joana e criei o Atelier Casa Mãe para ajudar famílias a adaptar as suas casas às necessidades e rotinas de todos, criando espaços que refletem a personalidade de quem habita e promovem uma melhor vida em família.',
-        'A minha história… Formei-me em Design de Ambientes no IADE e trabalhei mais de 10 anos em ateliers reconhecidos em Portugal (SA&V, Rita Glória, Oficina166) e no estrangeiro (Irlanda, Angola) antes de criar o meu próprio atelier.',
+        'Formei-me em Design de Ambientes no IADE e trabalhei mais de 10 anos em ateliers reconhecidos em Portugal (SA&V, Rita Glória, Oficina166) e no estrangeiro (Irlanda, Angola) antes de criar o meu próprio atelier.',
         'Na minha vida mudei-me mais de 10 vezes e tornei-me adepta do "menos é mais". Com a maternidade, percebi que método e organização são fundamentais para uma vida familiar equilibrada.',
         'Durante a quarentena, vi-me com as minhas duas filhas e o meu marido em teletrabalho num apartamento que não foi desenhado para nós. Foi então que comecei a combinar design de interiores com a praticidade do dia-a-dia—equilibrando conforto e estética com funcionalidade, organização e usabilidade.',
         'Abracei também um projeto pessoal: comprei uma casa antiga e renovei-a, planeando cada divisão em função das necessidades da minha família. Estar "fechada em casa" ajudou-me a perceber atritos e como minimizá-los para estimular a independência das crianças.',
