@@ -30,8 +30,9 @@ export const translations = {
         ],
         p3: "For families who want a home that adapts better to daily life:",
         list2: [
-          "You feel like you tidy all day and it still gets messy",
-          "You don't want to move but want to rethink your current place",
+          "Spends the whole day tidying up, yet the house still feels cluttered",
+          "Doesn’t want to move just yet but needs to rethink the space",
+          "The family routine isn’t flowing well within the space",
         ],
       },
       portfolio: {
@@ -210,8 +211,9 @@ export const translations = {
         ],
         p3: "Para quem quer uma casa mais adaptada à família:",
         list2: [
-          "Sente que passa o dia a arrumar e continua desarrumada",
-          "Não quer mudar já de casa, mas quer repensar o espaço atual",
+          "Passa o dia a arrumar a casa e mesmo assim continua confusa",
+          "Não quer mudar já de casa mas precisa de repensar o espaço",
+          "A rotina familiar não está a fluir dentro do espaço",
         ],
       },
       portfolio: {
