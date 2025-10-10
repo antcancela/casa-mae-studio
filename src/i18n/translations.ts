@@ -189,7 +189,7 @@ export const translations = {
     home: {
       hero: {
         headline: 'Design de Interiores para Famílias',
-        subheadline: 'Sou a Joana Leitão, e no Atelier Casa Mãe especializo-me em criar casas bonitas e funcionais para a família—com especial cuidado com os mais novos.',
+        subheadline: 'Desenhamos casas bonitas e funcionais para famílias, com especial atenção aos mais novos. Criamos ou transformamos espaços que privilegiam conforto, funcionalidade e a participação de todos.',
         primaryCta: 'Marcar Conversa',
         secondaryCta: 'Ver Trabalhos',
       },
