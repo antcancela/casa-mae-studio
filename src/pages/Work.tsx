@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SEO } from '@/components/SEO';
@@ -229,71 +229,77 @@ export const Work = () => {
       {/* Lightbox Dialog */}
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
         <DialogContent className="max-w-7xl w-full h-[90vh] p-0 overflow-hidden bg-black/95">
+          <DialogTitle className="sr-only">
+            {locale === 'pt' ? 'Visualizador de imagem' : 'Image viewer'}
+          </DialogTitle>
+          <DialogDescription className="sr-only">
+            {locale === 'pt'
+              ? 'Use as setas para navegar e Esc para fechar.'
+              : 'Use arrow keys to navigate and Esc to close.'}
+          </DialogDescription>
+          
           <div 
-            className="relative w-full h-full flex items-center justify-center"
+            className="grid h-full w-full grid-rows-[1fr_auto]"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            {/* Close button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={closeLightbox}
-              className="absolute top-4 right-4 z-50 text-white hover:bg-white/20"
-            >
-              <X className="h-6 w-6" />
-            </Button>
+            {/* Image viewport (row 1) */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              {/* Previous button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={goToPrevious}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-50 text-white hover:bg-white/20"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="h-8 w-8" />
+              </Button>
 
-            {/* Previous button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={goToPrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-50 text-white hover:bg-white/20"
-              aria-label="Previous image"
-            >
-              <ChevronLeft className="h-8 w-8" />
-            </Button>
+              {/* Spinner */}
+              {imageLoading && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+                </div>
+              )}
 
-            {/* Image */}
-            {currentImage && (
-              <div className="relative w-full h-full flex items-center justify-center p-0 md:px-8 md:py-6">
-                {imageLoading && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-                  </div>
-                )}
+              {/* Image */}
+              {currentImage && (
                 <img
                   src={currentImage.src}
                   alt={currentImage.caption}
-                  className="max-w-full max-h-full object-contain transition-opacity duration-300"
+                  className="max-w-full max-h-full w-auto h-auto object-contain transition-opacity duration-300 select-none"
                   style={{ opacity: imageLoading ? 0 : 1 }}
                   onLoad={() => setImageLoading(false)}
-                  loading="lazy"
+                  loading="eager"
+                  draggable={false}
                 />
-                {/* Caption and swipe hint */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-                  <div className="bg-black/70 text-white px-6 py-2 rounded-full text-sm">
-                    {currentImage.caption} ({currentIndex + 1} / {currentGallery.length})
-                  </div>
-                  <div className="text-white/60 text-xs md:hidden">
-                    Swipe to navigate
-                  </div>
+              )}
+
+              {/* Next button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={goToNext}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-50 text-white hover:bg-white/20"
+                aria-label="Next image"
+              >
+                <ChevronRight className="h-8 w-8" />
+              </Button>
+            </div>
+
+            {/* Caption row (row 2) - no longer overlays the image */}
+            {currentImage && (
+              <div className="flex items-center justify-center gap-3 py-2 px-4 text-center text-white/90 bg-black/60 backdrop-blur-sm pb-[env(safe-area-inset-bottom)]">
+                <div className="text-sm">
+                  {currentImage.caption} ({currentIndex + 1} / {currentGallery.length})
+                </div>
+                <div className="text-white/60 text-xs md:hidden">
+                  {locale === 'pt' ? 'Deslize para navegar' : 'Swipe to navigate'}
                 </div>
               </div>
             )}
-
-            {/* Next button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={goToNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-50 text-white hover:bg-white/20"
-              aria-label="Next image"
-            >
-              <ChevronRight className="h-8 w-8" />
-            </Button>
           </div>
         </DialogContent>
       </Dialog>
