@@ -58,7 +58,7 @@ export const translations = {
                 description: "We discuss your needs and I present a detailed proposal with timeline and investment",
               },
               {
-                title: "Design Development",
+                title: "Interior Design Project",
                 description: "Complete interior design with detailed plans and specifications",
               },
               {
@@ -81,7 +81,7 @@ export const translations = {
                 description: "We discuss your needs and I present a detailed proposal with timeline and investment",
               },
               {
-                title: "Design Development",
+                title: "Interior Design Project",
                 description: "Complete interior design with detailed plans and specifications",
               },
               {
