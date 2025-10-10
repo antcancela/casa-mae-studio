@@ -98,12 +98,9 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
                 <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl shadow-lg">
                   01
                 </div>
-                <h3 className="text-display text-2xl md:text-3xl font-semibold mb-3 text-primary">
+                <h3 className="text-display text-2xl md:text-3xl font-semibold mb-6 text-primary">
                   {t.home.intro.audience1.title}
                 </h3>
-                <p className="text-muted-foreground mb-6 text-sm">
-                  {t.home.intro.audience1.subtitle}
-                </p>
                 <ul className="space-y-4">
                   {t.home.intro.list1.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-foreground/80">
@@ -121,12 +118,9 @@ export const Home = ({ onBookCallClick }: HomeProps) => {
                 <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl shadow-lg">
                   02
                 </div>
-                <h3 className="text-display text-2xl md:text-3xl font-semibold mb-3 text-primary">
+                <h3 className="text-display text-2xl md:text-3xl font-semibold mb-6 text-primary">
                   {t.home.intro.audience2.title}
                 </h3>
-                <p className="text-muted-foreground mb-6 text-sm">
-                  {t.home.intro.audience2.subtitle}
-                </p>
                 <ul className="space-y-4">
                   {t.home.intro.list2.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-foreground/80">
