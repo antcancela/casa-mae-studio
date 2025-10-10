@@ -228,7 +228,7 @@ export const Work = () => {
 
       {/* Lightbox Dialog */}
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
-        <DialogContent className="max-w-7xl w-full h-[90vh] p-0 overflow-hidden bg-black/95">
+        <DialogContent className="max-w-7xl w-full h-[90dvh] md:h-[90vh] p-0 overflow-hidden bg-black/95 gap-0">
           <DialogTitle className="sr-only">
             {locale === 'pt' ? 'Visualizador de imagem' : 'Image viewer'}
           </DialogTitle>
@@ -239,13 +239,13 @@ export const Work = () => {
           </DialogDescription>
           
           <div 
-            className="grid h-full w-full grid-rows-[1fr_auto]"
+            className="grid h-full w-full min-h-0 grid-rows-[minmax(0,1fr)_auto]"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
             {/* Image viewport (row 1) */}
-            <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full h-full min-h-0 overflow-hidden flex items-center justify-center">
               {/* Previous button */}
               <Button
                 variant="ghost"
@@ -269,7 +269,7 @@ export const Work = () => {
                 <img
                   src={currentImage.src}
                   alt={currentImage.caption}
-                  className="max-w-full max-h-full w-auto h-auto object-contain transition-opacity duration-300 select-none"
+                  className="block max-w-full max-h-full object-contain select-none transition-opacity duration-300"
                   style={{ opacity: imageLoading ? 0 : 1 }}
                   onLoad={() => setImageLoading(false)}
                   loading="eager"
