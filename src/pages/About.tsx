@@ -3,26 +3,21 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import joanaPortrait from '@/assets/joana-portrait.jpg';
 import { SEO } from '@/components/SEO';
 import { getPersonSchema, getBreadcrumbSchema } from '@/lib/structuredData';
-
 export const About = () => {
-  const { t, locale } = useLanguage();
-
-  const metaDescription = locale === 'pt'
-    ? 'Conheça Joana Leitão, designer de interiores especializada em espaços familiares. Mais de 10 anos de experiência criando lares funcionais e bonitos.'
-    : 'Meet Joana Leitão, interior designer specialized in family spaces. Over 10 years of experience creating functional and beautiful homes.';
-
-  const breadcrumbSchema = getBreadcrumbSchema([
-    { name: 'Home', url: typeof window !== 'undefined' ? `${window.location.origin}/` : '' },
-    { name: locale === 'pt' ? 'Sobre' : 'About', url: typeof window !== 'undefined' ? window.location.href : '' }
-  ]);
-
-  return (
-    <div className="min-h-screen py-16">
-      <SEO 
-        title={locale === 'pt' ? 'Sobre' : 'About'}
-        description={metaDescription}
-        jsonLd={[getPersonSchema(), breadcrumbSchema]}
-      />
+  const {
+    t,
+    locale
+  } = useLanguage();
+  const metaDescription = locale === 'pt' ? 'Conheça Joana Leitão, designer de interiores especializada em espaços familiares. Mais de 10 anos de experiência criando lares funcionais e bonitos.' : 'Meet Joana Leitão, interior designer specialized in family spaces. Over 10 years of experience creating functional and beautiful homes.';
+  const breadcrumbSchema = getBreadcrumbSchema([{
+    name: 'Home',
+    url: typeof window !== 'undefined' ? `${window.location.origin}/` : ''
+  }, {
+    name: locale === 'pt' ? 'Sobre' : 'About',
+    url: typeof window !== 'undefined' ? window.location.href : ''
+  }]);
+  return <div className="min-h-screen py-16">
+      <SEO title={locale === 'pt' ? 'Sobre' : 'About'} description={metaDescription} jsonLd={[getPersonSchema(), breadcrumbSchema]} />
       <div className="container mx-auto max-w-6xl px-4">
         <h1 className="text-display text-4xl md:text-5xl font-semibold mb-16 text-center">
           {t.about.title}
@@ -31,11 +26,7 @@ export const About = () => {
         {/* Introduction with image */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-center">
           <div>
-            <img
-              src={joanaPortrait}
-              alt="Joana Leitão"
-              className="rounded-2xl shadow-elegant w-full h-auto object-cover"
-            />
+            <img src={joanaPortrait} alt="Joana Leitão" className="rounded-2xl shadow-elegant w-full h-auto object-cover" />
           </div>
           <div className="space-y-6">
             <p className="text-xl text-foreground/90 leading-relaxed font-medium">
@@ -50,9 +41,7 @@ export const About = () => {
         {/* Journey section */}
         <Card className="mb-12 border-none shadow-elegant bg-secondary/10">
           <CardContent className="p-8 md:p-12">
-            <h2 className="text-display text-2xl md:text-3xl font-semibold mb-6 text-primary">
-              A Minha Jornada
-            </h2>
+            <h2 className="text-display text-2xl md:text-3xl font-semibold mb-6 text-primary">My Journey</h2>
             <div className="space-y-6">
               <p className="text-lg text-foreground/90 leading-relaxed">
                 {t.about.paragraphs[2]}
@@ -90,6 +79,5 @@ export const About = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
-  );
+    </div>;
 };
