@@ -124,4 +124,14 @@ All colors MUST be HSL.
       transform: translateY(0);
     }
   }
+  
+  /* Warm Vintage Photo Treatment - Portfolio/Work Images Only */
+  .work-gallery-filter {
+    filter: sepia(0.2) saturate(0.85) contrast(1.08) brightness(1.03) hue-rotate(8deg);
+    transition: filter 0.4s ease-in-out;
+  }
+  
+  .work-gallery-filter:hover {
+    filter: none;
+  }
 }
