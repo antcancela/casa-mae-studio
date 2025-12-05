@@ -204,29 +204,29 @@ export const Work = () => {
 
       <Tabs defaultValue="familyHome" className="w-full">
         {/* Mobile: horizontal scroll, Desktop: grid */}
-        <div className="mb-8 overflow-hidden">
-          <TabsList className="flex w-full md:grid md:grid-cols-4 gap-1 p-1.5 h-auto bg-muted/60 rounded-xl overflow-x-auto no-scrollbar">
+        <div className="mb-8">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 p-1.5 h-auto bg-muted/60 rounded-xl">
             <TabsTrigger 
               value="familyHome" 
-              className="flex-1 min-w-0 px-3 py-2.5 text-xs sm:text-sm font-medium rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm truncate"
+              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
             >
               {t.work.categories.familyHome}
             </TabsTrigger>
             <TabsTrigger 
               value="lisbon"
-              className="flex-1 min-w-0 px-3 py-2.5 text-xs sm:text-sm font-medium rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm truncate"
+              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
             >
               {t.work.categories.lisbon}
             </TabsTrigger>
             <TabsTrigger 
               value="river"
-              className="flex-1 min-w-0 px-3 py-2.5 text-xs sm:text-sm font-medium rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm truncate"
+              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
             >
               {t.work.categories.river}
             </TabsTrigger>
             <TabsTrigger 
               value="kidsRooms"
-              className="flex-1 min-w-0 px-3 py-2.5 text-xs sm:text-sm font-medium rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm truncate"
+              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
             >
               {t.work.categories.kidsRooms}
             </TabsTrigger>
