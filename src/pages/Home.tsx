@@ -24,60 +24,85 @@ export const Home = ({
   const metaDescription = locale === 'pt' ? 'Design de interiores especializado em famílias e quartos de crianças. Atelier Casa Mãe cria espaços bonitos e funcionais para toda a família.' : 'Interior design specialized in families and children\'s rooms. Atelier Casa Mãe creates beautiful and functional spaces for the whole family.';
 return <div className="min-h-screen overflow-hidden">
       <SEO title={locale === 'pt' ? 'Início' : 'Home'} description={metaDescription} jsonLd={[getOrganizationSchema(), getServiceSchema()]} />
-      {/* Hero Section with Parallax */}
-      <section className="relative min-h-[90vh] lg:min-h-[85vh] flex items-center overflow-hidden">
-        {/* Parallax Background Image - Mobile Full Width */}
-        <div 
-          className="absolute inset-0 md:hidden"
-          style={{
-            backgroundImage: `url(${joanaHero})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center top',
-            backgroundAttachment: 'scroll',
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/60 to-background" />
-        </div>
-        
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
         {/* Subtle background gradient - Desktop */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/20 pointer-events-none hidden md:block" />
         
-        <div className="container mx-auto px-4 py-12 md:py-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Content */}
-            <div className="order-1 lg:order-1 space-y-6 md:space-y-8 mt-[45vh] md:mt-0">
-              <h1 className="text-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.1] animate-fade-in-up">
-                {t.home.hero.headline}
-              </h1>
-              <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-xl animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
-                {t.home.hero.subheadline}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                <Button size="lg" onClick={onBookCallClick} className="group shadow-lg hover:shadow-xl transition-all duration-300">
-                  {t.home.hero.primaryCta}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline" asChild className="hover:bg-primary/5 transition-colors duration-300 bg-background/80 backdrop-blur-sm md:bg-transparent">
-                  <Link to="/work">{t.home.hero.secondaryCta}</Link>
-                </Button>
-              </div>
+        {/* Mobile Layout: Image on top, text below */}
+        <div className="md:hidden">
+          {/* Full-width parallax image */}
+          <div 
+            className="relative h-[50vh] w-full overflow-hidden"
+            style={{
+              backgroundImage: `url(${joanaHero})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center top',
+              backgroundAttachment: 'fixed',
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/80" />
+          </div>
+          
+          {/* Mobile content below image */}
+          <div className="px-4 py-8 -mt-8 relative z-10">
+            <h1 className="text-display text-3xl sm:text-4xl font-semibold leading-[1.1] animate-fade-in-up mb-5">
+              {t.home.hero.headline}
+            </h1>
+            <p className="text-base text-muted-foreground leading-relaxed mb-6 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+              {t.home.hero.subheadline}
+            </p>
+            <div className="flex flex-col gap-3 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <Button size="lg" onClick={onBookCallClick} className="group shadow-lg hover:shadow-xl transition-all duration-300 w-full">
+                {t.home.hero.primaryCta}
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button size="lg" variant="outline" asChild className="hover:bg-primary/5 transition-colors duration-300 w-full">
+                <Link to="/work">{t.home.hero.secondaryCta}</Link>
+              </Button>
             </div>
-            
-            {/* Desktop Image with Parallax Effect */}
-            <div className="hidden md:block order-2 animate-scale-in" style={{ animationDelay: '0.2s' }}>
-              <div className="relative group">
-                <div className="absolute -inset-6 bg-gradient-to-tr from-primary/15 to-accent/20 rounded-3xl blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-700" />
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                  <img 
-                    src={joanaHero} 
-                    alt="Joana Leitão - Interior designer specializing in family-friendly spaces and children's rooms" 
-                    className="relative w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700 ease-out" 
-                    loading="eager" 
-                  />
+          </div>
+        </div>
+        
+        {/* Desktop Layout: Side by side */}
+        <div className="hidden md:flex min-h-[85vh] items-center relative z-10">
+          <div className="container mx-auto px-4 py-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              {/* Content */}
+              <div className="space-y-8">
+                <h1 className="text-display text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.1] animate-fade-in-up">
+                  {t.home.hero.headline}
+                </h1>
+                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-xl animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+                  {t.home.hero.subheadline}
+                </p>
+                <div className="flex flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                  <Button size="lg" onClick={onBookCallClick} className="group shadow-lg hover:shadow-xl transition-all duration-300">
+                    {t.home.hero.primaryCta}
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                  <Button size="lg" variant="outline" asChild className="hover:bg-primary/5 transition-colors duration-300">
+                    <Link to="/work">{t.home.hero.secondaryCta}</Link>
+                  </Button>
                 </div>
-                {/* Decorative frame accent */}
-                <div className="absolute -bottom-3 -right-3 w-24 h-24 border-2 border-primary/20 rounded-2xl -z-10" />
-                <div className="absolute -top-3 -left-3 w-16 h-16 border-2 border-primary/10 rounded-xl -z-10" />
+              </div>
+              
+              {/* Desktop Image */}
+              <div className="animate-scale-in" style={{ animationDelay: '0.2s' }}>
+                <div className="relative group">
+                  <div className="absolute -inset-6 bg-gradient-to-tr from-primary/15 to-accent/20 rounded-3xl blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-700" />
+                  <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                    <img 
+                      src={joanaHero} 
+                      alt="Joana Leitão - Interior designer specializing in family-friendly spaces and children's rooms" 
+                      className="relative w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700 ease-out" 
+                      loading="eager" 
+                    />
+                  </div>
+                  {/* Decorative frame accent */}
+                  <div className="absolute -bottom-3 -right-3 w-24 h-24 border-2 border-primary/20 rounded-2xl -z-10" />
+                  <div className="absolute -top-3 -left-3 w-16 h-16 border-2 border-primary/10 rounded-xl -z-10" />
+                </div>
               </div>
             </div>
           </div>
