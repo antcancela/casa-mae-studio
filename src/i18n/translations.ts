@@ -347,7 +347,7 @@ export const translations = {
         kidsRooms: "Quartos de Crianças",
         familyHome: "Casa de Família",
         lisbon: "Apartamento em Lisboa",
-        river: "Apartamento Familiar Frente Rio",
+        river: "Apartamento Frente Rio",
       },
     },
 
