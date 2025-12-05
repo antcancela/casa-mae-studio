@@ -178,7 +178,7 @@ export const Work = () => {
           <img
             src={image.src}
             alt={image.caption}
-            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300 work-gallery-filter"
+            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
         </div>
@@ -267,7 +267,7 @@ export const Work = () => {
                 <img
                   src={currentImage.src}
                   alt={currentImage.caption}
-                  className="block max-w-full max-h-full object-contain select-none transition-opacity duration-300 work-gallery-filter"
+                  className="block max-w-full max-h-full object-contain select-none transition-opacity duration-300"
                   style={{ opacity: imageLoading ? 0 : 1 }}
                   onLoad={() => setImageLoading(false)}
                   loading="eager"
