@@ -204,29 +204,29 @@ export const Work = () => {
 
       <Tabs defaultValue="familyHome" className="w-full">
         {/* Mobile: horizontal scroll, Desktop: grid */}
-        <div className="mb-8 -mx-4 px-4 md:mx-0 md:px-0">
-          <TabsList className="inline-flex w-auto min-w-full md:grid md:w-full md:grid-cols-4 gap-1 p-1.5 h-auto bg-muted/60 rounded-xl overflow-x-auto no-scrollbar">
+        <div className="mb-8 overflow-hidden">
+          <TabsList className="flex w-full md:grid md:grid-cols-4 gap-1 p-1.5 h-auto bg-muted/60 rounded-xl overflow-x-auto no-scrollbar">
             <TabsTrigger 
               value="familyHome" 
-              className="flex-shrink-0 px-4 py-2.5 text-sm font-medium whitespace-nowrap rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              className="flex-1 min-w-0 px-3 py-2.5 text-xs sm:text-sm font-medium rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm truncate"
             >
               {t.work.categories.familyHome}
             </TabsTrigger>
             <TabsTrigger 
               value="lisbon"
-              className="flex-shrink-0 px-4 py-2.5 text-sm font-medium whitespace-nowrap rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              className="flex-1 min-w-0 px-3 py-2.5 text-xs sm:text-sm font-medium rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm truncate"
             >
               {t.work.categories.lisbon}
             </TabsTrigger>
             <TabsTrigger 
               value="river"
-              className="flex-shrink-0 px-4 py-2.5 text-sm font-medium whitespace-nowrap rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              className="flex-1 min-w-0 px-3 py-2.5 text-xs sm:text-sm font-medium rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm truncate"
             >
               {t.work.categories.river}
             </TabsTrigger>
             <TabsTrigger 
               value="kidsRooms"
-              className="flex-shrink-0 px-4 py-2.5 text-sm font-medium whitespace-nowrap rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              className="flex-1 min-w-0 px-3 py-2.5 text-xs sm:text-sm font-medium rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm truncate"
             >
               {t.work.categories.kidsRooms}
             </TabsTrigger>
