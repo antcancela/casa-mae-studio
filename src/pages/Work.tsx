@@ -203,12 +203,35 @@ export const Work = () => {
       </p>
 
       <Tabs defaultValue="familyHome" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-8">
-          <TabsTrigger value="familyHome">{t.work.categories.familyHome}</TabsTrigger>
-          <TabsTrigger value="lisbon">{t.work.categories.lisbon}</TabsTrigger>
-          <TabsTrigger value="river">{t.work.categories.river}</TabsTrigger>
-          <TabsTrigger value="kidsRooms">{t.work.categories.kidsRooms}</TabsTrigger>
-        </TabsList>
+        {/* Mobile: horizontal scroll, Desktop: grid */}
+        <div className="mb-8 -mx-4 px-4 md:mx-0 md:px-0">
+          <TabsList className="inline-flex w-auto min-w-full md:grid md:w-full md:grid-cols-4 gap-1 p-1.5 h-auto bg-muted/60 rounded-xl overflow-x-auto no-scrollbar">
+            <TabsTrigger 
+              value="familyHome" 
+              className="flex-shrink-0 px-4 py-2.5 text-sm font-medium whitespace-nowrap rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+            >
+              {t.work.categories.familyHome}
+            </TabsTrigger>
+            <TabsTrigger 
+              value="lisbon"
+              className="flex-shrink-0 px-4 py-2.5 text-sm font-medium whitespace-nowrap rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+            >
+              {t.work.categories.lisbon}
+            </TabsTrigger>
+            <TabsTrigger 
+              value="river"
+              className="flex-shrink-0 px-4 py-2.5 text-sm font-medium whitespace-nowrap rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+            >
+              {t.work.categories.river}
+            </TabsTrigger>
+            <TabsTrigger 
+              value="kidsRooms"
+              className="flex-shrink-0 px-4 py-2.5 text-sm font-medium whitespace-nowrap rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+            >
+              {t.work.categories.kidsRooms}
+            </TabsTrigger>
+          </TabsList>
+        </div>
 
         <TabsContent value="familyHome">
           <Gallery images={galleries.familyHome} />
