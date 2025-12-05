@@ -31,17 +31,15 @@ return <div className="min-h-screen overflow-hidden">
         
         {/* Mobile Layout: Image on top, text below */}
         <div className="md:hidden">
-          {/* Full-width parallax image */}
-          <div 
-            className="relative h-[50vh] w-full overflow-hidden"
-            style={{
-              backgroundImage: `url(${joanaHero})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center top',
-              backgroundAttachment: 'fixed',
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/80" />
+          {/* Full-width image */}
+          <div className="relative h-[50vh] w-full overflow-hidden">
+            <img 
+              src={joanaHero}
+              alt="Joana Leitão - Interior designer"
+              className="absolute inset-0 w-full h-full object-cover object-top"
+              loading="eager"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
           </div>
           
           {/* Mobile content below image */}
