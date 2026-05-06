@@ -209,27 +209,27 @@ export const Work = () => {
         {/* Mobile: horizontal scroll, Desktop: grid */}
         <div className="mb-8">
           <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 p-1.5 h-auto bg-muted/60 rounded-xl">
-            <TabsTrigger 
-              value="familyHome" 
-              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+            <TabsTrigger
+              value="familyHome"
+              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg transition-elegant data-[state=active]:bg-background data-[state=active]:shadow-md data-[state=active]:text-primary"
             >
               {t.work.categories.familyHome}
             </TabsTrigger>
-            <TabsTrigger 
+            <TabsTrigger
               value="lisbon"
-              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg transition-elegant data-[state=active]:bg-background data-[state=active]:shadow-md data-[state=active]:text-primary"
             >
               {t.work.categories.lisbon}
             </TabsTrigger>
-            <TabsTrigger 
+            <TabsTrigger
               value="river"
-              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg transition-elegant data-[state=active]:bg-background data-[state=active]:shadow-md data-[state=active]:text-primary"
             >
               {t.work.categories.river}
             </TabsTrigger>
-            <TabsTrigger 
+            <TabsTrigger
               value="kidsRooms"
-              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg transition-elegant data-[state=active]:bg-background data-[state=active]:shadow-md data-[state=active]:text-primary"
             >
               {t.work.categories.kidsRooms}
             </TabsTrigger>
