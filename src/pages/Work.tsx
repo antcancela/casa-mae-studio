@@ -198,10 +198,10 @@ export const Work = () => {
         jsonLd={breadcrumbSchema}
       />
       
-      <h1 className="text-display text-4xl md:text-5xl font-semibold mb-6 text-center">
+      <h1 className="text-display text-4xl md:text-5xl font-semibold mb-6 text-center animate-fade-in-up">
         {t.work.title}
       </h1>
-      <p className="text-lg text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
+      <p className="text-lg text-muted-foreground text-center mb-12 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.12s' }}>
         {t.work.intro}
       </p>
 
