@@ -168,19 +168,22 @@ export const Work = () => {
   ]);
 
   const Gallery = ({ images }: { images: typeof galleries.kidsRooms }) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in">
       {images.map((image, idx) => (
         <div
           key={idx}
-          className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+          className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition-elegant animate-fade-in-up"
+          style={{ animationDelay: `${Math.min(idx * 70, 500)}ms` }}
           onClick={() => openLightbox(images, idx)}
         >
           <img
             src={image.src}
             alt={image.caption}
-            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-80 object-cover img-zoom"
             loading="lazy"
           />
+          {/* Subtle gradient overlay on hover */}
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         </div>
       ))}
     </div>
