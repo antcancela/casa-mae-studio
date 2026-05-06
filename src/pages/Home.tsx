@@ -52,7 +52,7 @@ return <div className="min-h-screen overflow-hidden">
               {t.home.hero.subheadline}
             </p>
             <div className="flex flex-col gap-3 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-              <Button size="lg" onClick={onBookCallClick} className="group shadow-lg hover:shadow-xl transition-all duration-300 w-full">
+              <Button size="lg" onClick={onBookCallClick} className="group shadow-lg hover:shadow-xl transition-all duration-300 w-full shine-cta press-tactile">
                 {t.home.hero.primaryCta}
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
