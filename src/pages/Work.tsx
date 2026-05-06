@@ -283,18 +283,22 @@ export const Work = () => {
 
               {/* Spinner */}
               {imageLoading && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-10 h-10 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 </div>
               )}
 
               {/* Image */}
               {currentImage && (
                 <img
+                  key={currentImage.src}
                   src={currentImage.src}
                   alt={currentImage.caption}
-                  className="block max-w-full max-h-full object-contain select-none transition-opacity duration-300"
-                  style={{ opacity: imageLoading ? 0 : 1 }}
+                  className="block max-w-full max-h-full object-contain select-none transition-all duration-500 ease-out"
+                  style={{
+                    opacity: imageLoading ? 0 : 1,
+                    transform: imageLoading ? 'scale(0.98)' : 'scale(1)',
+                  }}
                   onLoad={() => setImageLoading(false)}
                   loading="eager"
                   draggable={false}
