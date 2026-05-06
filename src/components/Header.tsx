@@ -77,7 +77,7 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
             {/* Desktop CTA */}
             <Button
               onClick={onBookCallClick}
-              className="hidden md:inline-flex shadow-md hover:shadow-lg transition-all duration-300 rounded-lg"
+              className="hidden md:inline-flex shadow-md hover:shadow-lg transition-all duration-300 rounded-lg shine-cta press-tactile"
               size="default"
             >
               {t.nav.bookCall}
