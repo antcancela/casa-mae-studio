@@ -6,6 +6,7 @@ import { ArrowRight, Users, CheckCircle2, Wrench, Lightbulb } from 'lucide-react
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { getOrganizationSchema, getServiceSchema } from '@/lib/structuredData';
+import { AnimatedStat } from '@/components/AnimatedStat';
 import joanaHero from '@/assets/joana-hero.jpg';
 import familyHome11 from '@/assets/gallery/family-home-11.jpg';
 import lisbonApt3 from '@/assets/gallery/lisbon-apt-3.jpg';
@@ -51,7 +52,7 @@ return <div className="min-h-screen overflow-hidden">
               {t.home.hero.subheadline}
             </p>
             <div className="flex flex-col gap-3 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-              <Button size="lg" onClick={onBookCallClick} className="group shadow-lg hover:shadow-xl transition-all duration-300 w-full">
+              <Button size="lg" onClick={onBookCallClick} className="group shadow-lg hover:shadow-xl transition-all duration-300 w-full shine-cta press-tactile">
                 {t.home.hero.primaryCta}
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -75,7 +76,7 @@ return <div className="min-h-screen overflow-hidden">
                   {t.home.hero.subheadline}
                 </p>
                 <div className="flex flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                  <Button size="lg" onClick={onBookCallClick} className="group shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Button size="lg" onClick={onBookCallClick} className="group shadow-lg hover:shadow-xl transition-all duration-300 shine-cta press-tactile">
                     {t.home.hero.primaryCta}
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -112,18 +113,9 @@ return <div className="min-h-screen overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.1),transparent_50%)]" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto text-center">
-            <div className="animate-fade-in group">
-              <div className="text-display text-5xl md:text-7xl font-bold mb-3 group-hover:scale-105 transition-transform duration-500">50+</div>
-              <div className="text-lg opacity-90 tracking-wide">{t.home.stats.projects}</div>
-            </div>
-            <div className="animate-fade-in group" style={{ animationDelay: '0.15s' }}>
-              <div className="text-display text-5xl md:text-7xl font-bold mb-3 group-hover:scale-105 transition-transform duration-500">15</div>
-              <div className="text-lg opacity-90 tracking-wide">{t.home.stats.years}</div>
-            </div>
-            <div className="animate-fade-in group" style={{ animationDelay: '0.3s' }}>
-              <div className="text-display text-5xl md:text-7xl font-bold mb-3 group-hover:scale-105 transition-transform duration-500">40+</div>
-              <div className="text-lg opacity-90 tracking-wide">{t.home.stats.families}</div>
-            </div>
+            <AnimatedStat end={50} suffix="+" label={t.home.stats.projects} delay={0} />
+            <AnimatedStat end={15} label={t.home.stats.years} delay={120} />
+            <AnimatedStat end={40} suffix="+" label={t.home.stats.families} delay={240} />
           </div>
         </div>
       </section>
@@ -356,7 +348,7 @@ return <div className="min-h-screen overflow-hidden">
           <h2 className="text-display text-3xl md:text-5xl lg:text-6xl font-bold mb-10 animate-fade-in leading-tight max-w-4xl mx-auto">
             {t.home.ctaBand.title}
           </h2>
-          <Button size="lg" variant="secondary" onClick={onBookCallClick} className="group shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 text-lg px-10 py-7 h-auto rounded-xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <Button size="lg" variant="secondary" onClick={onBookCallClick} className="group shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 text-lg px-10 py-7 h-auto rounded-xl animate-fade-in shine-cta press-tactile" style={{ animationDelay: '0.2s' }}>
             {t.home.ctaBand.cta}
             <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
           </Button>

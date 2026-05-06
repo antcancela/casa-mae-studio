@@ -168,19 +168,22 @@ export const Work = () => {
   ]);
 
   const Gallery = ({ images }: { images: typeof galleries.kidsRooms }) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in">
       {images.map((image, idx) => (
         <div
           key={idx}
-          className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+          className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition-elegant animate-fade-in-up"
+          style={{ animationDelay: `${Math.min(idx * 70, 500)}ms` }}
           onClick={() => openLightbox(images, idx)}
         >
           <img
             src={image.src}
             alt={image.caption}
-            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-80 object-cover img-zoom"
             loading="lazy"
           />
+          {/* Subtle gradient overlay on hover */}
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         </div>
       ))}
     </div>
@@ -195,10 +198,10 @@ export const Work = () => {
         jsonLd={breadcrumbSchema}
       />
       
-      <h1 className="text-display text-4xl md:text-5xl font-semibold mb-6 text-center">
+      <h1 className="text-display text-4xl md:text-5xl font-semibold mb-6 text-center animate-fade-in-up">
         {t.work.title}
       </h1>
-      <p className="text-lg text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
+      <p className="text-lg text-muted-foreground text-center mb-12 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.12s' }}>
         {t.work.intro}
       </p>
 
@@ -206,27 +209,27 @@ export const Work = () => {
         {/* Mobile: horizontal scroll, Desktop: grid */}
         <div className="mb-8">
           <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 p-1.5 h-auto bg-muted/60 rounded-xl">
-            <TabsTrigger 
-              value="familyHome" 
-              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+            <TabsTrigger
+              value="familyHome"
+              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg transition-elegant data-[state=active]:bg-background data-[state=active]:shadow-md data-[state=active]:text-primary"
             >
               {t.work.categories.familyHome}
             </TabsTrigger>
-            <TabsTrigger 
+            <TabsTrigger
               value="lisbon"
-              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg transition-elegant data-[state=active]:bg-background data-[state=active]:shadow-md data-[state=active]:text-primary"
             >
               {t.work.categories.lisbon}
             </TabsTrigger>
-            <TabsTrigger 
+            <TabsTrigger
               value="river"
-              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg transition-elegant data-[state=active]:bg-background data-[state=active]:shadow-md data-[state=active]:text-primary"
             >
               {t.work.categories.river}
             </TabsTrigger>
-            <TabsTrigger 
+            <TabsTrigger
               value="kidsRooms"
-              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              className="px-3 py-2.5 text-xs sm:text-sm font-medium text-center rounded-lg transition-elegant data-[state=active]:bg-background data-[state=active]:shadow-md data-[state=active]:text-primary"
             >
               {t.work.categories.kidsRooms}
             </TabsTrigger>
@@ -280,18 +283,22 @@ export const Work = () => {
 
               {/* Spinner */}
               {imageLoading && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-10 h-10 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 </div>
               )}
 
               {/* Image */}
               {currentImage && (
                 <img
+                  key={currentImage.src}
                   src={currentImage.src}
                   alt={currentImage.caption}
-                  className="block max-w-full max-h-full object-contain select-none transition-opacity duration-300"
-                  style={{ opacity: imageLoading ? 0 : 1 }}
+                  className="block max-w-full max-h-full object-contain select-none transition-all duration-500 ease-out"
+                  style={{
+                    opacity: imageLoading ? 0 : 1,
+                    transform: imageLoading ? 'scale(0.98)' : 'scale(1)',
+                  }}
                   onLoad={() => setImageLoading(false)}
                   loading="eager"
                   draggable={false}
