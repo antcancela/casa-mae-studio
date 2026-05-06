@@ -149,7 +149,7 @@ return <div className="min-h-screen overflow-hidden">
             </Card>
 
             {/* Card 2: Casa Adaptada */}
-            <Card className="relative border-0 shadow-xl bg-card/80 backdrop-blur-sm hover-lift animate-fade-in rounded-2xl overflow-hidden" style={{ animationDelay: '0.15s' }}>
+            <Card className="relative border-0 shadow-xl bg-card/80 backdrop-blur-sm hover-lift animate-fade-in rounded-2xl md:overflow-visible overflow-hidden" style={{ animationDelay: '0.15s' }}>
               <div className="absolute top-0 left-0 w-full h-1 md:h-1.5 bg-gradient-to-r from-primary/60 to-primary" />
               <CardContent className="p-6 md:p-10 pt-8 md:pt-10">
                 <div className="inline-flex items-center justify-center w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-primary text-primary-foreground font-bold text-base md:text-xl shadow-lg mb-4 md:mb-0 md:absolute md:-top-5 md:-left-5 md:-rotate-3">
