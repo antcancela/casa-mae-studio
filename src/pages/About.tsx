@@ -32,7 +32,7 @@ export const About = () => {
         {/* Introduction with image */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-center">
           <div className="animate-scale-in" style={{ animationDelay: '0.1s' }}>
-            <div className="group overflow-hidden rounded-2xl shadow-elegant">
+            <div className="group overflow-hidden rounded-2xl shadow-2xl">
               <img
                 src={joanaPortrait}
                 alt="Joana Leitão"
@@ -52,7 +52,7 @@ export const About = () => {
 
         {/* Journey section */}
         <div ref={journey.ref} className={`reveal ${journey.inView ? 'is-visible' : ''}`}>
-          <Card className="mb-12 border-none shadow-elegant bg-secondary/10 hover-lift">
+          <Card className="mb-12 border-none shadow-2xl bg-secondary/10 hover-lift">
             <CardContent className="p-8 md:p-12">
               <h2 className="text-display text-2xl md:text-3xl font-semibold mb-6 text-primary">My Journey</h2>
               <div className="space-y-6">
@@ -78,7 +78,7 @@ export const About = () => {
 
         {/* Mission card */}
         <div ref={mission.ref} className={`reveal ${mission.inView ? 'is-visible' : ''}`}>
-          <Card className="mb-12 border-none shadow-elegant bg-primary/5 hover-lift">
+          <Card className="mb-12 border-none shadow-2xl bg-primary/5 hover-lift">
             <CardContent className="p-8 md:p-12">
               <h2 className="text-display text-2xl md:text-3xl font-semibold mb-6 text-primary">
                 Atelier Casa Mãe
