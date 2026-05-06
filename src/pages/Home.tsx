@@ -113,18 +113,9 @@ return <div className="min-h-screen overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.1),transparent_50%)]" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto text-center">
-            <div className="animate-fade-in group">
-              <div className="text-display text-5xl md:text-7xl font-bold mb-3 group-hover:scale-105 transition-transform duration-500">50+</div>
-              <div className="text-lg opacity-90 tracking-wide">{t.home.stats.projects}</div>
-            </div>
-            <div className="animate-fade-in group" style={{ animationDelay: '0.15s' }}>
-              <div className="text-display text-5xl md:text-7xl font-bold mb-3 group-hover:scale-105 transition-transform duration-500">15</div>
-              <div className="text-lg opacity-90 tracking-wide">{t.home.stats.years}</div>
-            </div>
-            <div className="animate-fade-in group" style={{ animationDelay: '0.3s' }}>
-              <div className="text-display text-5xl md:text-7xl font-bold mb-3 group-hover:scale-105 transition-transform duration-500">40+</div>
-              <div className="text-lg opacity-90 tracking-wide">{t.home.stats.families}</div>
-            </div>
+            <AnimatedStat end={50} suffix="+" label={t.home.stats.projects} delay={0} />
+            <AnimatedStat end={15} label={t.home.stats.years} delay={120} />
+            <AnimatedStat end={40} suffix="+" label={t.home.stats.families} delay={240} />
           </div>
         </div>
       </section>
