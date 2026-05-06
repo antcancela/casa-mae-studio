@@ -6,6 +6,7 @@ import { ArrowRight, Users, CheckCircle2, Wrench, Lightbulb } from 'lucide-react
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { getOrganizationSchema, getServiceSchema } from '@/lib/structuredData';
+import { AnimatedStat } from '@/components/AnimatedStat';
 import joanaHero from '@/assets/joana-hero.jpg';
 import familyHome11 from '@/assets/gallery/family-home-11.jpg';
 import lisbonApt3 from '@/assets/gallery/lisbon-apt-3.jpg';
