@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { SEO } from '@/components/SEO';
 import { getBreadcrumbSchema } from '@/lib/structuredData';
+import { PageHero } from '@/components/PageHero';
 
 // Import gallery images
 import kidsRoom1 from '@/assets/gallery/kids-room-1.jpg';
@@ -190,20 +191,21 @@ export const Work = () => {
   );
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12 overflow-hidden">
       <SEO 
         title={locale === 'pt' ? 'Portfólio' : 'Work'}
         description={metaDescription}
         type="website"
         jsonLd={breadcrumbSchema}
       />
-      
-      <h1 className="text-display text-4xl md:text-5xl font-semibold mb-6 text-center animate-fade-in-up">
-        {t.work.title}
-      </h1>
-      <p className="text-lg text-muted-foreground text-center mb-12 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.12s' }}>
-        {t.work.intro}
-      </p>
+
+      <div className="mb-14">
+        <PageHero
+          eyebrow={locale === 'pt' ? 'Portfólio' : 'Portfolio'}
+          headline={t.work.title}
+          description={t.work.intro}
+        />
+      </div>
 
       <Tabs defaultValue="familyHome" className="w-full">
         {/* Mobile: horizontal scroll, Desktop: grid */}
