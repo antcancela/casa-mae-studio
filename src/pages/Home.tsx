@@ -63,45 +63,108 @@ return <div className="min-h-screen overflow-hidden">
           </div>
         </div>
         
-        {/* Desktop Layout: Side by side */}
-        <div className="hidden md:flex min-h-[85vh] items-center relative z-10">
-          <div className="container mx-auto px-4 py-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              {/* Content */}
-              <div className="space-y-8">
-                <h1 className="text-display text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.1] animate-fade-in-up">
-                  {t.home.hero.headline}
-                </h1>
-                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-xl animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+        {/* Desktop Layout: Premium Family Atelier */}
+        <div className="hidden md:flex min-h-[90vh] items-center relative z-10">
+          {/* Decorative blurred background accent */}
+          <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-accent/40 rounded-full blur-[120px] opacity-60 -z-10 pointer-events-none" />
+          <div className="absolute -top-32 -left-24 w-[420px] h-[420px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
+
+          <div className="container mx-auto px-6 py-12">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              {/* Left Column: Copy */}
+              <div className="lg:col-span-6 space-y-9 animate-fade-in-up">
+                <div className="flex items-center gap-3">
+                  <div className="h-px w-10 bg-primary" />
+                  <span className="text-primary font-semibold tracking-[0.2em] text-[11px] uppercase">
+                    {locale === 'pt' ? 'Atelier Casa Mãe' : 'Atelier Casa Mãe'}
+                  </span>
+                </div>
+
+                {(() => {
+                  const headline = t.home.hero.headline;
+                  const words = headline.trim().split(' ');
+                  const last = words.pop() ?? '';
+                  const rest = words.join(' ');
+                  return (
+                    <h1 className="text-display text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] tracking-tight text-foreground">
+                      {rest}{rest && ' '}
+                      <span className="relative inline-block">
+                        <span className="italic font-normal">{last}</span>
+                        <svg className="absolute -bottom-2 left-0 w-full h-3 text-accent -z-10" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
+                          <path d="M0 5 Q 25 0 50 5 T 100 5" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
+                        </svg>
+                      </span>
+                    </h1>
+                  );
+                })()}
+
+                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
                   {t.home.hero.subheadline}
                 </p>
-                <div className="flex flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                  <Button size="lg" onClick={onBookCallClick} className="group shadow-lg hover:shadow-xl transition-all duration-300 shine-cta press-tactile">
+
+                <div className="flex flex-wrap items-center gap-6 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                  <Button
+                    size="lg"
+                    onClick={onBookCallClick}
+                    className="group rounded-2xl px-10 py-6 text-base font-semibold shadow-2xl shadow-primary/30 hover:shadow-primary/40 transition-all duration-500 shine-cta press-tactile"
+                  >
                     {t.home.hero.primaryCta}
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
-                  <Button size="lg" variant="outline" asChild className="hover:bg-primary/5 transition-colors duration-300">
-                    <Link to="/work">{t.home.hero.secondaryCta}</Link>
-                  </Button>
+
+                  <Link to="/work" className="flex items-center gap-3 text-foreground font-semibold group py-2">
+                    <span className="border-b border-foreground/20 group-hover:border-primary transition-colors pb-1">
+                      {t.home.hero.secondaryCta}
+                    </span>
+                    <span className="w-10 h-10 rounded-full border border-foreground/15 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
                 </div>
               </div>
-              
-              {/* Desktop Image */}
-              <div className="animate-scale-in" style={{ animationDelay: '0.2s' }}>
-                <div className="relative group">
-                  <div className="absolute -inset-6 bg-gradient-to-tr from-primary/15 to-accent/20 rounded-3xl blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-700" />
-                  <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                    <img 
-                      src={joanaHero} 
-                      alt="Joana Leitão - Interior designer specializing in family-friendly spaces and children's rooms" 
-                      className="relative w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700 ease-out" 
-                      loading="eager" 
-                    />
-                  </div>
-                  {/* Decorative frame accent */}
-                  <div className="absolute -bottom-3 -right-3 w-24 h-24 border-2 border-primary/20 rounded-2xl -z-10" />
-                  <div className="absolute -top-3 -left-3 w-16 h-16 border-2 border-primary/10 rounded-xl -z-10" />
+
+              {/* Right Column: Layered Visual Composition */}
+              <div className="lg:col-span-6 relative h-[640px] flex items-center justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                {/* Main rotated image card */}
+                <div className="relative w-[88%] h-[88%] rounded-[2.5rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700 z-10">
+                  <img
+                    src={joanaHero}
+                    alt="Joana Leitão - Interior designer specializing in family-friendly spaces"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/25 to-transparent" />
                 </div>
+
+                {/* Overlapping detail card */}
+                <div className="absolute -bottom-2 -left-4 w-[240px] h-[240px] rounded-[2rem] overflow-hidden border-[10px] border-background shadow-2xl z-20 -rotate-3 hover:scale-[1.04] hover:-rotate-1 transition-all duration-500">
+                  <img
+                    src={kidsRoom3}
+                    alt="Children's room interior detail"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Floating glass message */}
+                <div className="absolute top-12 -left-6 glass-card px-7 py-5 rounded-[1.75rem] shadow-xl z-30 animate-float max-w-[220px]">
+                  <div className="flex gap-1.5 mb-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/20" />
+                  </div>
+                  <p className="text-foreground text-sm font-bold tracking-tight mb-1">
+                    {locale === 'pt' ? 'Espaços com Alma' : 'Spaces with Soul'}
+                  </p>
+                  <p className="text-muted-foreground text-[11px] leading-snug">
+                    {locale === 'pt'
+                      ? 'Onde a funcionalidade encontra o afeto.'
+                      : 'Where function meets affection.'}
+                  </p>
+                </div>
+
+                {/* Decorative ring */}
+                <div className="absolute -z-10 top-4 right-0 w-56 h-56 border border-primary/15 rounded-full" />
               </div>
             </div>
           </div>
