@@ -188,7 +188,10 @@ return <div className="min-h-screen overflow-hidden">
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Sculpture Showcase — featured project as object */}
+      <SculptureShowcase />
+
+
       <section className="py-16 bg-gradient-to-r from-primary via-primary to-primary/95 text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.1),transparent_50%)]" />
         <div className="container mx-auto px-4 relative z-10">
