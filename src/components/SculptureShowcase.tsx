@@ -59,7 +59,7 @@ export const SculptureShowcase = () => {
         >
           <div className="h-px w-10 bg-background/60" />
           <span className="font-mono text-[10px] md:text-xs tracking-[0.3em] uppercase text-background/70">
-            {locale === 'pt' ? 'Objeto · 001' : 'Object · 001'}
+            {locale === 'pt' ? 'Projeto · 001' : 'Project · 001'}
           </span>
         </motion.div>
 
