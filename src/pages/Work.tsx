@@ -204,7 +204,8 @@ export const Work = () => {
   );
 
   return (
-    <div className="container mx-auto px-4 py-12 overflow-hidden">
+    <div className="overflow-hidden">
+      <div className="container mx-auto px-4 py-12">
       <SEO 
         title={locale === 'pt' ? 'Portfólio' : 'Work'}
         description={metaDescription}
