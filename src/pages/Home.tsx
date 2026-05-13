@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { ArrowRight, Users, CheckCircle2, Wrench, Lightbulb } from 'lucide-react';
+import { ArrowRight, Users, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { getOrganizationSchema, getServiceSchema } from '@/lib/structuredData';
