@@ -171,12 +171,16 @@ export const Work = () => {
   ]);
 
   const Gallery = ({ images }: { images: typeof galleries.kidsRooms }) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {images.map((image, idx) => (
-        <div
+        <motion.div
           key={idx}
-          className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition-elegant animate-fade-in-up"
-          style={{ animationDelay: `${Math.min(idx * 70, 500)}ms` }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10% 0px' }}
+          transition={{ duration: 0.8, delay: Math.min(idx * 0.06, 0.5), ease: [0.22, 1, 0.36, 1] }}
+          whileHover={{ y: -6 }}
+          className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer hover:shadow-2xl"
           onClick={() => openLightbox(images, idx)}
         >
           <img
@@ -185,9 +189,16 @@ export const Work = () => {
             className="w-full h-80 object-cover img-zoom"
             loading="lazy"
           />
-          {/* Subtle gradient overlay on hover */}
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-        </div>
+          {/* Specimen label — slides in on hover */}
+          <div className="absolute top-4 left-4 bg-background/90 backdrop-blur px-3 py-1 rounded-full font-mono text-[10px] tracking-[0.2em] uppercase text-foreground translate-x-[-120%] group-hover:translate-x-0 transition-transform duration-500 ease-out">
+            {`CM·${String(idx + 1).padStart(3, '0')}`}
+          </div>
+          {/* Caption */}
+          <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-foreground/80 via-foreground/10 to-transparent opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 pointer-events-none">
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-background/70 mb-1">2024</p>
+            <p className="text-background text-sm">{image.caption}</p>
+          </div>
+        </motion.div>
       ))}
     </div>
   );
