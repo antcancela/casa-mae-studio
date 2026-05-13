@@ -202,19 +202,6 @@ return <div className="min-h-screen overflow-hidden">
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.14),transparent_55%)]"
         />
-        <motion.div
-          aria-hidden
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.4, delay: 0.2 }}
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)',
-            backgroundSize: '80px 80px',
-          }}
-        />
         <div className="container mx-auto px-4 relative z-10">
           <Reveal className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto text-center" y={20}>
             <AnimatedStat end={50} suffix="+" label={t.home.stats.projects} delay={0} />
