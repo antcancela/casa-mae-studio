@@ -37,17 +37,19 @@ return <div className="min-h-screen overflow-hidden">
             <img 
               src={joanaHero}
               alt="Joana Leitão - Interior designer"
+              width={1600}
+              height={1200}
+              fetchPriority="high"
               className="absolute inset-0 w-full h-full object-cover object-top"
-              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
           </div>
           
           {/* Mobile content below image */}
           <div className="px-4 py-8 -mt-8 relative z-10">
-            <h1 className="text-display text-3xl sm:text-4xl font-semibold leading-[1.1] animate-fade-in-up mb-5">
+            <div role="heading" aria-level={1} className="text-display text-3xl sm:text-4xl font-semibold leading-[1.1] animate-fade-in-up mb-5">
               {t.home.hero.headline}
-            </h1>
+            </div>
             <p className="text-base text-muted-foreground leading-relaxed mb-6 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
               {t.home.hero.subheadline}
             </p>
@@ -130,8 +132,10 @@ return <div className="min-h-screen overflow-hidden">
                   <img
                     src={joanaHero}
                     alt="Joana Leitão - Interior designer specializing in family-friendly spaces"
+                    width={1600}
+                    height={1800}
+                    fetchPriority="high"
                     className="w-full h-full object-cover"
-                    loading="eager"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/25 to-transparent" />
                 </div>
@@ -314,7 +318,7 @@ return <div className="min-h-screen overflow-hidden">
                   <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 mb-5 animate-float">
                     <Wrench className="h-10 w-10 text-primary" />
                   </div>
-                  <h4 className="text-display text-2xl md:text-3xl font-bold mb-3 text-primary">{t.home.process.paths.turnkey.title}</h4>
+                  <h3 className="text-display text-2xl md:text-3xl font-bold mb-3 text-primary">{t.home.process.paths.turnkey.title}</h3>
                   <p className="text-muted-foreground">{t.home.process.paths.turnkey.subtitle}</p>
                 </div>
                 <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-transparent mx-auto mb-8" />
@@ -327,7 +331,7 @@ return <div className="min-h-screen overflow-hidden">
                         {idx + 1}
                       </div>
                       <div className="flex-1 pt-1">
-                        <h5 className="font-semibold mb-1.5 text-foreground">{step.title}</h5>
+                        <h4 className="font-semibold mb-1.5 text-foreground">{step.title}</h4>
                         <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                       </div>
                     </div>)}
@@ -346,7 +350,7 @@ return <div className="min-h-screen overflow-hidden">
                   <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 mb-5 animate-float" style={{ animationDelay: '0.5s' }}>
                     <Lightbulb className="h-10 w-10 text-primary" />
                   </div>
-                  <h4 className="text-display text-2xl md:text-3xl font-bold mb-3 text-primary">{t.home.process.paths.consultancy.title}</h4>
+                  <h3 className="text-display text-2xl md:text-3xl font-bold mb-3 text-primary">{t.home.process.paths.consultancy.title}</h3>
                   <p className="text-muted-foreground">{t.home.process.paths.consultancy.subtitle}</p>
                 </div>
                 <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-transparent mx-auto mb-8" />
@@ -359,7 +363,7 @@ return <div className="min-h-screen overflow-hidden">
                         {idx + 1}
                       </div>
                       <div className="flex-1 pt-1">
-                        <h5 className="font-semibold mb-1.5 text-foreground">{step.title}</h5>
+                        <h4 className="font-semibold mb-1.5 text-foreground">{step.title}</h4>
                         <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                       </div>
                     </div>)}
