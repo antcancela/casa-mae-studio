@@ -7,7 +7,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { SEO } from '@/components/SEO';
 import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { PageHero } from '@/components/PageHero';
-import { TechnicalArtifacts } from '@/components/TechnicalArtifacts';
+
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Import gallery images
@@ -269,7 +269,7 @@ export const Work = () => {
       </div>
 
       {/* Behind the design — technical artifacts revealed on scroll */}
-      <TechnicalArtifacts />
+      
 
       <div className="container mx-auto px-4">
       {/* Lightbox Dialog */}
