@@ -265,6 +265,12 @@ export const Work = () => {
         </TabsContent>
       </Tabs>
 
+      </div>
+
+      {/* Behind the design — technical artifacts revealed on scroll */}
+      <TechnicalArtifacts />
+
+      <div className="container mx-auto px-4">
       {/* Lightbox Dialog */}
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
         <DialogContent className="max-w-7xl w-full h-[90dvh] md:h-[90vh] p-0 overflow-hidden bg-black/95 gap-0">
