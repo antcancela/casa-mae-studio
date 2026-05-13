@@ -353,6 +353,7 @@ export const Work = () => {
           </div>
         </DialogContent>
       </Dialog>
+      </div>
     </div>
   );
 };
