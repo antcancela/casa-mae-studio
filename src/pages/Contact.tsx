@@ -5,6 +5,7 @@ import { siteConfig } from '@/config/site';
 import { SEO } from '@/components/SEO';
 import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { PageHero } from '@/components/PageHero';
+import { Magnetic } from '@/components/motion/Magnetic';
 
 interface ContactProps {
   onBookCallClick: () => void;
@@ -36,14 +37,16 @@ export const Contact = ({ onBookCallClick }: ContactProps) => {
             headline={t.contact.title}
             description={t.contact.lead}
           >
-            <Button
-              onClick={onBookCallClick}
-              size="lg"
-              className="group rounded-2xl px-10 py-6 text-base font-semibold shadow-2xl shadow-primary/30 hover:shadow-primary/40 transition-all duration-500 shine-cta press-tactile"
-            >
-              {t.contact.cta}
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Magnetic strength={0.25}>
+              <Button
+                onClick={onBookCallClick}
+                size="lg"
+                className="group rounded-2xl px-10 py-6 text-base font-semibold shadow-2xl shadow-primary/30 hover:shadow-primary/40 transition-all duration-500 shine-cta press-tactile"
+              >
+                {t.contact.cta}
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Magnetic>
           </PageHero>
         </div>
 

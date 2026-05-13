@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './ui/button';
+import { Magnetic } from './motion/Magnetic';
 import { useLanguage } from '@/i18n/LanguageContext';
 import logo from '@/assets/logo-new.png';
 
@@ -46,15 +48,17 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-lg hover:bg-primary/5 ${
-                  isActive(item.path) 
-                    ? 'text-primary' 
-                    : 'text-foreground/70 hover:text-foreground'
+                className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-300 rounded-lg ${
+                  isActive(item.path) ? 'text-primary' : 'text-foreground/70 hover:text-foreground'
                 }`}
               >
-                {item.label}
+                <span className="relative z-10">{item.label}</span>
                 {isActive(item.path) && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary" />
+                  <motion.span
+                    layoutId="nav-active"
+                    className="absolute inset-x-2 -bottom-0.5 h-0.5 bg-primary rounded-full"
+                    transition={{ type: 'spring', stiffness: 300, damping: 28 }}
+                  />
                 )}
               </Link>
             ))}
@@ -75,13 +79,15 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
             </Button>
 
             {/* Desktop CTA */}
-            <Button
-              onClick={onBookCallClick}
-              className="hidden md:inline-flex shadow-md hover:shadow-lg transition-all duration-300 rounded-lg shine-cta press-tactile"
-              size="default"
-            >
-              {t.nav.bookCall}
-            </Button>
+            <Magnetic strength={0.2} className="hidden md:inline-flex">
+              <Button
+                onClick={onBookCallClick}
+                className="shadow-md hover:shadow-lg transition-all duration-300 rounded-lg shine-cta press-tactile"
+                size="default"
+              >
+                {t.nav.bookCall}
+              </Button>
+            </Magnetic>
 
             {/* Mobile menu button */}
             <Button
@@ -97,41 +103,58 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
         </div>
       </div>
 
-      {/* Mobile Navigation - Enhanced */}
-      <div 
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
-          mobileMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="border-t border-border/50 bg-background/98 backdrop-blur-md">
-          <nav className="container mx-auto px-4 py-4 flex flex-col space-y-1">
-            {navItems.map((item, index) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
-                  isActive(item.path) 
-                    ? 'text-primary bg-primary/10' 
-                    : 'text-foreground/80 hover:text-foreground hover:bg-muted/50'
-                }`}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="pt-2">
-              <Button 
-                onClick={() => { onBookCallClick(); setMobileMenuOpen(false); }} 
-                className="w-full rounded-lg"
-                size="lg"
-              >
-                {t.nav.bookCall}
-              </Button>
+      {/* Mobile Navigation — staggered reveal */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            key="mobile-nav"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden overflow-hidden"
+          >
+            <div className="border-t border-border/50 bg-background/98 backdrop-blur-md">
+              <nav className="container mx-auto px-4 py-4 flex flex-col space-y-1">
+                {navItems.map((item, index) => (
+                  <motion.div
+                    key={item.path}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.08 + index * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Link
+                      to={item.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                        isActive(item.path)
+                          ? 'text-primary bg-primary/10'
+                          : 'text-foreground/80 hover:text-foreground hover:bg-muted/50'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ))}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.08 + navItems.length * 0.06, duration: 0.5 }}
+                  className="pt-2"
+                >
+                  <Button
+                    onClick={() => { onBookCallClick(); setMobileMenuOpen(false); }}
+                    className="w-full rounded-lg"
+                    size="lg"
+                  >
+                    {t.nav.bookCall}
+                  </Button>
+                </motion.div>
+              </nav>
             </div>
-          </nav>
-        </div>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

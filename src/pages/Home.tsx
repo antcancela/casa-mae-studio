@@ -1,12 +1,18 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { ArrowRight, Users, CheckCircle2, Wrench, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { getOrganizationSchema, getServiceSchema } from '@/lib/structuredData';
 import { AnimatedStat } from '@/components/AnimatedStat';
+import { SculptureShowcase } from '@/components/SculptureShowcase';
+import { Reveal } from '@/components/motion/Reveal';
+import { Magnetic } from '@/components/motion/Magnetic';
+import { Tilt } from '@/components/motion/Tilt';
+import { SplitText } from '@/components/motion/SplitText';
+import { Parallax } from '@/components/motion/Parallax';
+import { motion } from 'framer-motion';
 import joanaHero from '@/assets/joana-hero.jpg';
 import familyHome11 from '@/assets/gallery/family-home-11.jpg';
 import lisbonApt3 from '@/assets/gallery/lisbon-apt-3.jpg';
@@ -82,37 +88,37 @@ return <div className="min-h-screen overflow-hidden">
                   </span>
                 </div>
 
-                {(() => {
-                  const headline = t.home.hero.headline;
-                  const words = headline.trim().split(' ');
-                  const last = words.pop() ?? '';
-                  const rest = words.join(' ');
-                  return (
-                    <h1 className="text-display text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] tracking-tight text-foreground">
-                      {rest}{rest && ' '}
-                      <span className="relative inline-block">
-                        <span className="italic font-normal">{last}</span>
-                        <svg className="absolute -bottom-2 left-0 w-full h-3 text-accent -z-10" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
-                          <path d="M0 5 Q 25 0 50 5 T 100 5" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
-                        </svg>
-                      </span>
-                    </h1>
-                  );
-                })()}
+                <SplitText
+                  text={t.home.hero.headline}
+                  italicLast
+                  className="text-display text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] tracking-tight text-foreground"
+                />
 
-                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg"
+                >
                   {t.home.hero.subheadline}
-                </p>
+                </motion.p>
 
-                <div className="flex flex-wrap items-center gap-6 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                  <Button
-                    size="lg"
-                    onClick={onBookCallClick}
-                    className="group rounded-2xl px-10 py-6 text-base font-semibold shadow-2xl shadow-primary/30 hover:shadow-primary/40 transition-all duration-500 shine-cta press-tactile"
-                  >
-                    {t.home.hero.primaryCta}
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.9, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex flex-wrap items-center gap-6"
+                >
+                  <Magnetic strength={0.25}>
+                    <Button
+                      size="lg"
+                      onClick={onBookCallClick}
+                      className="group rounded-2xl px-10 py-6 text-base font-semibold shadow-2xl shadow-primary/30 hover:shadow-primary/40 transition-all duration-500 shine-cta press-tactile"
+                    >
+                      {t.home.hero.primaryCta}
+                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Magnetic>
 
                   <Link to="/work" className="flex items-center gap-3 text-foreground font-semibold group py-2">
                     <span className="border-b border-foreground/20 group-hover:border-primary transition-colors pb-1">
@@ -122,36 +128,46 @@ return <div className="min-h-screen overflow-hidden">
                       <ArrowRight className="w-4 h-4" />
                     </span>
                   </Link>
-                </div>
+                </motion.div>
               </div>
 
-              {/* Right Column: Layered Visual Composition */}
-              <div className="lg:col-span-6 relative h-[640px] flex items-center justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                {/* Main rotated image card */}
-                <div className="relative w-[88%] h-[88%] rounded-[2.5rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700 z-10">
-                  <img
-                    src={joanaHero}
-                    alt="Joana Leitão - Interior designer specializing in family-friendly spaces"
-                    width={1600}
-                    height={1800}
-                    fetchPriority="high"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/25 to-transparent" />
-                </div>
+              {/* Right Column: Sculpture composition */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="lg:col-span-6 relative h-[640px] flex items-center justify-end"
+                style={{ perspective: 1200 }}
+              >
+                <Tilt max={6} className="relative w-[88%] h-[88%] z-10">
+                  <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700">
+                    <img
+                      src={joanaHero}
+                      alt="Joana Leitão - Interior designer specializing in family-friendly spaces"
+                      width={1600}
+                      height={1800}
+                      fetchPriority="high"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/25 to-transparent" />
+                  </div>
+                </Tilt>
 
-                {/* Overlapping detail card */}
-                <div className="absolute -bottom-2 -left-4 w-[240px] h-[240px] rounded-[2rem] overflow-hidden border-[10px] border-background shadow-2xl z-20 -rotate-3 hover:scale-[1.04] hover:-rotate-1 transition-all duration-500">
-                  <img
-                    src={kidsRoom3}
-                    alt="Children's room interior detail"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, x: -40, rotate: -8 }}
+                  animate={{ opacity: 1, x: 0, rotate: -3 }}
+                  transition={{ duration: 1, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute -bottom-2 -left-4 w-[240px] h-[240px] rounded-[2rem] overflow-hidden border-[10px] border-background shadow-2xl z-20 hover:scale-[1.04] hover:-rotate-1 transition-all duration-500"
+                >
+                  <img src={kidsRoom3} alt="Children's room interior detail" className="w-full h-full object-cover" loading="lazy" />
+                </motion.div>
 
-                {/* Floating glass message */}
-                <div className="absolute top-12 -left-6 glass-card px-7 py-5 rounded-[1.75rem] shadow-xl z-30 animate-float max-w-[220px]">
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute top-12 -left-6 glass-card px-7 py-5 rounded-[1.75rem] shadow-xl z-30 animate-float max-w-[220px]"
+                >
                   <div className="flex gap-1.5 mb-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                     <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
@@ -161,21 +177,21 @@ return <div className="min-h-screen overflow-hidden">
                     {locale === 'pt' ? 'Espaços com Alma' : 'Spaces with Soul'}
                   </p>
                   <p className="text-muted-foreground text-[11px] leading-snug">
-                    {locale === 'pt'
-                      ? 'Onde a funcionalidade encontra o afeto.'
-                      : 'Where function meets affection.'}
+                    {locale === 'pt' ? 'Onde a funcionalidade encontra o afeto.' : 'Where function meets affection.'}
                   </p>
-                </div>
+                </motion.div>
 
-                {/* Decorative ring */}
                 <div className="absolute -z-10 top-4 right-0 w-56 h-56 border border-primary/15 rounded-full" />
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Sculpture Showcase — featured project as object */}
+      <SculptureShowcase />
+
+
       <section className="py-16 bg-gradient-to-r from-primary via-primary to-primary/95 text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.1),transparent_50%)]" />
         <div className="container mx-auto px-4 relative z-10">
@@ -415,10 +431,12 @@ return <div className="min-h-screen overflow-hidden">
           <h2 className="text-display text-3xl md:text-5xl lg:text-6xl font-bold mb-10 animate-fade-in leading-tight max-w-4xl mx-auto">
             {t.home.ctaBand.title}
           </h2>
-          <Button size="lg" variant="secondary" onClick={onBookCallClick} className="group shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 text-lg px-10 py-7 h-auto rounded-xl animate-fade-in shine-cta press-tactile" style={{ animationDelay: '0.2s' }}>
-            {t.home.ctaBand.cta}
-            <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <Magnetic strength={0.3} className="inline-block">
+            <Button size="lg" variant="secondary" onClick={onBookCallClick} className="group shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg px-10 py-7 h-auto rounded-xl shine-cta press-tactile">
+              {t.home.ctaBand.cta}
+              <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Magnetic>
         </div>
       </section>
     </div>;

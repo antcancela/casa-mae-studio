@@ -7,6 +7,8 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { SEO } from '@/components/SEO';
 import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { PageHero } from '@/components/PageHero';
+import { TechnicalArtifacts } from '@/components/TechnicalArtifacts';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Import gallery images
 import kidsRoom1 from '@/assets/gallery/kids-room-1.jpg';
@@ -169,12 +171,16 @@ export const Work = () => {
   ]);
 
   const Gallery = ({ images }: { images: typeof galleries.kidsRooms }) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {images.map((image, idx) => (
-        <div
+        <motion.div
           key={idx}
-          className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition-elegant animate-fade-in-up"
-          style={{ animationDelay: `${Math.min(idx * 70, 500)}ms` }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10% 0px' }}
+          transition={{ duration: 0.8, delay: Math.min(idx * 0.06, 0.5), ease: [0.22, 1, 0.36, 1] }}
+          whileHover={{ y: -6 }}
+          className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer hover:shadow-2xl"
           onClick={() => openLightbox(images, idx)}
         >
           <img
@@ -183,15 +189,23 @@ export const Work = () => {
             className="w-full h-80 object-cover img-zoom"
             loading="lazy"
           />
-          {/* Subtle gradient overlay on hover */}
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-        </div>
+          {/* Specimen label — slides in on hover */}
+          <div className="absolute top-4 left-4 bg-background/90 backdrop-blur px-3 py-1 rounded-full font-mono text-[10px] tracking-[0.2em] uppercase text-foreground translate-x-[-120%] group-hover:translate-x-0 transition-transform duration-500 ease-out">
+            {`CM·${String(idx + 1).padStart(3, '0')}`}
+          </div>
+          {/* Caption */}
+          <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-foreground/80 via-foreground/10 to-transparent opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 pointer-events-none">
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-background/70 mb-1">2024</p>
+            <p className="text-background text-sm">{image.caption}</p>
+          </div>
+        </motion.div>
       ))}
     </div>
   );
 
   return (
-    <div className="container mx-auto px-4 py-12 overflow-hidden">
+    <div className="overflow-hidden">
+      <div className="container mx-auto px-4 py-12">
       <SEO 
         title={locale === 'pt' ? 'Portfólio' : 'Work'}
         description={metaDescription}
@@ -252,6 +266,12 @@ export const Work = () => {
         </TabsContent>
       </Tabs>
 
+      </div>
+
+      {/* Behind the design — technical artifacts revealed on scroll */}
+      <TechnicalArtifacts />
+
+      <div className="container mx-auto px-4">
       {/* Lightbox Dialog */}
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
         <DialogContent className="max-w-7xl w-full h-[90dvh] md:h-[90vh] p-0 overflow-hidden bg-black/95 gap-0">
@@ -333,6 +353,7 @@ export const Work = () => {
           </div>
         </DialogContent>
       </Dialog>
+      </div>
     </div>
   );
 };
