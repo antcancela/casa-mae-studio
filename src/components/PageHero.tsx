@@ -22,10 +22,7 @@ export const PageHero = ({ eyebrow, headline, description, children, align = 'ce
   const eyebrowJustify = align === 'center' ? 'justify-center' : 'justify-start';
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Decorative blurred background accents */}
-      <div className="absolute -top-32 right-0 w-[520px] h-[520px] bg-accent/40 rounded-full blur-[120px] opacity-60 -z-10 pointer-events-none" />
-      <div className="absolute -top-24 -left-24 w-[380px] h-[380px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
+    <section className="relative">
 
       <div className={`max-w-3xl space-y-7 animate-fade-in-up flex flex-col ${alignment}`}>
         <div className={`flex items-center gap-3 ${eyebrowJustify}`}>
