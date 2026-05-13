@@ -6,6 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import { HelmetProvider } from 'react-helmet-async';
+import { MotionConfig } from 'framer-motion';
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CalendlyModal } from "@/components/CalendlyModal";
@@ -25,7 +27,9 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
         <LanguageProvider>
+          <MotionConfig reducedMotion="user" transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
           <TooltipProvider>
+          <SmoothScroll />
           <Toaster />
           <Sonner />
           <BrowserRouter>
@@ -54,6 +58,7 @@ const App = () => {
             </Routes>
           </BrowserRouter>
         </TooltipProvider>
+        </MotionConfig>
       </LanguageProvider>
     </HelmetProvider>
     </QueryClientProvider>
