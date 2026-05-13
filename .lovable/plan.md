@@ -1,61 +1,95 @@
-## Plano: Refinar UI e Transições do Website
 
-### Nota sobre os "novos modelos de AI"
-Os novos modelos de AI no Lovable (Gemini 3, GPT-5.2) são para gerar/editar conteúdo dinâmico (texto, imagens) através de edge functions. Não afetam diretamente o UI estático. O que vou fazer aqui é **refinar manualmente o UI e transições** para um look mais elegante e fluido — alinhado com a direção estética já existente do projeto.
+# Motion & Interaction Overhaul — Atelier Casa Mãe
 
-Se o que pretendes for usar AI para gerar novas imagens do portfolio ou textos automaticamente, diz-me e ajusto o plano.
+Goal: elevate the site to award-quality motion design (Awwwards / FWA tier). Treat each interior project as a sculptural object. Reveal technical artifacts (plans, elevations, sketches) through scroll. Smooth, refined, deeply responsive.
+
+References: Transparent Speaker, Bang & Olufsen, Sonos, Teenage Engineering — minimalist, product-as-art, deliberate motion, generous whitespace, monospace + serif duets, materials forward.
 
 ---
 
-### Áreas a refinar
+## 1. Foundations
 
-**1. Sistema de animações global (`src/index.css` + `tailwind.config.ts`)**
-- Adicionar keyframes mais ricos: `slide-in-up`, `blur-in`, `shimmer`
-- Easing curves mais sofisticadas (cubic-bezier "expressive")
-- Utility class `.transition-elegant` (duration 500ms, easing suave)
-- Utility `.glass` (backdrop-blur + border subtil) para cards premium
-- Reduzir motion respeitando `prefers-reduced-motion`
+**Install**
+- `framer-motion` — all animations move here (replace CSS `animate-fade-in*` usage progressively).
+- `@studio-freight/lenis` — global smooth scroll, integrated with Framer Motion's `useScroll`.
 
-**2. Página Work — transições entre categorias (`src/pages/Work.tsx`)**
-- Adicionar fade/slide animation quando se troca de tab (TabsContent com `animate-fade-in`)
-- Stagger animation nas imagens da galeria (cada imagem entra com delay incremental)
-- Hover effect mais elegante nas thumbnails: overlay com gradient + caption a aparecer suavemente
-- Tabs ativos: indicador animado com transição de cor/sombra mais suave
-- Lightbox: transição entre imagens com cross-fade em vez de spinner brusco
+**Global setup**
+- Create `src/components/SmoothScroll.tsx` mounting Lenis on `<body>`, syncing RAF with Framer Motion `ScrollTrigger`.
+- Add `MotionConfig` provider in `App.tsx` with shared transition `{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }` and `reducedMotion="user"`.
+- Add reusable motion primitives in `src/components/motion/`:
+  - `Reveal.tsx` — fade/slide/blur on scroll (whileInView + viewport margin).
+  - `Magnetic.tsx` — pointer-following wrapper for buttons/links.
+  - `Marquee.tsx` — infinite horizontal scroller for credits/process.
+  - `ParallaxImage.tsx` — `useScroll` + `useTransform` for image y-shift.
+  - `SplitText.tsx` — per-word/letter stagger reveal for headlines.
 
-**3. Página Home (`src/pages/Home.tsx`)**
-- Hero: parallax subtil na imagem ao fazer scroll (CSS `transform` + scroll listener leve)
-- Stats section: contador animado dos números (50+, 15, 40+) ao entrar em viewport
-- Portfolio teaser: melhorar overlay hover (já tem, mas refinar timing e adicionar zoom mais suave)
-- Process cards: entrada escalonada quando visível
-- Adicionar `IntersectionObserver` hook reutilizável para animar ao entrar em view (em vez de animar tudo no load)
+## 2. Home — sculptural hero & scroll narrative
 
-**4. Página About (`src/pages/About.tsx`)**
-- Adicionar animações de entrada (atualmente não tem nenhuma)
-- Image com hover lift subtil
-- Cards com fade-in escalonado
+- **Hero**: headline becomes `SplitText` with per-word mask reveal. Hero image gets subtle parallax + slow scale-in; on hover the image rotates 0° with a soft tilt driven by mouse position (sculpture on a turntable feel). Floating glass card animates in with springy y + opacity. CTA buttons wrapped in `Magnetic` with shine sweep retained.
+- **"Sculpture" section** (new, between hero and existing content): full-bleed dark canvas. As the user scrolls, a featured project image scales from a small framed thumbnail to full bleed, while a caption typewriter-reveals next to it. Inspired by Transparent Speaker product page.
+- **Process section**: convert to horizontal scroll-pinned track on desktop (`useScroll` + x transform), vertical stack on mobile. Each step card has a number that counts in.
+- **Stats**: keep `AnimatedStat` but wrap in `Reveal` with stagger.
 
-**5. Header (`src/components/Header.tsx`)**
-- Refinar transição do menu mobile (já tem, mas melhorar easing)
-- Underline animado no nav link ativo (em vez do dot atual) — opcional, manter dot mas adicionar barra subtil
+## 3. Work — technical artifacts on scroll
 
-**6. Botões e interações globais**
-- Adicionar leve `scale(0.98)` em `:active` para feedback tátil
-- Ripple/shine effect subtil em CTAs primários (via pseudo-element, sem JS)
+- Gallery cards: replace CSS fade with Framer `whileInView` stagger; add a small "specimen label" (monospace, project code, year) that slides in from the side on hover — Teenage Engineering vibe.
+- New **"Behind the design"** strip below the gallery: a horizontal scroll of technical artifacts (floor plans, elevations, material swatches). Use placeholder SVG plans for now (procedurally drawn) layered with parallax. Each artifact reveals as it enters viewport — line-draw SVG animation for plan strokes (`pathLength` 0 → 1).
+- Lightbox: keep, but add Framer `AnimatePresence` for smoother enter/exit and image cross-fades.
 
-### Detalhes técnicos
+## 4. About — editorial motion
 
-- Criar `src/hooks/use-in-view.ts` — hook que usa `IntersectionObserver` para disparar animações ao entrar em viewport
-- Criar `src/hooks/use-count-up.ts` — hook para animar contadores numéricos
-- Adicionar utilities em `src/index.css`: `.animate-stagger-children`, `.transition-elegant`, `.glass-card`
-- Tabs: usar `data-[state=active]` e `data-[state=inactive]` com `animate-fade-in` no TabsContent
-- Tudo respeitando `@media (prefers-reduced-motion: reduce)`
+- Portrait gets parallax + subtle scale on scroll. Quote card animates in with mask reveal. Add a vertical marquee of values/keywords beside the bio.
 
-### O que NÃO muda
-- Paleta de cores (já está coerente com a marca)
-- Tipografia (Playfair Display + Inter)
-- Estrutura de layout das páginas
-- Conteúdo / textos / traduções
+## 5. Contact
 
-### Resultado esperado
-Website com sensação mais "premium" e fluida: animações que aparecem ao fazer scroll (não tudo de uma vez), transições suaves entre tabs do portfolio, contadores que sobem nas stats, hovers mais elegantes — mantendo a estética peachy-beige atual.
+- Form fields get focus microinteraction (label rises, underline draws). Submit button magnetic + success state morph.
+
+## 6. Header / Nav
+
+- Logo: hover spring micro-rotation. Nav links: animated underline (`layoutId` shared between active/hover). Mobile menu: full-screen panel with staggered link reveal.
+
+## 7. Microinteractions everywhere
+
+- Buttons: magnetic + tactile press + shine (existing).
+- Cards: 3D tilt on pointer move (subtle, max 4°).
+- Images: cursor-follow zoom hint.
+- Section dividers: thin line that draws across viewport on scroll-in.
+
+## 8. Responsiveness
+
+- Audit every section at 320 / 375 / 768 / 1024 / 1440.
+- Disable horizontal-scroll-pinned tracks on `<lg`, fall back to vertical stacks.
+- Reduce parallax magnitude on touch (Lenis touch tuning).
+- Ensure hero text size clamps with `clamp()` and hero composition stacks gracefully on mobile.
+
+## 9. Performance & a11y
+
+- Respect `prefers-reduced-motion` — `MotionConfig reducedMotion="user"` covers most; Lenis `autoRaf=false` and stop animations when reduced motion.
+- Lazy-load heavy SVG plan artifacts.
+- Keep LCP hero image with `fetchPriority="high"` (already set).
+
+---
+
+## Technical notes (for the curious)
+
+- Lenis setup pattern:
+  ```ts
+  const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+  ```
+  Sync with Framer: `lenis.on('scroll', ScrollTrigger.update)` style — for Framer we just rely on native scroll events which Lenis dispatches.
+- Use `LazyMotion` + `domAnimation` features to keep bundle small.
+- Replace existing `.animate-fade-in*` CSS utilities progressively; keep them as fallback during migration.
+
+---
+
+## Rollout order
+
+1. Install deps, add `SmoothScroll`, `MotionConfig`, motion primitives.
+2. Home hero + sculpture section + process horizontal scroll.
+3. Work gallery + technical-artifacts strip.
+4. About + Contact + Header polish.
+5. Responsive audit + reduced-motion QA + screenshot pass at 3 breakpoints.
+
+This is a substantial change touching most pages. I'll implement it end-to-end in one pass and screenshot-verify each major section before finishing.
