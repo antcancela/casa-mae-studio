@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { ArrowRight, Users, CheckCircle2, Wrench, Lightbulb } from 'lucide-react';
+import { ArrowRight, Users, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
 import { getOrganizationSchema, getServiceSchema } from '@/lib/structuredData';
@@ -22,6 +22,66 @@ import kidsRoom5 from '@/assets/gallery/kids-room-5.jpg';
 interface HomeProps {
   onBookCallClick: () => void;
 }
+
+// Architectural emblem: floor plan (turnkey)
+const PlanIcon = ({ className = '' }: { className?: string }) => (
+  <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden="true">
+    <motion.g
+      stroke="currentColor"
+      strokeWidth={1.6}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      initial={{ pathLength: 0, opacity: 0 }}
+      whileInView={{ pathLength: 1, opacity: 1 }}
+      viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+      transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {/* Outer walls */}
+      <path d="M7 8 H41 V40 H7 Z" />
+      {/* Internal divider */}
+      <path d="M26 8 V24" />
+      <path d="M7 24 H20" />
+      <path d="M26 24 H41" />
+      {/* Door swing arc (bottom-left room) */}
+      <path d="M14 40 A6 6 0 0 0 20 34" />
+      <path d="M14 40 V34" strokeDasharray="2 2" opacity={0.6} />
+      {/* Window ticks */}
+      <path d="M30 8 V11" />
+      <path d="M36 8 V11" />
+    </motion.g>
+  </svg>
+);
+
+// Architectural emblem: elevation (consultancy)
+const ElevationIcon = ({ className = '' }: { className?: string }) => (
+  <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden="true">
+    <motion.g
+      stroke="currentColor"
+      strokeWidth={1.6}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      initial={{ pathLength: 0, opacity: 0 }}
+      whileInView={{ pathLength: 1, opacity: 1 }}
+      viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+      transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {/* Facade silhouette with pitched roof */}
+      <path d="M8 38 V20 L24 10 L40 20 V38" />
+      {/* Ground line */}
+      <path d="M5 38 H43" />
+      <path d="M5 41 H43" strokeDasharray="2 2" opacity={0.5} />
+      {/* Door */}
+      <path d="M21 38 V28 H27 V38" />
+      {/* Windows */}
+      <path d="M12 24 H17 V29 H12 Z" />
+      <path d="M31 24 H36 V29 H31 Z" />
+      {/* Window mullions */}
+      <path d="M14.5 24 V29 M12 26.5 H17" opacity={0.7} />
+      <path d="M33.5 24 V29 M31 26.5 H36" opacity={0.7} />
+    </motion.g>
+  </svg>
+);
+
 export const Home = ({
   onBookCallClick
 }: HomeProps) => {
@@ -411,7 +471,55 @@ return <div className="min-h-screen overflow-hidden">
 
       {/* Process Section */}
       <section className="py-24 md:py-32 bg-background relative overflow-hidden">
-        <div className="container mx-auto px-4">
+        {/* Architectural plan watermark background */}
+        <div
+          className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.07] text-foreground"
+          style={{
+            maskImage: 'radial-gradient(ellipse at center, black 35%, transparent 75%)',
+            WebkitMaskImage: 'radial-gradient(ellipse at center, black 35%, transparent 75%)',
+          }}
+          aria-hidden="true"
+        >
+          <svg viewBox="0 0 1200 600" className="w-[140%] max-w-none h-auto" fill="none">
+            <motion.g
+              stroke="currentColor"
+              strokeWidth={1.2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              initial={{ pathLength: 0, opacity: 0 }}
+              whileInView={{ pathLength: 1, opacity: 1 }}
+              viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {/* Outer envelope */}
+              <path d="M120 110 H1080 V490 H120 Z" />
+              {/* Vertical spine */}
+              <path d="M600 110 V490" />
+              {/* Left zone */}
+              <path d="M120 270 H360" />
+              <path d="M360 110 V270" />
+              <path d="M120 380 H600" />
+              <path d="M260 380 V490" />
+              {/* Right zone */}
+              <path d="M600 230 H880" />
+              <path d="M880 110 V230" />
+              <path d="M820 230 V490" />
+              <path d="M600 360 H820" />
+              {/* Door swings */}
+              <path d="M360 270 A40 40 0 0 1 320 230" />
+              <path d="M820 360 A36 36 0 0 0 856 396" />
+              {/* Window ticks (top) */}
+              <path d="M180 110 V128 M240 110 V128 M420 110 V128 M480 110 V128 M540 110 V128 M660 110 V128 M720 110 V128 M780 110 V128 M940 110 V128 M1000 110 V128" />
+              {/* Window ticks (bottom) */}
+              <path d="M180 472 V490 M340 472 V490 M460 472 V490 M540 472 V490 M680 472 V490 M760 472 V490 M900 472 V490 M1020 472 V490" />
+              {/* Dimension lines */}
+              <path d="M120 70 H1080" strokeDasharray="4 6" opacity={0.55} />
+              <path d="M120 60 V80 M600 60 V80 M1080 60 V80" opacity={0.55} />
+            </motion.g>
+          </svg>
+        </div>
+
+        <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16 md:mb-20">
             <Reveal>
               <p className="font-mono text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
@@ -441,8 +549,8 @@ return <div className="min-h-screen overflow-hidden">
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.18 } } }}
           >
             {[
-              { icon: Wrench, title: t.home.process.paths.turnkey.title, subtitle: t.home.process.paths.turnkey.subtitle, steps: t.home.process.paths.turnkey.steps, cta: t.home.process.paths.turnkey.cta, floatDelay: 0 },
-              { icon: Lightbulb, title: t.home.process.paths.consultancy.title, subtitle: t.home.process.paths.consultancy.subtitle, steps: t.home.process.paths.consultancy.steps, cta: t.home.process.paths.consultancy.cta, floatDelay: 0.5 },
+              { icon: PlanIcon, tag: locale === 'pt' ? 'Planta · 01' : 'Plan · 01', title: t.home.process.paths.turnkey.title, subtitle: t.home.process.paths.turnkey.subtitle, steps: t.home.process.paths.turnkey.steps, cta: t.home.process.paths.turnkey.cta, floatDelay: 0 },
+              { icon: ElevationIcon, tag: locale === 'pt' ? 'Alçado · 02' : 'Elevation · 02', title: t.home.process.paths.consultancy.title, subtitle: t.home.process.paths.consultancy.subtitle, steps: t.home.process.paths.consultancy.steps, cta: t.home.process.paths.consultancy.cta, floatDelay: 0.5 },
             ].map((path) => {
               const Icon = path.icon;
               return (
@@ -463,8 +571,9 @@ return <div className="min-h-screen overflow-hidden">
                             className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 mb-5 animate-float shadow-inner"
                             style={{ animationDelay: `${path.floatDelay}s` }}
                           >
-                            <Icon className="h-10 w-10 text-primary" />
+                            <Icon className="h-11 w-11 text-primary" />
                           </motion.div>
+                          <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">{path.tag}</p>
                           <h3 className="text-display text-2xl md:text-3xl font-bold mb-3 text-primary">{path.title}</h3>
                           <p className="text-muted-foreground">{path.subtitle}</p>
                         </div>
