@@ -7,6 +7,8 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { SEO } from '@/components/SEO';
 import { getBreadcrumbSchema } from '@/lib/structuredData';
 import { PageHero } from '@/components/PageHero';
+import { TechnicalArtifacts } from '@/components/TechnicalArtifacts';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Import gallery images
 import kidsRoom1 from '@/assets/gallery/kids-room-1.jpg';
