@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion, type Variants } from 'framer-motion';
 import { useRef } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 
@@ -19,13 +19,14 @@ export const TechnicalArtifacts = () => {
   const swatchY = useTransform(scrollYProgress, [0, 1], [80, -80]);
   const elevationX = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
-  const draw = {
+  const ease = [0.22, 1, 0.36, 1] as const;
+  const draw: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: (i: number) => ({
       pathLength: 1,
       opacity: 1,
       transition: {
-        pathLength: { duration: 1.6, ease: [0.22, 1, 0.36, 1], delay: 0.2 + i * 0.08 },
+        pathLength: { duration: 1.6, ease, delay: 0.2 + i * 0.08 },
         opacity: { duration: 0.4, delay: 0.2 + i * 0.08 },
       },
     }),
