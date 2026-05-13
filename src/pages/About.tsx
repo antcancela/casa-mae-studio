@@ -5,6 +5,9 @@ import { SEO } from '@/components/SEO';
 import { getPersonSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import { useInView } from '@/hooks/use-in-view';
 import { PageHero } from '@/components/PageHero';
+import { Parallax } from '@/components/motion/Parallax';
+import { Reveal } from '@/components/motion/Reveal';
+import { Marquee } from '@/components/motion/Marquee';
 
 export const About = () => {
   const { t, locale } = useLanguage();
@@ -35,17 +38,18 @@ export const About = () => {
 
         {/* Introduction with layered image */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-24 items-center">
-          <div className="lg:col-span-6 relative h-[520px] lg:h-[600px] flex items-center justify-center animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            {/* Main rotated portrait */}
-            <div className="relative w-[88%] h-[92%] rounded-[2.5rem] overflow-hidden shadow-2xl -rotate-2 hover:rotate-0 transition-transform duration-700 z-10">
-              <img
-                src={joanaPortrait}
-                alt="Joana Leitão"
-                className="w-full h-full object-cover"
-                loading="eager"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
-            </div>
+          <div className="lg:col-span-6 relative h-[520px] lg:h-[600px] flex items-center justify-center">
+            <Parallax range={40} className="relative w-[88%] h-[92%] z-10">
+              <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl -rotate-2 hover:rotate-0 transition-transform duration-700">
+                <img
+                  src={joanaPortrait}
+                  alt="Joana Leitão"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
+              </div>
+            </Parallax>
 
             {/* Floating glass quote */}
             <div className="absolute bottom-6 -right-2 lg:right-2 glass-card px-6 py-4 rounded-[1.75rem] shadow-xl z-30 animate-float max-w-[240px]">
