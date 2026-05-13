@@ -88,37 +88,37 @@ return <div className="min-h-screen overflow-hidden">
                   </span>
                 </div>
 
-                {(() => {
-                  const headline = t.home.hero.headline;
-                  const words = headline.trim().split(' ');
-                  const last = words.pop() ?? '';
-                  const rest = words.join(' ');
-                  return (
-                    <h1 className="text-display text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] tracking-tight text-foreground">
-                      {rest}{rest && ' '}
-                      <span className="relative inline-block">
-                        <span className="italic font-normal">{last}</span>
-                        <svg className="absolute -bottom-2 left-0 w-full h-3 text-accent -z-10" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
-                          <path d="M0 5 Q 25 0 50 5 T 100 5" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
-                        </svg>
-                      </span>
-                    </h1>
-                  );
-                })()}
+                <SplitText
+                  text={t.home.hero.headline}
+                  italicLast
+                  className="text-display text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] tracking-tight text-foreground"
+                />
 
-                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg"
+                >
                   {t.home.hero.subheadline}
-                </p>
+                </motion.p>
 
-                <div className="flex flex-wrap items-center gap-6 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                  <Button
-                    size="lg"
-                    onClick={onBookCallClick}
-                    className="group rounded-2xl px-10 py-6 text-base font-semibold shadow-2xl shadow-primary/30 hover:shadow-primary/40 transition-all duration-500 shine-cta press-tactile"
-                  >
-                    {t.home.hero.primaryCta}
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.9, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex flex-wrap items-center gap-6"
+                >
+                  <Magnetic strength={0.25}>
+                    <Button
+                      size="lg"
+                      onClick={onBookCallClick}
+                      className="group rounded-2xl px-10 py-6 text-base font-semibold shadow-2xl shadow-primary/30 hover:shadow-primary/40 transition-all duration-500 shine-cta press-tactile"
+                    >
+                      {t.home.hero.primaryCta}
+                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Magnetic>
 
                   <Link to="/work" className="flex items-center gap-3 text-foreground font-semibold group py-2">
                     <span className="border-b border-foreground/20 group-hover:border-primary transition-colors pb-1">
@@ -128,36 +128,46 @@ return <div className="min-h-screen overflow-hidden">
                       <ArrowRight className="w-4 h-4" />
                     </span>
                   </Link>
-                </div>
+                </motion.div>
               </div>
 
-              {/* Right Column: Layered Visual Composition */}
-              <div className="lg:col-span-6 relative h-[640px] flex items-center justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                {/* Main rotated image card */}
-                <div className="relative w-[88%] h-[88%] rounded-[2.5rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700 z-10">
-                  <img
-                    src={joanaHero}
-                    alt="Joana Leitão - Interior designer specializing in family-friendly spaces"
-                    width={1600}
-                    height={1800}
-                    fetchPriority="high"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/25 to-transparent" />
-                </div>
+              {/* Right Column: Sculpture composition */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="lg:col-span-6 relative h-[640px] flex items-center justify-end"
+                style={{ perspective: 1200 }}
+              >
+                <Tilt max={6} className="relative w-[88%] h-[88%] z-10">
+                  <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700">
+                    <img
+                      src={joanaHero}
+                      alt="Joana Leitão - Interior designer specializing in family-friendly spaces"
+                      width={1600}
+                      height={1800}
+                      fetchPriority="high"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/25 to-transparent" />
+                  </div>
+                </Tilt>
 
-                {/* Overlapping detail card */}
-                <div className="absolute -bottom-2 -left-4 w-[240px] h-[240px] rounded-[2rem] overflow-hidden border-[10px] border-background shadow-2xl z-20 -rotate-3 hover:scale-[1.04] hover:-rotate-1 transition-all duration-500">
-                  <img
-                    src={kidsRoom3}
-                    alt="Children's room interior detail"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, x: -40, rotate: -8 }}
+                  animate={{ opacity: 1, x: 0, rotate: -3 }}
+                  transition={{ duration: 1, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute -bottom-2 -left-4 w-[240px] h-[240px] rounded-[2rem] overflow-hidden border-[10px] border-background shadow-2xl z-20 hover:scale-[1.04] hover:-rotate-1 transition-all duration-500"
+                >
+                  <img src={kidsRoom3} alt="Children's room interior detail" className="w-full h-full object-cover" loading="lazy" />
+                </motion.div>
 
-                {/* Floating glass message */}
-                <div className="absolute top-12 -left-6 glass-card px-7 py-5 rounded-[1.75rem] shadow-xl z-30 animate-float max-w-[220px]">
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute top-12 -left-6 glass-card px-7 py-5 rounded-[1.75rem] shadow-xl z-30 animate-float max-w-[220px]"
+                >
                   <div className="flex gap-1.5 mb-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                     <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
@@ -167,15 +177,12 @@ return <div className="min-h-screen overflow-hidden">
                     {locale === 'pt' ? 'Espaços com Alma' : 'Spaces with Soul'}
                   </p>
                   <p className="text-muted-foreground text-[11px] leading-snug">
-                    {locale === 'pt'
-                      ? 'Onde a funcionalidade encontra o afeto.'
-                      : 'Where function meets affection.'}
+                    {locale === 'pt' ? 'Onde a funcionalidade encontra o afeto.' : 'Where function meets affection.'}
                   </p>
-                </div>
+                </motion.div>
 
-                {/* Decorative ring */}
                 <div className="absolute -z-10 top-4 right-0 w-56 h-56 border border-primary/15 rounded-full" />
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
