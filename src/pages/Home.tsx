@@ -22,6 +22,66 @@ import kidsRoom5 from '@/assets/gallery/kids-room-5.jpg';
 interface HomeProps {
   onBookCallClick: () => void;
 }
+
+// Architectural emblem: floor plan (turnkey)
+const PlanIcon = ({ className = '' }: { className?: string }) => (
+  <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden="true">
+    <motion.g
+      stroke="currentColor"
+      strokeWidth={1.6}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      initial={{ pathLength: 0, opacity: 0 }}
+      whileInView={{ pathLength: 1, opacity: 1 }}
+      viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+      transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {/* Outer walls */}
+      <path d="M7 8 H41 V40 H7 Z" />
+      {/* Internal divider */}
+      <path d="M26 8 V24" />
+      <path d="M7 24 H20" />
+      <path d="M26 24 H41" />
+      {/* Door swing arc (bottom-left room) */}
+      <path d="M14 40 A6 6 0 0 0 20 34" />
+      <path d="M14 40 V34" strokeDasharray="2 2" opacity={0.6} />
+      {/* Window ticks */}
+      <path d="M30 8 V11" />
+      <path d="M36 8 V11" />
+    </motion.g>
+  </svg>
+);
+
+// Architectural emblem: elevation (consultancy)
+const ElevationIcon = ({ className = '' }: { className?: string }) => (
+  <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden="true">
+    <motion.g
+      stroke="currentColor"
+      strokeWidth={1.6}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      initial={{ pathLength: 0, opacity: 0 }}
+      whileInView={{ pathLength: 1, opacity: 1 }}
+      viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+      transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {/* Facade silhouette with pitched roof */}
+      <path d="M8 38 V20 L24 10 L40 20 V38" />
+      {/* Ground line */}
+      <path d="M5 38 H43" />
+      <path d="M5 41 H43" strokeDasharray="2 2" opacity={0.5} />
+      {/* Door */}
+      <path d="M21 38 V28 H27 V38" />
+      {/* Windows */}
+      <path d="M12 24 H17 V29 H12 Z" />
+      <path d="M31 24 H36 V29 H31 Z" />
+      {/* Window mullions */}
+      <path d="M14.5 24 V29 M12 26.5 H17" opacity={0.7} />
+      <path d="M33.5 24 V29 M31 26.5 H36" opacity={0.7} />
+    </motion.g>
+  </svg>
+);
+
 export const Home = ({
   onBookCallClick
 }: HomeProps) => {
