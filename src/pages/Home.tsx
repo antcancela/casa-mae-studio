@@ -431,10 +431,12 @@ return <div className="min-h-screen overflow-hidden">
           <h2 className="text-display text-3xl md:text-5xl lg:text-6xl font-bold mb-10 animate-fade-in leading-tight max-w-4xl mx-auto">
             {t.home.ctaBand.title}
           </h2>
-          <Button size="lg" variant="secondary" onClick={onBookCallClick} className="group shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 text-lg px-10 py-7 h-auto rounded-xl animate-fade-in shine-cta press-tactile" style={{ animationDelay: '0.2s' }}>
-            {t.home.ctaBand.cta}
-            <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <Magnetic strength={0.3} className="inline-block">
+            <Button size="lg" variant="secondary" onClick={onBookCallClick} className="group shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg px-10 py-7 h-auto rounded-xl shine-cta press-tactile">
+              {t.home.ctaBand.cta}
+              <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Magnetic>
         </div>
       </section>
     </div>;
