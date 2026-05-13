@@ -549,8 +549,8 @@ return <div className="min-h-screen overflow-hidden">
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.18 } } }}
           >
             {[
-              { icon: Wrench, title: t.home.process.paths.turnkey.title, subtitle: t.home.process.paths.turnkey.subtitle, steps: t.home.process.paths.turnkey.steps, cta: t.home.process.paths.turnkey.cta, floatDelay: 0 },
-              { icon: Lightbulb, title: t.home.process.paths.consultancy.title, subtitle: t.home.process.paths.consultancy.subtitle, steps: t.home.process.paths.consultancy.steps, cta: t.home.process.paths.consultancy.cta, floatDelay: 0.5 },
+              { icon: PlanIcon, tag: locale === 'pt' ? 'Planta · 01' : 'Plan · 01', title: t.home.process.paths.turnkey.title, subtitle: t.home.process.paths.turnkey.subtitle, steps: t.home.process.paths.turnkey.steps, cta: t.home.process.paths.turnkey.cta, floatDelay: 0 },
+              { icon: ElevationIcon, tag: locale === 'pt' ? 'Alçado · 02' : 'Elevation · 02', title: t.home.process.paths.consultancy.title, subtitle: t.home.process.paths.consultancy.subtitle, steps: t.home.process.paths.consultancy.steps, cta: t.home.process.paths.consultancy.cta, floatDelay: 0.5 },
             ].map((path) => {
               const Icon = path.icon;
               return (
