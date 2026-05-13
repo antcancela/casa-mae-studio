@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './ui/button';
+import { Magnetic } from './motion/Magnetic';
 import { useLanguage } from '@/i18n/LanguageContext';
 import logo from '@/assets/logo-new.png';
 
@@ -46,15 +48,17 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 rounded-lg hover:bg-primary/5 ${
-                  isActive(item.path) 
-                    ? 'text-primary' 
-                    : 'text-foreground/70 hover:text-foreground'
+                className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-300 rounded-lg ${
+                  isActive(item.path) ? 'text-primary' : 'text-foreground/70 hover:text-foreground'
                 }`}
               >
-                {item.label}
+                <span className="relative z-10">{item.label}</span>
                 {isActive(item.path) && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary" />
+                  <motion.span
+                    layoutId="nav-active"
+                    className="absolute inset-x-2 -bottom-0.5 h-0.5 bg-primary rounded-full"
+                    transition={{ type: 'spring', stiffness: 300, damping: 28 }}
+                  />
                 )}
               </Link>
             ))}
@@ -75,13 +79,15 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
             </Button>
 
             {/* Desktop CTA */}
-            <Button
-              onClick={onBookCallClick}
-              className="hidden md:inline-flex shadow-md hover:shadow-lg transition-all duration-300 rounded-lg shine-cta press-tactile"
-              size="default"
-            >
-              {t.nav.bookCall}
-            </Button>
+            <Magnetic strength={0.2} className="hidden md:inline-flex">
+              <Button
+                onClick={onBookCallClick}
+                className="shadow-md hover:shadow-lg transition-all duration-300 rounded-lg shine-cta press-tactile"
+                size="default"
+              >
+                {t.nav.bookCall}
+              </Button>
+            </Magnetic>
 
             {/* Mobile menu button */}
             <Button
