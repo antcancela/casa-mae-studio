@@ -35,6 +35,7 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <ScrollToTop />
+            <Routes>
               {/* Links page without Header/Footer */}
               <Route path="/links" element={<Links />} />
               
