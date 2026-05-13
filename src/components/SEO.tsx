@@ -17,6 +17,7 @@ export const SEO = ({ title, description, image, type = 'website', jsonLd }: SEO
   const defaultDescription = siteConfig.siteDescription[locale as 'en' | 'pt'];
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
   const fullImage = image ? `${siteUrl}${image}` : `${siteUrl}/logo.png`;
+  const currentUrl = typeof window !== 'undefined' ? window.location.href.split('?')[0].split('#')[0] : siteUrl;
 
   return (
     <Helmet>
@@ -29,6 +30,7 @@ export const SEO = ({ title, description, image, type = 'website', jsonLd }: SEO
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description || defaultDescription} />
       <meta property="og:image" content={fullImage} />
+      <meta property="og:url" content={currentUrl} />
       <meta property="og:locale" content={locale === 'pt' ? 'pt_PT' : 'en_US'} />
       
       {/* Twitter */}
