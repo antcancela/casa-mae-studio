@@ -18,6 +18,7 @@ import familyHome11 from '@/assets/gallery/family-home-11.jpg';
 import lisbonApt3 from '@/assets/gallery/lisbon-apt-3.jpg';
 import riverApt3 from '@/assets/gallery/river-apt-3.jpg';
 import kidsRoom3 from '@/assets/gallery/kids-room-3.jpg';
+import kidsRoom5 from '@/assets/gallery/kids-room-5.jpg';
 interface HomeProps {
   onBookCallClick: () => void;
 }
@@ -159,7 +160,7 @@ return <div className="min-h-screen overflow-hidden">
                   transition={{ duration: 1, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
                   className="absolute -bottom-2 -left-4 w-[240px] h-[240px] rounded-[2rem] overflow-hidden border-[10px] border-background shadow-2xl z-20 hover:scale-[1.04] hover:-rotate-1 transition-all duration-500"
                 >
-                  <img src={kidsRoom3} alt="Children's room interior detail" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={kidsRoom5} alt="Children's room interior detail" className="w-full h-full object-cover" loading="lazy" />
                 </motion.div>
 
                 <motion.div
