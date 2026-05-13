@@ -1,0 +1,13 @@
+# Atelier Casa Mãe
+
+> Interior design studio in Lisbon creating beautiful, functional homes for families, with special care for the youngest.
+
+Atelier Casa Mãe is led by Joana Leitão. The studio offers turnkey interior design and design consultancy services, with deep expertise in family homes and children's rooms.
+
+## Pages
+
+- [Home](/): Studio overview, services, and featured work.
+- [About](/about): Joana Leitão's background and the studio's philosophy.
+- [Work](/work): Portfolio of family homes, apartments, and children's rooms.
+- [Contact](/contact): Book a 30-minute conversation or send a message.
+- [Links](/links): Quick-access link hub used in social bios.
