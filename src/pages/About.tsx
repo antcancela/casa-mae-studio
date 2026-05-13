@@ -125,6 +125,39 @@ export const About = () => {
           </Card>
         </div>
       </div>
+
+      {/* Values marquee — sculptural keyword strip */}
+      <Reveal className="mt-16">
+        <Marquee duration={40} className="border-y border-border/60 py-6 bg-secondary/20">
+          {[
+            locale === 'pt' ? 'Função' : 'Function',
+            '·',
+            locale === 'pt' ? 'Materialidade' : 'Materiality',
+            '·',
+            locale === 'pt' ? 'Família' : 'Family',
+            '·',
+            locale === 'pt' ? 'Luz' : 'Light',
+            '·',
+            locale === 'pt' ? 'Textura' : 'Texture',
+            '·',
+            locale === 'pt' ? 'Afeto' : 'Affection',
+            '·',
+            locale === 'pt' ? 'Detalhe' : 'Detail',
+            '·',
+            locale === 'pt' ? 'Atelier Casa Mãe' : 'Atelier Casa Mãe',
+            '·',
+          ].map((word, i) => (
+            <span
+              key={i}
+              className={`text-display text-3xl md:text-5xl font-semibold ${
+                i % 2 === 0 ? 'italic font-normal text-primary' : 'text-foreground/30'
+              }`}
+            >
+              {word}
+            </span>
+          ))}
+        </Marquee>
+      </Reveal>
     </div>
   );
 };
