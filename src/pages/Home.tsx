@@ -519,7 +519,7 @@ return <div className="min-h-screen overflow-hidden">
           </svg>
         </div>
 
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16 md:mb-20">
             <Reveal>
               <p className="font-mono text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
