@@ -223,24 +223,6 @@ return <div className="min-h-screen overflow-hidden">
                   <img src={kidsRoom5} alt="Children's room interior detail" className="w-full h-full object-cover" loading="lazy" />
                 </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute top-12 -left-6 glass-card px-7 py-5 rounded-[1.75rem] shadow-xl z-30 animate-float max-w-[220px]"
-                >
-                  <div className="flex gap-1.5 mb-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary/20" />
-                  </div>
-                  <p className="text-foreground text-sm font-bold tracking-tight mb-1">
-                    {locale === 'pt' ? 'Espaços com Alma' : 'Spaces with Soul'}
-                  </p>
-                  <p className="text-muted-foreground text-[11px] leading-snug">
-                    {locale === 'pt' ? 'Onde a funcionalidade encontra o afeto.' : 'Where function meets affection.'}
-                  </p>
-                </motion.div>
 
                 <div className="absolute -z-10 top-4 right-0 w-56 h-56 border border-primary/15 rounded-full" />
               </motion.div>
