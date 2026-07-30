@@ -139,7 +139,7 @@ export const translations = {
     about: {
       title: "About Me",
       paragraphs: [
-        "Hi! I'm Joana, and I created Atelier Casa Mãe to help families adapt their homes to everyone's needs and routines—creating spaces that reflect who you are and support a better family life.",
+        "Hi! I'm Joana, and I created Atelier Casa Mãe to help families adapt their homes to everyone's needs and routines—creating spaces that reflect who you are and support a better family dynamic.",
         "I graduated in Environment Design from IADE and worked for 10+ years in renowned ateliers in Portugal (SA&V, Rita Glória, Oficina166) and abroad (Ireland, Angola) before starting my own studio.",
         "I've moved more than 10 times and became a believer in 'less is more'. With motherhood, I realized that method and organization are fundamental for a balanced family life.",
         "During quarantine, I found myself with my two daughters and my husband telecommuting in an apartment not designed for us. That's when I began combining interior design with everyday practicality—balancing comfort and aesthetics with functionality, organization, and usability.",
