@@ -52,7 +52,7 @@ export const About = () => {
             </div>
 
             {/* Floating glass quote */}
-            <div className="absolute bottom-6 -right-2 lg:right-2 glass-card px-6 py-4 rounded-[1.75rem] shadow-xl z-30 animate-float max-w-[240px]">
+            <div className="absolute bottom-6 -right-2 lg:right-2 glass-card px-6 py-4 rounded-[1.75rem] shadow-xl z-30 max-w-[240px]">
               <div className="flex gap-1.5 mb-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
