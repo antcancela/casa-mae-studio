@@ -5,7 +5,6 @@ import { SEO } from '@/components/SEO';
 import { getPersonSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import { useInView } from '@/hooks/use-in-view';
 import { PageHero } from '@/components/PageHero';
-import { Parallax } from '@/components/motion/Parallax';
 import { Reveal } from '@/components/motion/Reveal';
 import { Marquee } from '@/components/motion/Marquee';
 
