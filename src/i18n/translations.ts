@@ -36,7 +36,7 @@ export const translations = {
           subtitle: "When your home needs to work harder for your family",
         },
         list2: [
-          "Spends the whole day tidying up, yet the house still feels cluttered",
+          "Spends the whole day tidying up, yet the house still feels disorganized",
           "Doesn't want to move just yet but needs to rethink the space",
           "The family routine isn't flowing well within the space",
         ],
@@ -223,7 +223,7 @@ export const translations = {
           subtitle: "Quando a sua casa precisa de funcionar melhor para a família",
         },
         list2: [
-          "Passa o dia a arrumar a casa e mesmo assim continua confusa",
+          "Passa o dia a arrumar a casa e mesmo assim continua desorganizada",
           "Não quer mudar já de casa mas precisa de repensar o espaço",
           "A rotina familiar não está a fluir dentro do espaço",
         ],
