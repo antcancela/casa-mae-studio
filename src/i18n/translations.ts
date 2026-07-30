@@ -328,7 +328,7 @@ export const translations = {
     about: {
       title: "Sobre Mim",
       paragraphs: [
-        "Olá! Sou a Joana e criei o Atelier Casa Mãe para ajudar famílias a adaptar as suas casas às necessidades e rotinas de todos, criando espaços que refletem a personalidade de quem habita e promovem uma melhor vida em família.",
+        "Olá! Sou a Joana e criei o Atelier Casa Mãe para ajudar famílias a adaptar as suas casas às necessidades e rotinas de todos, criando espaços que refletem a personalidade de quem habita e promovem uma melhor dinâmica familiar.",
         "Formei-me em Design de Ambientes no IADE e trabalhei mais de 10 anos em ateliers reconhecidos em Portugal (SA&V, Rita Glória, Oficina166) e no estrangeiro (Irlanda, Angola) antes de criar o meu próprio atelier.",
         'Mudei mais de 10 vezes e tornei-me adepta do "menos é mais". Com a maternidade, percebi que método e organização são fundamentais para uma vida familiar equilibrada.',
         "Durante a quarentena, vi-me com as minhas duas filhas e o meu marido em teletrabalho num apartamento que não foi desenhado para nós. Foi então que comecei a combinar design de interiores com a praticidade do dia-a-dia—equilibrando conforto e estética com funcionalidade, organização e usabilidade.",
