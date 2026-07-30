@@ -70,7 +70,7 @@ export const About = () => {
             <div className="absolute -z-10 top-4 left-4 w-48 h-48 border border-primary/15 rounded-full" />
           </div>
 
-          <div className="lg:col-span-6 space-y-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="lg:col-span-6 space-y-6">
             <p className="text-xl text-foreground/90 leading-relaxed font-medium">
               {t.about.paragraphs[0]}
             </p>
