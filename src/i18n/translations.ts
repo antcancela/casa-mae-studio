@@ -29,7 +29,7 @@ export const translations = {
           "Moved to Portugal",
           "Is moving to a new home",
           "Wants to create a workspace",
-          "Their child needs a study or play area",
+          "Their children are moving to another room",
         ],
         audience2: {
           title: "Families Seeking Better Adaptation",
@@ -216,7 +216,7 @@ export const translations = {
           "Mudou-se para Portugal",
           "Está a mudar de casa",
           "Procura ter de uma zona de trabalho",
-          "O seu filho precisa de uma zona de estudo/brincar",
+          "Os seus filhos vão para outro quarto",
         ],
         audience2: {
           title: "Quer Uma Casa Mais Adaptada à Família",
