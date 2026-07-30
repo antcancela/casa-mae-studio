@@ -358,7 +358,7 @@ export const translations = {
       instagram: {
         title: "Ainda indecisa/o?",
         description:
-          "Siga-me no Instagram e veja se gosta do que partilho. Conheça melhor o meu trabalho, processo e filosofia de design.",
+          "Siga-me no Instagram e veja se gosta do que partilho. Conheça melhor o meu trabalho, processo e dicas de organização.",
         cta: "Seguir no Instagram",
       },
       info: {
