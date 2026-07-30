@@ -8,41 +8,41 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Peachy-beige color palette matching logo tones */
-    --background: 30 45% 96%;
-    --foreground: 20 25% 25%;
+    /* Coral palette (#D16D6A) with soft warm neutrals */
+    --background: 20 45% 96%;
+    --foreground: 8 22% 24%;
 
-    --card: 28 50% 98%;
-    --card-foreground: 20 25% 25%;
+    --card: 18 50% 98%;
+    --card-foreground: 8 22% 24%;
 
-    --popover: 28 50% 98%;
-    --popover-foreground: 20 25% 25%;
+    --popover: 18 50% 98%;
+    --popover-foreground: 8 22% 24%;
 
-    --primary: 20 45% 55%;
-    --primary-foreground: 30 45% 96%;
+    --primary: 2 53% 62%;
+    --primary-foreground: 20 45% 97%;
 
-    --secondary: 28 50% 88%;
-    --secondary-foreground: 20 25% 25%;
+    --secondary: 6 55% 90%;
+    --secondary-foreground: 8 22% 24%;
 
-    --muted: 30 35% 90%;
-    --muted-foreground: 20 20% 38%;
+    --muted: 14 35% 92%;
+    --muted-foreground: 8 18% 38%;
 
-    --accent: 25 55% 82%;
-    --accent-foreground: 20 25% 25%;
+    --accent: 4 60% 85%;
+    --accent-foreground: 8 22% 24%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 30 45% 96%;
+    --destructive-foreground: 20 45% 96%;
 
-    --border: 28 40% 86%;
-    --input: 28 40% 86%;
-    --ring: 20 45% 55%;
+    --border: 8 38% 88%;
+    --input: 8 38% 88%;
+    --ring: 2 53% 62%;
 
     --radius: 0.75rem;
 
-    /* Custom design tokens - peachy beige palette */
-    --warm-peach: 28 50% 88%;
-    --soft-terracotta: 20 45% 55%;
-    --natural-cream: 30 40% 92%;
+    /* Custom design tokens - coral palette */
+    --warm-peach: 6 55% 90%;
+    --soft-terracotta: 2 53% 62%;
+    --natural-cream: 16 40% 94%;
     
     /* Typography */
     --font-display: 'Playfair Display', serif;
