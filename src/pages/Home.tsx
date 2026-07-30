@@ -193,15 +193,9 @@ return <div className="min-h-screen overflow-hidden">
               </div>
 
               {/* Right Column: Sculpture composition */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="lg:col-span-6 relative h-[640px] flex items-center justify-end"
-                style={{ perspective: 1200 }}
-              >
-                <Tilt max={6} className="relative w-[88%] h-[88%] z-10">
-                  <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700">
+              <div className="lg:col-span-6 relative h-[640px] flex items-center justify-end">
+                <div className="relative w-[88%] h-[88%] z-10">
+                  <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl">
                     <img
                       src={joanaHero}
                       alt="Joana Leitão - Interior designer specializing in family-friendly spaces"
@@ -212,20 +206,14 @@ return <div className="min-h-screen overflow-hidden">
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/25 to-transparent" />
                   </div>
-                </Tilt>
+                </div>
 
-                <motion.div
-                  initial={{ opacity: 0, x: -40, rotate: -8 }}
-                  animate={{ opacity: 1, x: 0, rotate: -3 }}
-                  transition={{ duration: 1, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute -bottom-2 -left-4 w-[240px] h-[240px] rounded-[2rem] overflow-hidden border-[10px] border-background shadow-2xl z-20 hover:scale-[1.04] hover:-rotate-1 transition-all duration-500"
-                >
+                <div className="absolute -bottom-2 -left-4 w-[240px] h-[240px] rounded-[2rem] overflow-hidden border-[10px] border-background shadow-2xl z-20">
                   <img src={kidsRoom5} alt="Children's room interior detail" className="w-full h-full object-cover" loading="lazy" />
-                </motion.div>
-
+                </div>
 
                 <div className="absolute -z-10 top-4 right-0 w-56 h-56 border border-primary/15 rounded-full" />
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
