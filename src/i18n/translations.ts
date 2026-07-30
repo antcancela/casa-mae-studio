@@ -29,7 +29,7 @@ export const translations = {
           "Moved to Portugal",
           "Is moving to a new home",
           "Wants to create a workspace",
-          "Their child needs a study or play area",
+          "Their children are moving to another room",
         ],
         audience2: {
           title: "Families Seeking Better Adaptation",
