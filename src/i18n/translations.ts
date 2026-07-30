@@ -169,7 +169,7 @@ export const translations = {
       instagram: {
         title: "Still on the fence?",
         description:
-          "Follow me on Instagram and see if you like what I share. Get a glimpse of my work, process, and design philosophy.",
+          "Follow me on Instagram and see if you like what I share. Get a glimpse of my work, process, and home organisation tips.",
         cta: "Follow on Instagram",
       },
       info: {
