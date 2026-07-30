@@ -5,7 +5,6 @@ import { SEO } from '@/components/SEO';
 import { getPersonSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import { useInView } from '@/hooks/use-in-view';
 import { PageHero } from '@/components/PageHero';
-import { Parallax } from '@/components/motion/Parallax';
 import { Reveal } from '@/components/motion/Reveal';
 import { Marquee } from '@/components/motion/Marquee';
 
@@ -39,8 +38,8 @@ export const About = () => {
         {/* Introduction with layered image */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-24 items-center">
           <div className="lg:col-span-6 relative h-[520px] lg:h-[600px] flex items-center justify-center">
-            <Parallax range={40} className="relative w-[88%] h-[92%] z-10">
-              <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl -rotate-2 hover:rotate-0 transition-transform duration-700">
+            <div className="relative w-[88%] h-[92%] z-10">
+              <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl -rotate-2">
                 <img
                   src={joanaPortrait}
                   alt="Joana Leitão"
@@ -49,10 +48,10 @@ export const About = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
               </div>
-            </Parallax>
+            </div>
 
             {/* Floating glass quote */}
-            <div className="absolute bottom-6 -right-2 lg:right-2 glass-card px-6 py-4 rounded-[1.75rem] shadow-xl z-30 animate-float max-w-[240px]">
+            <div className="absolute bottom-6 -right-2 lg:right-2 glass-card px-6 py-4 rounded-[1.75rem] shadow-xl z-30 max-w-[240px]">
               <div className="flex gap-1.5 mb-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
@@ -70,7 +69,7 @@ export const About = () => {
             <div className="absolute -z-10 top-4 left-4 w-48 h-48 border border-primary/15 rounded-full" />
           </div>
 
-          <div className="lg:col-span-6 space-y-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="lg:col-span-6 space-y-6">
             <p className="text-xl text-foreground/90 leading-relaxed font-medium">
               {t.about.paragraphs[0]}
             </p>
