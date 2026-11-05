@@ -2,6 +2,7 @@ export const siteConfig = {
   // Contact Information
   email: 'info@ateliercasamae.pt',
   phone: '+351 912 259 662',
+  whatsapp: '351916692521',
   location: 'Lisbon, Portugal',
   
   // Social Links

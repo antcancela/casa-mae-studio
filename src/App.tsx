@@ -12,6 +12,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CalendlyModal } from "@/components/CalendlyModal";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Work } from "./pages/Work";
@@ -35,6 +36,7 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <ScrollToTop />
+            <WhatsAppButton />
             <Routes>
               {/* Links page without Header/Footer */}
               <Route path="/links" element={<Links />} />
