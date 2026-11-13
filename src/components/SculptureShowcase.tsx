@@ -67,7 +67,7 @@ export const SculptureShowcase = () => {
           text={
             locale === 'pt'
               ? 'Cada casa de família é única.'
-              : 'Each project is an object.'
+              : 'Every family home is unique.'
           }
           italicLast
           className="text-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] max-w-4xl mb-16 md:mb-24"
