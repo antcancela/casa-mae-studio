@@ -96,10 +96,6 @@ export const translations = {
                 title: "Implementation Guide",
                 description: "Comprehensive documentation and recommendations for project development",
               },
-              {
-                title: "Support & Guidance",
-                description: "Ongoing consultation as you manage the implementation",
-              },
             ],
           },
         },
@@ -284,10 +280,6 @@ export const translations = {
               {
                 title: "Guia de Implementação",
                 description: "Documentação abrangente e recomendações para a elaboração do projeto",
-              },
-              {
-                title: "Apoio e Orientação",
-                description: "Consultoria contínua enquanto gere a implementação",
               },
             ],
           },
