@@ -48,10 +48,6 @@ export const Links = () => {
       href: `mailto:${siteConfig.email}`,
       icon: Mail,
     },
-    {
-      label: siteConfig.location,
-      icon: MapPin,
-    },
   ];
 
   return (
