@@ -13,17 +13,17 @@ export const Links = () => {
 
   const primaryLinks = [
     {
-      label: 'Book a 30-min Conversation',
+      label: 'Marcar uma Conversa de 30 min',
       onClick: () => setCalendlyOpen(true),
       variant: 'default' as const,
     },
     {
-      label: 'View My Work',
+      label: 'Ver o Meu Trabalho',
       href: '/work',
       variant: 'secondary' as const,
     },
     {
-      label: 'About Me',
+      label: 'Sobre Mim',
       href: '/about',
       variant: 'secondary' as const,
     },
@@ -72,9 +72,9 @@ export const Links = () => {
             />
           </div>
           <div>
-            <h1 className="text-display text-2xl font-bold">Atelier Casa Mãe — Interior Design for Family Homes in Lisbon and Cascais</h1>
+            <h1 className="text-display text-2xl font-bold">Atelier Casa Mãe — Design de Interiores para Casas de Família em Lisboa e Cascais</h1>
             <p className="text-body text-muted-foreground mt-2">
-              Beautiful, functional spaces for families
+              Espaços bonitos e funcionais para famílias
             </p>
           </div>
         </div>
@@ -89,7 +89,7 @@ export const Links = () => {
               aria-expanded={pdfOpen}
             >
               <FileText className="h-5 w-5" />
-              Online Consulting
+              Consultoria Online
             </Button>
             <AnimatePresence initial={false}>
               {pdfOpen && (
