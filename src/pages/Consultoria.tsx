@@ -60,7 +60,7 @@ export const Consultoria = ({ lang }: { lang: Lang }) => {
         </section>
 
         {/* Who */}
-        <section className="py-12">
+        <section className="py-4">
           <motion.div {...fade} className="flex items-center gap-5 rounded-2xl border border-border bg-card p-5">
             <img src={joanaPortrait} alt="Joana Leitão" loading="lazy" className="h-24 w-24 sm:h-28 sm:w-28 rounded-2xl object-cover shrink-0" />
             <div>
