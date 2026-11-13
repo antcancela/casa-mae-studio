@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Instagram, Mail, Phone, MapPin, FileText } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin, FileText, ExternalLink } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
