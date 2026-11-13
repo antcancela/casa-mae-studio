@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Check, X, MessageCircle, ArrowDown, ArrowRight } from 'lucide-react';
 import { consultoria, type Lang } from '@/content/consultoria';
 import { siteConfig } from '@/config/site';
+import joanaPortrait from '@/assets/joana-portrait.jpg';
 
 const fade = {
   initial: { opacity: 0, y: 24 },
@@ -60,19 +61,16 @@ export const Consultoria = ({ lang }: { lang: Lang }) => {
 
         {/* Who */}
         <section className="py-12">
-          <motion.div {...fade}>
-            <h2 className="text-display text-3xl font-bold">{c.who.title}</h2>
-            <p className="mt-3 text-muted-foreground">{c.who.intro}</p>
+          <motion.div {...fade} className="flex items-center gap-5 rounded-2xl border border-border bg-card p-5">
+            <img src={joanaPortrait} alt="Joana Leitão" loading="lazy" className="h-24 w-24 sm:h-28 sm:w-28 rounded-2xl object-cover shrink-0" />
+            <div>
+              <h2 className="text-display text-2xl font-bold">{c.who.title}</h2>
+              <p className="mt-2 text-sm text-muted-foreground">{c.who.intro}</p>
+              <Link to="/about" className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground underline underline-offset-4 hover:text-primary transition-colors">
+                {lang === 'pt' ? 'Saber mais' : 'Learn more'} <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
           </motion.div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {c.who.items.map(([label, text], i) => (
-              <motion.div key={label} {...fade} transition={{ ...fade.transition, delay: i * 0.08 }}
-                className="rounded-2xl border border-border bg-card p-6 hover:-translate-y-1 hover:shadow-lg transition-all">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">{label}</p>
-                <p className="mt-2 text-sm leading-relaxed">{text}</p>
-              </motion.div>
-            ))}
-          </div>
         </section>
 
         {/* For who */}
