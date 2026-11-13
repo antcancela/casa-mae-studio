@@ -49,11 +49,6 @@ export const Links = () => {
       icon: Mail,
     },
     {
-      label: siteConfig.phone,
-      href: `tel:${siteConfig.phone}`,
-      icon: Phone,
-    },
-    {
       label: siteConfig.location,
       icon: MapPin,
     },
