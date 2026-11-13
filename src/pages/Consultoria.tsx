@@ -126,8 +126,8 @@ export const Consultoria = ({ lang }: { lang: Lang }) => {
             <Eyebrow>{c.delivery.eyebrow}</Eyebrow>
             <h2 className="text-display text-3xl font-bold">{c.delivery.title}</h2>
           </motion.div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <motion.div {...fade} className="rounded-2xl border border-primary/20 bg-primary/5 p-6">
+          <div className="mt-8 -mx-5 px-5 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <motion.div {...fade} className="shrink-0 w-[85%] sm:w-[calc(50%-0.5rem)] snap-start rounded-2xl border border-primary/20 bg-primary/5 p-6">
               <h3 className="font-semibold mb-4">{c.delivery.inLabel}</h3>
               <ul className="space-y-3">
                 {c.delivery.included.map((t) => (
@@ -135,7 +135,7 @@ export const Consultoria = ({ lang }: { lang: Lang }) => {
                 ))}
               </ul>
             </motion.div>
-            <motion.div {...fade} className="rounded-2xl border border-border bg-card p-6">
+            <motion.div {...fade} className="shrink-0 w-[85%] sm:w-[calc(50%-0.5rem)] snap-start rounded-2xl border border-border bg-card p-6">
               <h3 className="font-semibold mb-4">{c.delivery.outLabel}</h3>
               <ul className="space-y-3">
                 {c.delivery.excluded.map((t) => (
