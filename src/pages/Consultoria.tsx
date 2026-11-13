@@ -80,19 +80,23 @@ export const Consultoria = ({ lang }: { lang: Lang }) => {
             <p className="mt-3 text-muted-foreground">{c.forWho.intro}</p>
             <p className="mt-2 text-sm italic">{c.forWho.note}</p>
           </motion.div>
-          {[
-            { label: c.forWho.stageLabel, items: c.forWho.stages, cls: 'bg-primary/5 border-primary/20' },
-            { label: c.forWho.warnLabel, items: c.forWho.warns, cls: 'bg-card border-border' },
-          ].map((g) => (
-            <div key={g.label} className="mt-6 grid gap-3 md:grid-cols-3">
-              {g.items.map((t, i) => (
-                <motion.div key={t} {...fade} transition={{ ...fade.transition, delay: i * 0.08 }} className={`rounded-2xl border p-5 ${g.cls}`}>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">{g.label}</p>
-                  <p className="mt-2 text-sm leading-relaxed">{t}</p>
-                </motion.div>
-              ))}
-            </div>
-          ))}
+          <div className="mt-6 -mx-5 px-5 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {[
+              { label: c.forWho.stageLabel, items: c.forWho.stages, cls: 'bg-primary/5 border-primary/20' },
+              { label: c.forWho.warnLabel, items: c.forWho.warns, cls: 'bg-card border-border' },
+            ].map((g) => (
+              <motion.div key={g.label} {...fade} className={`snap-start shrink-0 w-[85%] sm:w-[calc(50%-0.5rem)] rounded-2xl border p-6 ${g.cls}`}>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary mb-4">{g.label}</p>
+                <ul className="space-y-3">
+                  {g.items.map((t) => (
+                    <li key={t} className="flex gap-3 text-sm leading-relaxed">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />{t}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
         </section>
 
         {/* Process */}
