@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Instagram, Mail, Phone, MapPin, FileText } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin, FileText, ExternalLink } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -113,7 +113,7 @@ export const Links = () => {
               asChild={!!link.href}
             >
               {link.href ? (
-                <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                <a href={link.href} target="_blank" rel="noopener noreferrer" className="gap-2">{link.label}<ExternalLink className="h-4 w-4 opacity-70" aria-hidden="true" /></a>
               ) : (
                 <span>{link.label}</span>
               )}
