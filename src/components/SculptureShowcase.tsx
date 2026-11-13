@@ -66,7 +66,7 @@ export const SculptureShowcase = () => {
         <SplitText
           text={
             locale === 'pt'
-              ? 'Cada casa de família é uma oportunidade.'
+              ? 'Cada casa de família é única.'
               : 'Each project is an object.'
           }
           italicLast
