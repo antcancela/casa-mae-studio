@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin, FileText } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import consultoriaPt from '@/assets/docs/consultoria-pt.pdf.asset.json';
+import consultoriaEn from '@/assets/docs/consultoria-en.pdf.asset.json';
 import { Button } from '@/components/ui/button';
 import { CalendlyModal } from '@/components/CalendlyModal';
 import { siteConfig } from '@/config/site';
@@ -7,6 +10,7 @@ import logo from '@/assets/logo-circle.png';
 
 export const Links = () => {
   const [calendlyOpen, setCalendlyOpen] = useState(false);
+  const [pdfOpen, setPdfOpen] = useState(false);
 
   const primaryLinks = [
     {
@@ -78,6 +82,37 @@ export const Links = () => {
 
         {/* Primary Links */}
         <div className="space-y-3">
+          <div className="rounded-2xl border border-primary/30 bg-primary/5 p-2">
+            <Button
+              size="lg"
+              className="w-full h-14 text-base font-medium gap-2"
+              onClick={() => setPdfOpen((v) => !v)}
+              aria-expanded={pdfOpen}
+            >
+              <FileText className="h-5 w-5" />
+              Consultoria Online
+            </Button>
+            <AnimatePresence initial={false}>
+              {pdfOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.35 }}
+                  className="overflow-hidden"
+                >
+                  <div className="grid grid-cols-2 gap-2 pt-2">
+                    <Button variant="outline" size="lg" className="h-12" asChild>
+                      <a href={consultoriaPt.url} target="_blank" rel="noopener noreferrer">Português</a>
+                    </Button>
+                    <Button variant="outline" size="lg" className="h-12" asChild>
+                      <a href={consultoriaEn.url} target="_blank" rel="noopener noreferrer">English</a>
+                    </Button>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
           {primaryLinks.map((link) => (
             <Button
               key={link.label}
