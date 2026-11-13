@@ -170,8 +170,6 @@ export const Consultoria = ({ lang }: { lang: Lang }) => {
             <p className="text-display text-2xl md:text-3xl italic leading-snug">“{c.quote[0]}”</p>
             <p className="mt-4 text-muted-foreground">{c.quote[1]}</p>
           </motion.blockquote>
-          <p className="mt-10 text-sm">Joana Leitão · <a className="text-primary" href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer">@atelier_casamae</a> · <a className="text-primary" href="https://ateliercasamae.pt">ateliercasamae.pt</a></p>
-          <p className="mt-1 text-xs text-muted-foreground">{c.footer}</p>
         </section>
       </main>
 
