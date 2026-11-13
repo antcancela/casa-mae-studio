@@ -8,7 +8,7 @@ const pt = {
   brand: 'Consultoria Casa à Medida',
   who: {
     title: 'Quem é a Casa Mãe?',
-    intro: 'Ajudo famílias a adaptar a casa às necessidades reais de cada fase de vida.',
+    intro: 'Sou a Joana, designer de interiores há mais de 10 anos e mãe de três. Mudei de casa 13 vezes e hoje ajudo famílias a criar casas práticas, organizadas e acolhedoras.',
     items: [
       ['Profissional', 'Joana, designer de interiores com mais de 10 anos de experiência'],
       ['Pessoal', 'Ao longo da minha vida mudei de casa 13 vezes, o que me deu uma perspectiva sobre a criação de espaços funcionais e acolhedores.'],
@@ -66,7 +66,7 @@ const en: typeof pt = {
   brand: 'Tailored Home Consultancy',
   who: {
     title: 'Who is Casa Mãe?',
-    intro: 'I help families adapt their home to the real needs of each stage of life.',
+    intro: "I'm Joana, an interior designer for over 10 years and a mother of three. I've moved house 13 times, and today I help families create practical, organised and welcoming homes.",
     items: [
       ['Professional', 'Joana, an interior designer with more than 10 years of experience'],
       ['Personal', 'I have moved 13 times in my life, which gave me a unique perspective on creating functional, welcoming spaces.'],
