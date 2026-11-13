@@ -110,7 +110,7 @@ const en: typeof pt = {
   },
   quote: ['The home that worked five years ago may not be the home your family needs today.', 'Adapting it brings back function, comfort and peace of mind.'],
   footer: 'Tailored Home Consultancy · book by direct message',
-  cta: 'Book by message',
+  cta: 'Book conversation',
   waMessage: "Hi Joana! I'd like to book the Tailored Home Consultancy.",
   seoTitle: 'Tailored Home Consultancy — Atelier Casa Mãe',
   seoDesc: 'Online consultancy to adapt your home to your family’s new needs, without having to move.',
