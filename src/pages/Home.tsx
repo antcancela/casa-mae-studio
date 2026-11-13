@@ -208,7 +208,7 @@ return <div className="min-h-screen overflow-hidden">
                   </div>
                 </div>
 
-                <div className="absolute -bottom-2 -left-4 w-[240px] h-[240px] rounded-[2rem] overflow-hidden border-[10px] border-background shadow-2xl z-20">
+                <div className="absolute -bottom-2 -right-4 w-[240px] h-[240px] rounded-[2rem] overflow-hidden border-[10px] border-background shadow-2xl z-20">
                   <img src={kidsRoom5} alt="Children's room interior detail" className="w-full h-full object-cover" loading="lazy" />
                 </div>
 
