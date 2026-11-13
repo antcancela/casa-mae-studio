@@ -249,9 +249,9 @@ export const translations = {
             cta: "Marcar Conversa",
             steps: [
               {
-                title: "Conversa e Orçamento",
+                title: "Visita, Conversa e Orçamento",
                 description:
-                  "Discutimos as suas necessidades e apresento uma proposta detalhada com cronograma e investimento",
+                  "Em sua casa, discutimos as suas necessidades e apresento uma proposta detalhada com cronograma e investimento",
               },
               {
                 title: "Realização de Projeto de Design de Interiores",
@@ -273,9 +273,9 @@ export const translations = {
             cta: "Marcar Conversa",
             steps: [
               {
-                title: "Conversa e Orçamento",
+                title: "Visita, Conversa e Orçamento",
                 description:
-                  "Discutimos as suas necessidades e apresento uma proposta detalhada com cronograma e investimento",
+                  "Em sua casa, discutimos as suas necessidades e apresento uma proposta detalhada com cronograma e investimento",
               },
               {
                 title: "Realização de Projeto de Design de Interiores",
