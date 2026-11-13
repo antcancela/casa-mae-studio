@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Check, X, MessageCircle, ArrowDown, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Check, X, Instagram, ArrowDown, ArrowRight } from 'lucide-react';
 import { consultoria, type Lang } from '@/content/consultoria';
 import { siteConfig } from '@/config/site';
 import joanaPortrait from '@/assets/joana-portrait.jpg';
