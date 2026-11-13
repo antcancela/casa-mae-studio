@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Instagram, Mail, Phone, MapPin, FileText } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
-import consultoriaPt from '@/assets/docs/consultoria-pt.pdf.asset.json';
-import consultoriaEn from '@/assets/docs/consultoria-en.pdf.asset.json';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { CalendlyModal } from '@/components/CalendlyModal';
 import { siteConfig } from '@/config/site';
@@ -103,10 +102,10 @@ export const Links = () => {
                 >
                   <div className="grid grid-cols-2 gap-2 pt-2">
                     <Button variant="outline" size="lg" className="h-12" asChild>
-                      <a href={consultoriaPt.url} target="_blank" rel="noopener noreferrer">Português</a>
+                      <Link to="/consultoria">Português</Link>
                     </Button>
                     <Button variant="outline" size="lg" className="h-12" asChild>
-                      <a href={consultoriaEn.url} target="_blank" rel="noopener noreferrer">English</a>
+                      <Link to="/consultoria/en">English</Link>
                     </Button>
                   </div>
                 </motion.div>

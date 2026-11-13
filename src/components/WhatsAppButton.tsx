@@ -1,13 +1,17 @@
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/config/site';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useLocation } from 'react-router-dom';
 
 export const WhatsAppButton = () => {
   const { locale } = useLanguage();
+  const { pathname } = useLocation();
   const text = locale === 'pt'
     ? 'Olá! Gostava de saber mais sobre o Atelier Casa Mãe.'
     : "Hi! I'd like to know more about Atelier Casa Mãe.";
   const href = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(text)}`;
+
+  if (pathname.startsWith('/consultoria')) return null;
 
   return (
     <motion.a

@@ -18,6 +18,7 @@ import { About } from "./pages/About";
 import { Work } from "./pages/Work";
 import { Contact } from "./pages/Contact";
 import { Links } from "./pages/Links";
+import { Consultoria } from "./pages/Consultoria";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,8 @@ const App = () => {
             <Routes>
               {/* Links page without Header/Footer */}
               <Route path="/links" element={<Links />} />
+              <Route path="/consultoria" element={<Consultoria lang="pt" />} />
+              <Route path="/consultoria/en" element={<Consultoria lang="en" />} />
               
               {/* Main layout with Header/Footer */}
               <Route path="*" element={
