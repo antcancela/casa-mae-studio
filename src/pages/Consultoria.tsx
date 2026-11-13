@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Check, X, MessageCircle, ArrowDown, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Check, X, Instagram, ArrowDown, ArrowRight } from 'lucide-react';
 import { consultoria, type Lang } from '@/content/consultoria';
 import { siteConfig } from '@/config/site';
 import joanaPortrait from '@/assets/joana-portrait.jpg';
@@ -177,7 +177,7 @@ export const Consultoria = ({ lang }: { lang: Lang }) => {
         <div className="max-w-md mx-auto flex flex-col gap-2">
           <a href="https://ig.me/m/atelier_casamae" target="_blank" rel="noopener noreferrer"
             className="w-full flex items-center justify-center gap-2 h-14 rounded-2xl bg-primary text-primary-foreground font-medium shadow-xl active:scale-[0.98] transition-transform">
-            <MessageCircle className="h-5 w-5" /> {c.cta}
+            <Instagram className="h-5 w-5" /> {c.cta}
           </a>
           <a href={wa} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
             className="w-full flex items-center justify-center gap-2 h-12 px-5 rounded-2xl border border-primary/40 bg-background text-primary font-medium shadow-xl active:scale-[0.98] transition-transform">
