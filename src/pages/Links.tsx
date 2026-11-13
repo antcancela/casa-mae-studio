@@ -122,7 +122,7 @@ export const Links = () => {
               asChild={!!link.href}
             >
               {link.href ? (
-                <a href={link.href}>{link.label}</a>
+                <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
               ) : (
                 <span>{link.label}</span>
               )}
