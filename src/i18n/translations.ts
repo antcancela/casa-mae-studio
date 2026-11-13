@@ -216,7 +216,7 @@ export const translations = {
           "Mudou-se para Portugal",
           "Está a mudar de casa",
           "Procura ter de uma zona de trabalho",
-          "Os seus filhos vão para outro quarto",
+          "Vai mudar os filhos de quarto",
         ],
         audience2: {
           title: "Quer Uma Casa Mais Adaptada à Família",
