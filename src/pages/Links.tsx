@@ -89,7 +89,7 @@ export const Links = () => {
               aria-expanded={pdfOpen}
             >
               <FileText className="h-5 w-5" />
-              Consultoria Online
+              Online Consulting
             </Button>
             <AnimatePresence initial={false}>
               {pdfOpen && (
