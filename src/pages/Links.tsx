@@ -73,7 +73,7 @@ export const Links = () => {
             />
           </div>
           <div>
-            <h1 className="text-display text-2xl font-bold">Atelier Casa Mãe — Interior Design for Family Homes in Lisbon</h1>
+            <h1 className="text-display text-2xl font-bold">Atelier Casa Mãe — Interior Design for Family Homes in Lisbon and Cascais</h1>
             <p className="text-body text-muted-foreground mt-2">
               Beautiful, functional spaces for families
             </p>
