@@ -135,7 +135,7 @@ export const Consultoria = ({ lang }: { lang: Lang }) => {
                 ))}
               </ul>
             </motion.div>
-            <motion.div {...fade} className="rounded-2xl border border-border bg-card p-6">
+            <motion.div {...fade} className="shrink-0 w-[85%] sm:w-[calc(50%-0.5rem)] snap-start rounded-2xl border border-border bg-card p-6">
               <h3 className="font-semibold mb-4">{c.delivery.outLabel}</h3>
               <ul className="space-y-3">
                 {c.delivery.excluded.map((t) => (
