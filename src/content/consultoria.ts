@@ -54,8 +54,8 @@ const pt = {
   footer: 'Consultoria Casa à Medida · marcação por mensagem direta',
   cta: 'Marcar por mensagem',
   waMessage: 'Olá Joana! Gostaria de marcar a Consultoria Casa à Medida.',
-  seoTitle: 'Consultoria Casa à Medida — Atelier Casa Mãe',
-  seoDesc: 'Consultoria online para adaptar a casa às novas necessidades da família, sem mudar de casa.',
+  seoTitle: 'Consultoria Online Casa à Medida da Família — Atelier Casa Mãe',
+  seoDesc: 'Consultoria online para adaptar a casa às novas necessidades da família. Sugestões de layout, organização e um plano de ação, sem ter de mudar de casa.',
 };
 
 const en: typeof pt = {
@@ -112,8 +112,8 @@ const en: typeof pt = {
   footer: 'Tailored Home Consultancy · book by direct message',
   cta: 'Book conversation',
   waMessage: "Hi Joana! I'd like to book the Tailored Home Consultancy.",
-  seoTitle: 'Tailored Home Consultancy — Atelier Casa Mãe',
-  seoDesc: 'Online consultancy to adapt your home to your family’s new needs, without having to move.',
+  seoTitle: 'Online Consultancy for Family Homes — Atelier Casa Mãe',
+  seoDesc: 'Online interior consultancy to adapt your home to your family’s changing needs. Layout ideas, organisation and an action plan, without having to move.',
 };
 
 export const consultoria = { pt, en };

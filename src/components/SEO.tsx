@@ -1,6 +1,8 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { siteConfig } from '@/config/site';
+import { getCanonicalUrl, primarySiteUrl } from '@/lib/seo-url';
 
 interface SEOProps {
   title?: string;
@@ -8,16 +10,19 @@ interface SEOProps {
   image?: string;
   type?: 'website' | 'article';
   jsonLd?: object | object[];
+  language?: 'pt' | 'en';
 }
 
-export const SEO = ({ title, description, image, type = 'website', jsonLd }: SEOProps) => {
-  const { locale } = useLanguage();
+export const SEO = ({ title, description, image, type = 'website', jsonLd, language }: SEOProps) => {
+  const { locale: selectedLocale } = useLanguage();
+  const locale = language || selectedLocale;
+  const { pathname } = useLocation();
   
   const fullTitle = title ? `${title} | ${siteConfig.siteName}` : siteConfig.siteName;
   const defaultDescription = siteConfig.siteDescription[locale as 'en' | 'pt'];
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
+  const siteUrl = primarySiteUrl;
   const fullImage = image ? `${siteUrl}${image}` : `${siteUrl}/logo.png`;
-  const currentUrl = typeof window !== 'undefined' ? window.location.href.split('?')[0].split('#')[0] : siteUrl;
+  const currentUrl = getCanonicalUrl(pathname);
 
   return (
     <Helmet>
@@ -40,7 +45,7 @@ export const SEO = ({ title, description, image, type = 'website', jsonLd }: SEO
       <meta name="twitter:image" content={fullImage} />
       
       {/* Canonical */}
-      <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : siteUrl} />
+      <link rel="canonical" href={currentUrl} />
       
       {/* JSON-LD Structured Data */}
       {jsonLd && (
