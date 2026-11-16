@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './ui/button';
 import { Magnetic } from './motion/Magnetic';
 import { useLanguage } from '@/i18n/LanguageContext';
-import logo from '@/assets/logo-new.png';
+import logo from '@/assets/casa-mae-horizontal-coral.svg.asset.json';
 
 interface HeaderProps {
   onBookCallClick: () => void;
@@ -36,9 +36,11 @@ export const Header = ({ onBookCallClick }: HeaderProps) => {
           {/* Logo */}
           <Link to="/" className="flex items-center group flex-shrink-0">
             <img 
-              src={logo} 
+              src={logo.url}
               alt="Atelier Casa Mãe" 
-              className="h-12 sm:h-14 lg:h-24 w-auto transition-all duration-300 group-hover:scale-[1.02]" 
+              width={574}
+              height={180}
+              className="w-40 sm:w-48 lg:w-60 h-auto transition-all duration-300 group-hover:scale-[1.02]"
             />
           </Link>
 
