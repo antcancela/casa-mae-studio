@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { CalendlyModal } from '@/components/CalendlyModal';
+import { SEO } from '@/components/SEO';
 import { siteConfig } from '@/config/site';
 import logo from '@/assets/logo-circle.png';
 
@@ -52,6 +53,11 @@ export const Links = () => {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <SEO
+        language="pt"
+        title="Consultoria Online e Design de Interiores para Famílias"
+        description="Conheça a consultoria online da Atelier Casa Mãe, marque uma conversa e descubra projetos de interiores para famílias em Lisboa e Cascais."
+      />
       <div className="w-full max-w-md space-y-8 animate-fade-in">
         {/* Header */}
         <div className="text-center space-y-4">

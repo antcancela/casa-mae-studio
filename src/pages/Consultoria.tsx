@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Check, X, Instagram, ArrowDown, ArrowRight } from 'lucide-react';
 import { consultoria, type Lang } from '@/content/consultoria';
 import { siteConfig } from '@/config/site';
+import { SEO } from '@/components/SEO';
 import joanaPortrait from '@/assets/joana-portrait.jpg';
 
 const fade = {
@@ -21,13 +21,9 @@ export const Consultoria = ({ lang }: { lang: Lang }) => {
   const c = consultoria[lang];
   const wa = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(c.waMessage)}`;
 
-  useEffect(() => {
-    document.title = c.seoTitle;
-    document.documentElement.lang = lang;
-  }, [c, lang]);
-
   return (
     <div className="min-h-screen bg-background text-foreground pb-44">
+      <SEO language={lang} title={c.seoTitle.replace(' — Atelier Casa Mãe', '')} description={c.seoDesc} />
       <div className="sticky top-0 z-30 backdrop-blur-md bg-background/80 border-b border-border/50">
         <div className="max-w-3xl mx-auto px-5 h-14 flex items-center justify-between">
           <Link to="/links" className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
