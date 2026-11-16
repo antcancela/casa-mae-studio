@@ -9,4 +9,4 @@
 
 - [x] Replace existing site logos with the supplied horizontal coral version.
 - [x] Derive the favicon from the matching supplied symbol.
-- [ ] Verify logo visibility on desktop and mobile.
+- [x] Verify logo visibility on desktop and mobile using the hosted asset (local Vite does not serve CDN paths).
