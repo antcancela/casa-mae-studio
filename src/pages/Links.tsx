@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { CalendlyModal } from '@/components/CalendlyModal';
 import { SEO } from '@/components/SEO';
 import { siteConfig } from '@/config/site';
-import logo from '@/assets/logo-circle.png';
+import logo from '@/assets/casa-mae-horizontal-coral.svg.asset.json';
 
 export const Links = () => {
   const [calendlyOpen, setCalendlyOpen] = useState(false);
@@ -63,9 +63,11 @@ export const Links = () => {
         <div className="text-center space-y-4">
           <div className="flex justify-center">
             <img 
-              src={logo} 
+              src={logo.url}
               alt="Atelier Casa Mãe" 
-              className="h-40 w-40 rounded-full"
+              width={574}
+              height={180}
+              className="w-72 max-w-full h-auto"
             />
           </div>
           <div>
