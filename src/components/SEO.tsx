@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { siteConfig } from '@/config/site';
+import { getCanonicalUrl, primarySiteUrl } from '@/lib/seo-url';
 
 interface SEOProps {
   title?: string;
@@ -19,9 +20,9 @@ export const SEO = ({ title, description, image, type = 'website', jsonLd, langu
   
   const fullTitle = title ? `${title} | ${siteConfig.siteName}` : siteConfig.siteName;
   const defaultDescription = siteConfig.siteDescription[locale as 'en' | 'pt'];
-  const siteUrl = 'https://ateliercasamae.pt';
+  const siteUrl = primarySiteUrl;
   const fullImage = image ? `${siteUrl}${image}` : `${siteUrl}/logo.png`;
-  const currentUrl = `${siteUrl}${pathname === '/' ? '/' : pathname.replace(/\/+$/, '')}`;
+  const currentUrl = getCanonicalUrl(pathname);
 
   return (
     <Helmet>
