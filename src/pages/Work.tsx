@@ -52,6 +52,11 @@ import kids153115 from '@/assets/gallery/additions/img_20261105_153115.jpg.asset
 
 const galleries = {
   kidsRooms: [
+    { src: kids140141.url, caption: "Kids' Room Design 9" },
+    { src: kids140216.url, caption: "Kids' Room Design 10" },
+    { src: kids140306.url, caption: "Kids' Room Design 11" },
+    { src: kids140341.url, caption: "Kids' Room Design 12" },
+    { src: kids153718.url, caption: "Kids' Room Design 13" },
     { src: kidsRoom1, caption: "Kids' Room Design 1" },
     { src: kidsRoom2, caption: "Kids' Room Design 2" },
     { src: kidsRoom3, caption: "Kids' Room Design 3" },
@@ -59,11 +64,6 @@ const galleries = {
     { src: kidsRoom5, caption: "Kids' Room Design 5" },
     { src: kidsRoom6, caption: "Kids' Room Design 6" },
     { src: kidsRoom7, caption: "Kids' Room Design 7" },
-    { src: kids140141.url, caption: "Kids' Room Design 9" },
-    { src: kids140216.url, caption: "Kids' Room Design 10" },
-    { src: kids140306.url, caption: "Kids' Room Design 11" },
-    { src: kids140341.url, caption: "Kids' Room Design 12" },
-    { src: kids153718.url, caption: "Kids' Room Design 13" },
     { src: kids153103.url, caption: "Kids' Room Design 14" },
     { src: kids153115.url, caption: "Kids' Room Design 15" },
   ],
