@@ -49,7 +49,6 @@ import kids140341 from '@/assets/gallery/additions/img_20250703_140341.jpg.asset
 import kids153718 from '@/assets/gallery/additions/img_20260807_153718_edit_366031121847452.jpg.asset.json';
 import kids153103 from '@/assets/gallery/additions/img_20261105_153103.jpg.asset.json';
 import kids153115 from '@/assets/gallery/additions/img_20261105_153115.jpg.asset.json';
-import kids153140 from '@/assets/gallery/additions/img_20261105_153140.jpg.asset.json';
 
 const galleries = {
   kidsRooms: [
@@ -67,7 +66,6 @@ const galleries = {
     { src: kids153718.url, caption: "Kids' Room Design 13" },
     { src: kids153103.url, caption: "Kids' Room Design 14" },
     { src: kids153115.url, caption: "Kids' Room Design 15" },
-    { src: kids153140.url, caption: "Kids' Room Design 16" },
   ],
   familyHome: [
     { src: family1161.url, caption: 'Family Home Interior 13' },
