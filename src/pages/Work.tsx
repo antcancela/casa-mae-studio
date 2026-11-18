@@ -18,7 +18,6 @@ import kidsRoom4 from '@/assets/gallery/kids-room-4.jpg';
 import kidsRoom5 from '@/assets/gallery/kids-room-5.jpg';
 import kidsRoom6 from '@/assets/gallery/kids-room-6.jpg';
 import kidsRoom7 from '@/assets/gallery/kids-room-7.jpg';
-import kidsRoom8 from '@/assets/gallery/kids-room-8.jpg';
 import familyHome3 from '@/assets/gallery/family-home-3.jpg';
 import familyHome4 from '@/assets/gallery/family-home-4.jpeg';
 import familyHome5 from '@/assets/gallery/family-home-5.jpg';
@@ -48,7 +47,6 @@ const galleries = {
     { src: kidsRoom5, caption: "Kids' Room Design 5" },
     { src: kidsRoom6, caption: "Kids' Room Design 6" },
     { src: kidsRoom7, caption: "Kids' Room Design 7" },
-    { src: kidsRoom8, caption: "Kids' Room Design 8" },
   ],
   familyHome: [
     { src: familyHome11, caption: 'Family Home Interior 11' },
