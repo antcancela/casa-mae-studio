@@ -37,6 +37,19 @@ import riverApt2 from '@/assets/gallery/river-apt-2.jpg';
 import riverApt3 from '@/assets/gallery/river-apt-3.jpg';
 import riverApt4 from '@/assets/gallery/river-apt-4.jpg';
 import riverApt5 from '@/assets/gallery/river-apt-5.jpg';
+import familyWhatsApp from '@/assets/gallery/additions/family-whatsapp-20240417.jpg.asset.json';
+import family1161 from '@/assets/gallery/additions/img_1161.jpg.asset.json';
+import family1165 from '@/assets/gallery/additions/img_1165.jpg.asset.json';
+import river6828 from '@/assets/gallery/additions/img_6828.jpg.asset.json';
+import river6837 from '@/assets/gallery/additions/img_6837.jpg.asset.json';
+import kids140141 from '@/assets/gallery/additions/img_20250703_140141.jpg.asset.json';
+import kids140216 from '@/assets/gallery/additions/img_20250703_140216.jpg.asset.json';
+import kids140306 from '@/assets/gallery/additions/img_20250703_140306_edit_22589737080496.jpg.asset.json';
+import kids140341 from '@/assets/gallery/additions/img_20250703_140341.jpg.asset.json';
+import kids153718 from '@/assets/gallery/additions/img_20260807_153718_edit_366031121847452.jpg.asset.json';
+import kids153103 from '@/assets/gallery/additions/img_20261105_153103.jpg.asset.json';
+import kids153115 from '@/assets/gallery/additions/img_20261105_153115.jpg.asset.json';
+import kids153140 from '@/assets/gallery/additions/img_20261105_153140.jpg.asset.json';
 
 const galleries = {
   kidsRooms: [
@@ -47,6 +60,14 @@ const galleries = {
     { src: kidsRoom5, caption: "Kids' Room Design 5" },
     { src: kidsRoom6, caption: "Kids' Room Design 6" },
     { src: kidsRoom7, caption: "Kids' Room Design 7" },
+    { src: kids140141.url, caption: "Kids' Room Design 9" },
+    { src: kids140216.url, caption: "Kids' Room Design 10" },
+    { src: kids140306.url, caption: "Kids' Room Design 11" },
+    { src: kids140341.url, caption: "Kids' Room Design 12" },
+    { src: kids153718.url, caption: "Kids' Room Design 13" },
+    { src: kids153103.url, caption: "Kids' Room Design 14" },
+    { src: kids153115.url, caption: "Kids' Room Design 15" },
+    { src: kids153140.url, caption: "Kids' Room Design 16" },
   ],
   familyHome: [
     { src: familyHome11, caption: 'Family Home Interior 11' },
@@ -57,6 +78,9 @@ const galleries = {
     { src: familyHome8, caption: 'Family Home Interior 8' },
     { src: familyHome9, caption: 'Family Home Interior 9' },
     { src: familyHome10, caption: 'Family Home Interior 10' },
+    { src: familyWhatsApp.url, caption: 'Family Home Interior 12' },
+    { src: family1161.url, caption: 'Family Home Interior 13' },
+    { src: family1165.url, caption: 'Family Home Interior 14' },
   ],
   lisbon: [
     { src: lisbonApt1, caption: 'Lisbon Apartment 1' },
@@ -72,6 +96,8 @@ const galleries = {
     { src: riverApt3, caption: 'River Apartment 3' },
     { src: riverApt4, caption: 'River Apartment 4' },
     { src: riverApt5, caption: 'River Apartment 5' },
+    { src: river6828.url, caption: 'River Apartment 6' },
+    { src: river6837.url, caption: 'River Apartment 7' },
   ],
 };
 
