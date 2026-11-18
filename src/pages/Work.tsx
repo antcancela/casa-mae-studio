@@ -91,12 +91,12 @@ const galleries = {
     { src: lisbonApt6, caption: 'Lisbon Apartment 6' },
   ],
   river: [
+    { src: river6828.url, caption: 'River Apartment 6' },
     { src: riverApt1, caption: 'River Apartment 1' },
     { src: riverApt2, caption: 'River Apartment 2' },
     { src: riverApt3, caption: 'River Apartment 3' },
     { src: riverApt4, caption: 'River Apartment 4' },
     { src: riverApt5, caption: 'River Apartment 5' },
-    { src: river6828.url, caption: 'River Apartment 6' },
     { src: river6837.url, caption: 'River Apartment 7' },
   ],
 };
